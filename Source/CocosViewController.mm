@@ -70,9 +70,9 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 	return self;
 }
 
-- (void)viewDidLayoutSubviews
+- (void)viewDidLoad
 {
-	[super viewDidLayoutSubviews];
+	[super viewDidLoad];
 	
 	[self startDirector];
 }
