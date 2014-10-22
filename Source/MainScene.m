@@ -8,6 +8,14 @@
 
 #import "MainScene.h"
 
-@implementation MainScene
+@implementation MainScene {
+    CCNode *_avatarNode;
+}
+
+-(void)didLoadFromCCB
+{
+    CCNode *avatar = [CCBReader load:@"Avatar"];
+    [_avatarNode addChild:avatar];
+}
 
 @end
