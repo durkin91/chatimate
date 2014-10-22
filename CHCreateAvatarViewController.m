@@ -10,6 +10,16 @@
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+
+
+- (IBAction)tickButtonPressed:(UIButton *)sender;
+- (IBAction)closeButtonPressed:(UIButton *)sender;
+- (IBAction)menuButtonPressed:(UIButton *)sender;
+- (IBAction)nextArrowButtonPressed:(UIButton *)sender;
+
+
 @end
 
 @implementation CHCreateAvatarViewController
@@ -36,4 +46,15 @@
     return NO;
 }
 
+- (IBAction)tickButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)closeButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)menuButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)nextArrowButtonPressed:(UIButton *)sender {
+}
 @end
