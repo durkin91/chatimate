@@ -7,14 +7,14 @@
 //
 
 #import "CHCreateAvatarViewController.h"
-#import "CHFactory.h"
+#import "CHCreateAvatar.h"
 #import "CHAvatarAttributeType.h"
 #import "CHAvatarAttributeOption.h"
 #import "CHAttributeData.h"
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-@property (strong, nonatomic) CHFactory *factory;
+@property (strong, nonatomic) CHCreateAvatar *factory;
 @property (nonatomic) int currentAttributeIndex;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -44,15 +44,11 @@
     
     //retrieve the currently active attribute and setup the collection view with starting index of 0.
     self.currentAttributeIndex = 0;
-    self.factory = [[CHFactory alloc] init];
+    self.factory = [[CHCreateAvatar alloc] init];
     [self setupCollectionView];
     
 }
 
-//-(void)viewWillAppear:(BOOL)animated
-//{
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"AttributeOptionCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"Cell"];
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -89,6 +85,12 @@
     [cell setBackgroundColor:option.cellColor];
     
     return cell;
+}
+
+#pragma mark - CollectionView Delegate
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CHAvatarAttributeType.h"
 
-@interface CHFactory : NSObject
+@interface CHCreateAvatar : NSObject
 
 @property (strong, nonatomic) CHAvatarAttributeType *activeAttributeType;
 

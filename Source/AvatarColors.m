@@ -108,10 +108,4 @@ static UIColor* _skinTone27 = nil;
 + (UIColor*)skinTone26 { return _skinTone26; }
 + (UIColor*)skinTone27 { return _skinTone27; }
 
-#pragma mark Drawing Methods
-
-+ (void)drawCanvas1;
-{
-}
-
 @end

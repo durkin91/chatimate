@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CHFactory.h"
+#import "CHCreateAvatar.h"
 #import "CHAttributeData.h"
 #import "CHAvatarAttributeType.h"
 #import "CHAvatarAttributeOption.h"
 
-@interface CHFactory ()
+@interface CHCreateAvatar ()
 
 @property (strong, nonatomic) NSArray *attributeTypeData;
 
 
 @end
 
-@implementation CHFactory
+@implementation CHCreateAvatar
 
 
 - (void)setActiveAttributeForIndex:(int)index
@@ -31,6 +31,13 @@
     
     self.activeAttributeType = [[CHAvatarAttributeType alloc] initWithData:data];
 
+}
+
+#pragma mark - Helper methods
+
+-(void)setColorProperties:(CHAvatarAttributeOption *)option
+{
+    
 }
 
 @end

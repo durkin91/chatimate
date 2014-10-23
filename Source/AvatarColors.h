@@ -43,7 +43,4 @@
 + (UIColor*)skinTone26;
 + (UIColor*)skinTone27;
 
-// Drawing Methods
-+ (void)drawCanvas1;
-
 @end
