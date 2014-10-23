@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CHAvatarAttributeType.h"
+#import "CHAvatarAttribute.h"
 
 @interface CHCreateAvatar : NSObject
 
-@property (strong, nonatomic) CHAvatarAttributeType *activeAttributeType;
+@property (strong, nonatomic) CHAvatarAttribute *activeAttributeType;
 
 - (void)setActiveAttributeForIndex:(int)index;
 

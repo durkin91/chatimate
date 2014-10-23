@@ -8,7 +8,7 @@
 
 #import "CHCreateAvatarViewController.h"
 #import "CHCreateAvatar.h"
-#import "CHAvatarAttributeType.h"
+#import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
 #import "CHAttributeData.h"
 

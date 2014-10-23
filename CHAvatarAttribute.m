@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CHAvatarAttributeType.h"
+#import "CHAvatarAttribute.h"
 #import "CHAttributeData.h"
 #import "CHAvatarAttributeOption.h"
 
-@implementation CHAvatarAttributeType
+@implementation CHAvatarAttribute
 
 -(id)init
 {
@@ -21,7 +21,7 @@
 -(id)initWithData:(NSDictionary *)data
 {
     self = [super init];
-    self.name = data[ATTRIBUTE_TYPE_NAME];
+    self.name = data[ATTRIBUTE_NAME];
     
     //create the options
     NSArray *optionsData = [CHAttributeData optionsForAttributeType:self.name];

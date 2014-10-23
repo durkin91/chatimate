@@ -11,7 +11,7 @@
 		155A243819F92D10000392AC /* CHDrawingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A243719F92D10000392AC /* CHDrawingData.m */; };
 		156C310619F87F9900793C01 /* CHAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310519F87F9900793C01 /* CHAvatar.m */; };
 		156C310A19F8857900793C01 /* CHCreateAvatarScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310919F8857900793C01 /* CHCreateAvatarScene.m */; };
-		156C310E19F88DF200793C01 /* CHAvatarAttributeType.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310D19F88DF200793C01 /* CHAvatarAttributeType.m */; };
+		156C310E19F88DF200793C01 /* CHAvatarAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310D19F88DF200793C01 /* CHAvatarAttribute.m */; };
 		156C311419F88E3A00793C01 /* CHAvatarAttributeOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C311319F88E3A00793C01 /* CHAvatarAttributeOption.m */; };
 		156C311B19F88F7600793C01 /* CHAttributeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C311A19F88F7600793C01 /* CHAttributeData.m */; };
 		156C312419F8AC4E00793C01 /* CHCreateAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C312319F8AC4E00793C01 /* CHCreateAvatar.m */; };
@@ -75,8 +75,8 @@
 		156C310519F87F9900793C01 /* CHAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatar.m; sourceTree = "<group>"; };
 		156C310819F8857900793C01 /* CHCreateAvatarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateAvatarScene.h; sourceTree = "<group>"; };
 		156C310919F8857900793C01 /* CHCreateAvatarScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCreateAvatarScene.m; sourceTree = "<group>"; };
-		156C310C19F88DF200793C01 /* CHAvatarAttributeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatarAttributeType.h; sourceTree = "<group>"; };
-		156C310D19F88DF200793C01 /* CHAvatarAttributeType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatarAttributeType.m; sourceTree = "<group>"; };
+		156C310C19F88DF200793C01 /* CHAvatarAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatarAttribute.h; sourceTree = "<group>"; };
+		156C310D19F88DF200793C01 /* CHAvatarAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatarAttribute.m; sourceTree = "<group>"; };
 		156C311219F88E3A00793C01 /* CHAvatarAttributeOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatarAttributeOption.h; sourceTree = "<group>"; };
 		156C311319F88E3A00793C01 /* CHAvatarAttributeOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatarAttributeOption.m; sourceTree = "<group>"; };
 		156C311919F88F7600793C01 /* CHAttributeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAttributeData.h; sourceTree = "<group>"; };
@@ -177,8 +177,8 @@
 			children = (
 				156C311919F88F7600793C01 /* CHAttributeData.h */,
 				156C311A19F88F7600793C01 /* CHAttributeData.m */,
-				156C310C19F88DF200793C01 /* CHAvatarAttributeType.h */,
-				156C310D19F88DF200793C01 /* CHAvatarAttributeType.m */,
+				156C310C19F88DF200793C01 /* CHAvatarAttribute.h */,
+				156C310D19F88DF200793C01 /* CHAvatarAttribute.m */,
 				156C311219F88E3A00793C01 /* CHAvatarAttributeOption.h */,
 				156C311319F88E3A00793C01 /* CHAvatarAttributeOption.m */,
 			);
@@ -465,7 +465,7 @@
 				156C311B19F88F7600793C01 /* CHAttributeData.m in Sources */,
 				156C311419F88E3A00793C01 /* CHAvatarAttributeOption.m in Sources */,
 				15DF950619F7A0AF00F06E8D /* CHCreateAvatarViewController.m in Sources */,
-				156C310E19F88DF200793C01 /* CHAvatarAttributeType.m in Sources */,
+				156C310E19F88DF200793C01 /* CHAvatarAttribute.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				155A243319F9060B000392AC /* AvatarColors.m in Sources */,
 				156C310619F87F9900793C01 /* CHAvatar.m in Sources */,

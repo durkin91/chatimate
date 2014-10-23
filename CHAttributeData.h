@@ -12,7 +12,7 @@
 #define CELL_COLOR @"Cell Color"
 
 //Keys for Attribute Type dictionary
-#define ATTRIBUTE_TYPE_NAME @"Attribute Type Name"
+#define ATTRIBUTE_NAME @"Attribute Name"
 
 //Attribute Type names
 #define SKIN_COLOR @"Skin Color"
@@ -22,6 +22,6 @@
 
 + (NSArray *)optionsForAttributeType:(NSString *)name;
 
-+ (NSArray *)attributeTypes;
++ (NSArray *)attributes;
 
 @end

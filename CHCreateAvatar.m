@@ -8,7 +8,7 @@
 
 #import "CHCreateAvatar.h"
 #import "CHAttributeData.h"
-#import "CHAvatarAttributeType.h"
+#import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
 
 @interface CHCreateAvatar ()
@@ -24,12 +24,12 @@
 - (void)setActiveAttributeForIndex:(int)index
 {
     if (!self.attributeTypeData) {
-        self.attributeTypeData = [CHAttributeData attributeTypes];
+        self.attributeTypeData = [CHAttributeData attributes];
     }
     
     NSDictionary *data = self.attributeTypeData[index];
     
-    self.activeAttributeType = [[CHAvatarAttributeType alloc] initWithData:data];
+    self.activeAttributeType = [[CHAvatarAttribute alloc] initWithData:data];
 
 }
 

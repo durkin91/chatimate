@@ -139,14 +139,14 @@
 
 #pragma mark - Attribute Type Data
 
-+ (NSArray *)attributeTypes
++ (NSArray *)attributes
 {
     NSDictionary *skinColor = @{
-                                ATTRIBUTE_TYPE_NAME : SKIN_COLOR
+                                ATTRIBUTE_NAME : SKIN_COLOR
                                 };
     
-    NSArray *attributeTypesData = @[skinColor];
-    return attributeTypesData;
+    NSArray *attributesData = @[skinColor];
+    return attributesData;
 }
 
 

@@ -11,7 +11,7 @@
 #define COLOR_ATTRIBUTE_TYPE @"Color"
 #define PATH_ATTRIBUTE_TYPE @"Path"
 
-@interface CHAvatarAttributeType : NSObject
+@interface CHAvatarAttribute : NSObject
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSArray *options;
