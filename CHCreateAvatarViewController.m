@@ -10,6 +10,7 @@
 #import "CHFactory.h"
 #import "CHAvatarAttributeType.h"
 #import "CHAvatarAttributeOption.h"
+#import "CHAttributeData.h"
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -86,7 +87,6 @@
     CHAvatarAttributeOption *option = [self.factory.activeAttributeType.options objectAtIndex:indexPath.item];
     
     [cell setBackgroundColor:option.cellColor];
-    NSLog(@"%@", option.cellColor);
     
     return cell;
 }
@@ -100,16 +100,22 @@
 }
 
 #pragma mark - UICollectionViewFlowLayout Delegate
-//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    CGSize cellSize = CGSizeMake(106, 106);
-//    return cellSize;
-//}
-//
-//-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-//{
-//    return 0.0f;
-//}
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize cellSize;
+    if ([self.factory.activeAttributeType.name isEqualToString:SKIN_COLOR]) {
+        cellSize = CGSizeMake(81, 81);
+    }
+    else {
+        cellSize = CGSizeMake(106, 106);
+    }
+    return cellSize;
+}
+
+-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 1.0f;
+}
 
 #pragma mark - IBActions
 
