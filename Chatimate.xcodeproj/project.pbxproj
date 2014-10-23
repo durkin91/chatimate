@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156C310619F87F9900793C01 /* CHAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310519F87F9900793C01 /* CHAvatar.m */; };
+		156C310A19F8857900793C01 /* CHCreateAvatarScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310919F8857900793C01 /* CHCreateAvatarScene.m */; };
 		15DF950019F7A03D00F06E8D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */; };
 		15DF950119F7A03D00F06E8D /* CocosViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF94FF19F7A03D00F06E8D /* CocosViewController.mm */; };
 		15DF950319F7A06100F06E8D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15DF950219F7A06100F06E8D /* Storyboard.storyboard */; };
@@ -30,7 +32,6 @@
 		B7378978180762440076A88C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896E180762440076A88C /* Default@2x.png */; };
 		B73789871807631A0076A88C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B73789851807631A0076A88C /* main.m */; };
 		B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B737894B180761A90076A88C /* libcocos2d.a */; };
-		B7378994180767190076A88C /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3117B978D7009739AE /* QuartzCore.framework */; };
 		B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3317B978D7009739AE /* OpenGLES.framework */; };
 		B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3517B978D7009739AE /* OpenAL.framework */; };
@@ -60,6 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		156C310419F87F9900793C01 /* CHAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatar.h; sourceTree = "<group>"; };
+		156C310519F87F9900793C01 /* CHAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatar.m; sourceTree = "<group>"; };
+		156C310819F8857900793C01 /* CHCreateAvatarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateAvatarScene.h; sourceTree = "<group>"; };
+		156C310919F8857900793C01 /* CHCreateAvatarScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCreateAvatarScene.m; sourceTree = "<group>"; };
 		15DF94FC19F7A03D00F06E8D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
 		15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Source/AppDelegate.mm; sourceTree = "<group>"; };
 		15DF94FE19F7A03D00F06E8D /* CocosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosViewController.h; path = Source/CocosViewController.h; sourceTree = "<group>"; };
@@ -87,8 +92,6 @@
 		B737896E180762440076A88C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Source/Resources/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		B73789851807631A0076A88C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = SOURCE_ROOT; };
 		B73789861807631A0076A88C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = Source/Prefix.pch; sourceTree = SOURCE_ROOT; };
-		B7378992180767190076A88C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/MainScene.h; sourceTree = "<group>"; };
-		B7378993180767190076A88C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/MainScene.m; sourceTree = "<group>"; };
 		B77F1B2E17B978D7009739AE /* Chatimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77F1B3117B978D7009739AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B77F1B3317B978D7009739AE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156C310719F87FB600793C01 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				15DF94FE19F7A03D00F06E8D /* CocosViewController.h */,
+				15DF94FF19F7A03D00F06E8D /* CocosViewController.mm */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		156C310B19F887F600793C01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				156C310819F8857900793C01 /* CHCreateAvatarScene.h */,
+				156C310919F8857900793C01 /* CHCreateAvatarScene.m */,
+				156C310419F87F9900793C01 /* CHAvatar.h */,
+				156C310519F87F9900793C01 /* CHAvatar.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		9222E2B918734FF800A246C7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,14 +158,12 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				15DF950419F7A0AF00F06E8D /* CHCreateAvatarViewController.h */,
-				15DF950519F7A0AF00F06E8D /* CHCreateAvatarViewController.m */,
 				15DF94FC19F7A03D00F06E8D /* AppDelegate.h */,
 				15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */,
-				15DF94FE19F7A03D00F06E8D /* CocosViewController.h */,
-				15DF94FF19F7A03D00F06E8D /* CocosViewController.mm */,
-				B7378992180767190076A88C /* MainScene.h */,
-				B7378993180767190076A88C /* MainScene.m */,
+				15DF950419F7A0AF00F06E8D /* CHCreateAvatarViewController.h */,
+				15DF950519F7A0AF00F06E8D /* CHCreateAvatarViewController.m */,
+				156C310B19F887F600793C01 /* Views */,
+				156C310719F87FB600793C01 /* Dependencies */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -358,11 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156C310A19F8857900793C01 /* CHCreateAvatarScene.m in Sources */,
 				15DF950119F7A03D00F06E8D /* CocosViewController.mm in Sources */,
-				B7378994180767190076A88C /* MainScene.m in Sources */,
 				15DF950019F7A03D00F06E8D /* AppDelegate.mm in Sources */,
 				15DF950619F7A0AF00F06E8D /* CHCreateAvatarViewController.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				156C310619F87F9900793C01 /* CHAvatar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,7 +38,7 @@
 
 -(CCScene *)cocosViewControllerSceneToRun:(CocosViewController *)cocosViewController
 {
-    return [CCBReader loadAsScene:@"MainScene"];
+    return [CCBReader loadAsScene:@"CreateAvatarScene"];
 }
 
 -(BOOL)shouldAutorotate

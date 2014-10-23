@@ -112,7 +112,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>background.png</string>
+							<string>avatar/background.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -140,9 +140,9 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>_avatarNode</string>
+				<string>avatarNode</string>
 				<key>memberVarAssignmentName</key>
-				<string>_avatarNode</string>
+				<string>avatarNode</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -210,7 +210,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>MainScene</string>
+		<string>CHCreateAvatarScene</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
