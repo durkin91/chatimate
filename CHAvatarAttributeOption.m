@@ -22,6 +22,8 @@
     self = [super init];
     self.cellColor = data[CELL_COLOR];
     
+    //NSLog(@"%@", self.cellColor);
+    
     return self;
 }
 

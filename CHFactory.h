@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CHAvatarAttributeType.h"
 
 @interface CHFactory : NSObject
 
-@property (strong, nonatomic) NSArray *attributeTypeData;
+@property (strong, nonatomic) CHAvatarAttributeType *activeAttributeType;
+
+- (void)setActiveAttributeForIndex:(int)index;
 
 @end

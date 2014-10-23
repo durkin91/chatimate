@@ -7,21 +7,29 @@
 //
 
 #import "CHFactory.h"
-#import "CHAvatarAttributeType.h"
 #import "CHAttributeData.h"
+#import "CHAvatarAttributeType.h"
+#import "CHAvatarAttributeOption.h"
+
+@interface CHFactory ()
+
+@property (strong, nonatomic) NSArray *attributeTypeData;
+
+
+@end
 
 @implementation CHFactory
 
-- (CHAvatarAttributeType *)attributeTypeForIndex:(int)index
+
+- (void)setActiveAttributeForIndex:(int)index
 {
     if (!self.attributeTypeData) {
         self.attributeTypeData = [CHAttributeData attributeTypes];
     }
     
     NSDictionary *data = self.attributeTypeData[index];
-    CHAvatarAttributeType *attributeType = [[CHAvatarAttributeType alloc] initWithData:data];
     
-    return attributeType;
+    self.activeAttributeType = [[CHAvatarAttributeType alloc] initWithData:data];
 
 }
 

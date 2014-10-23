@@ -8,6 +8,7 @@
 
 #import "CHAvatarAttributeType.h"
 #import "CHAttributeData.h"
+#import "CHAvatarAttributeOption.h"
 
 @implementation CHAvatarAttributeType
 
@@ -21,7 +22,16 @@
 {
     self = [super init];
     self.name = data[ATTRIBUTE_TYPE_NAME];
-    self.options = [CHAttributeData optionsForAttributeType:self.name];
+    
+    //create the options
+    NSArray *optionsData = [CHAttributeData optionsForAttributeType:self.name];
+    NSMutableArray *allOptions = [@[] mutableCopy];
+    for (NSDictionary *data in optionsData) {
+        CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:data];
+        [allOptions addObject:option];
+    }
+    
+    self.options = allOptions;
     
     return self;
 }

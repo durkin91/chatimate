@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) UIColor *cellColor;
 
--(id)initWithData:(NSDictionary *)data;
+- (id)initWithData:(NSDictionary *)data;
 
 
 @end
