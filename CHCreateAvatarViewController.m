@@ -11,7 +11,7 @@
 #import "CHAvatarAttributeType.h"
 #import "CHAvatarAttributeOption.h"
 
-@interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) CHFactory *factory;
 @property (nonatomic) int currentAttributeIndex;
@@ -47,6 +47,11 @@
     [self setupCollectionView];
     
 }
+
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [self.collectionView registerNib:[UINib nibWithNibName:@"AttributeOptionCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"Cell"];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -93,6 +98,18 @@
 {
     return [CCBReader loadAsScene:@"CreateAvatarScene"];
 }
+
+#pragma mark - UICollectionViewFlowLayout Delegate
+//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    CGSize cellSize = CGSizeMake(106, 106);
+//    return cellSize;
+//}
+//
+//-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+//{
+//    return 0.0f;
+//}
 
 #pragma mark - IBActions
 

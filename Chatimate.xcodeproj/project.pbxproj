@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		155A243319F9060B000392AC /* AvatarColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A243219F9060B000392AC /* AvatarColors.m */; };
 		156C310619F87F9900793C01 /* CHAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310519F87F9900793C01 /* CHAvatar.m */; };
 		156C310A19F8857900793C01 /* CHCreateAvatarScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310919F8857900793C01 /* CHCreateAvatarScene.m */; };
 		156C310E19F88DF200793C01 /* CHAvatarAttributeType.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310D19F88DF200793C01 /* CHAvatarAttributeType.m */; };
@@ -65,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		155A243119F9060B000392AC /* AvatarColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvatarColors.h; path = Source/AvatarColors.h; sourceTree = "<group>"; };
+		155A243219F9060B000392AC /* AvatarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvatarColors.m; path = Source/AvatarColors.m; sourceTree = "<group>"; };
 		156C310419F87F9900793C01 /* CHAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatar.h; sourceTree = "<group>"; };
 		156C310519F87F9900793C01 /* CHAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatar.m; sourceTree = "<group>"; };
 		156C310819F8857900793C01 /* CHCreateAvatarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateAvatarScene.h; sourceTree = "<group>"; };
@@ -139,6 +142,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		155A243419F90615000392AC /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				155A243119F9060B000392AC /* AvatarColors.h */,
+				155A243219F9060B000392AC /* AvatarColors.m */,
+			);
+			name = Colors;
+			sourceTree = "<group>";
+		};
 		156C310719F87FB600793C01 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +163,7 @@
 		156C310B19F887F600793C01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				155A243419F90615000392AC /* Colors */,
 				156C310819F8857900793C01 /* CHCreateAvatarScene.h */,
 				156C310919F8857900793C01 /* CHCreateAvatarScene.m */,
 				156C310419F87F9900793C01 /* CHAvatar.h */,
@@ -416,6 +429,7 @@
 				15DF950619F7A0AF00F06E8D /* CHCreateAvatarViewController.m in Sources */,
 				156C310E19F88DF200793C01 /* CHAvatarAttributeType.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				155A243319F9060B000392AC /* AvatarColors.m in Sources */,
 				156C310619F87F9900793C01 /* CHAvatar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
