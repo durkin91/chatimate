@@ -24,6 +24,8 @@
 
 @implementation CHCreateAvatarViewController
 
+#pragma mark Setup
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
@@ -34,17 +36,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark CocosViewControllerDelegate
+//Fixes an error that I get with CocosViewController trying to autorotate to landscape
+-(BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+#pragma mark - CocosViewControllerDelegate
 
 -(CCScene *)cocosViewControllerSceneToRun:(CocosViewController *)cocosViewController
 {
     return [CCBReader loadAsScene:@"CreateAvatarScene"];
 }
 
--(BOOL)shouldAutorotate
-{
-    return NO;
-}
+#pragma mark - IBActions
 
 - (IBAction)tickButtonPressed:(UIButton *)sender {
 }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		156C310619F87F9900793C01 /* CHAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310519F87F9900793C01 /* CHAvatar.m */; };
 		156C310A19F8857900793C01 /* CHCreateAvatarScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310919F8857900793C01 /* CHCreateAvatarScene.m */; };
+		156C310E19F88DF200793C01 /* CHAvatarAttributeType.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310D19F88DF200793C01 /* CHAvatarAttributeType.m */; };
+		156C311419F88E3A00793C01 /* CHAvatarAttributeOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C311319F88E3A00793C01 /* CHAvatarAttributeOption.m */; };
+		156C311B19F88F7600793C01 /* CHAttributeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C311A19F88F7600793C01 /* CHAttributeData.m */; };
+		156C312419F8AC4E00793C01 /* CHFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C312319F8AC4E00793C01 /* CHFactory.m */; };
 		15DF950019F7A03D00F06E8D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */; };
 		15DF950119F7A03D00F06E8D /* CocosViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF94FF19F7A03D00F06E8D /* CocosViewController.mm */; };
 		15DF950319F7A06100F06E8D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15DF950219F7A06100F06E8D /* Storyboard.storyboard */; };
@@ -65,6 +69,14 @@
 		156C310519F87F9900793C01 /* CHAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatar.m; sourceTree = "<group>"; };
 		156C310819F8857900793C01 /* CHCreateAvatarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateAvatarScene.h; sourceTree = "<group>"; };
 		156C310919F8857900793C01 /* CHCreateAvatarScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCreateAvatarScene.m; sourceTree = "<group>"; };
+		156C310C19F88DF200793C01 /* CHAvatarAttributeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatarAttributeType.h; sourceTree = "<group>"; };
+		156C310D19F88DF200793C01 /* CHAvatarAttributeType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatarAttributeType.m; sourceTree = "<group>"; };
+		156C311219F88E3A00793C01 /* CHAvatarAttributeOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatarAttributeOption.h; sourceTree = "<group>"; };
+		156C311319F88E3A00793C01 /* CHAvatarAttributeOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatarAttributeOption.m; sourceTree = "<group>"; };
+		156C311919F88F7600793C01 /* CHAttributeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAttributeData.h; sourceTree = "<group>"; };
+		156C311A19F88F7600793C01 /* CHAttributeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAttributeData.m; sourceTree = "<group>"; };
+		156C312219F8AC4E00793C01 /* CHFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFactory.h; sourceTree = "<group>"; };
+		156C312319F8AC4E00793C01 /* CHFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFactory.m; sourceTree = "<group>"; };
 		15DF94FC19F7A03D00F06E8D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
 		15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Source/AppDelegate.mm; sourceTree = "<group>"; };
 		15DF94FE19F7A03D00F06E8D /* CocosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosViewController.h; path = Source/CocosViewController.h; sourceTree = "<group>"; };
@@ -147,6 +159,21 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		156C311519F88E5500793C01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				156C311919F88F7600793C01 /* CHAttributeData.h */,
+				156C311A19F88F7600793C01 /* CHAttributeData.m */,
+				156C310C19F88DF200793C01 /* CHAvatarAttributeType.h */,
+				156C310D19F88DF200793C01 /* CHAvatarAttributeType.m */,
+				156C311219F88E3A00793C01 /* CHAvatarAttributeOption.h */,
+				156C311319F88E3A00793C01 /* CHAvatarAttributeOption.m */,
+				156C312219F8AC4E00793C01 /* CHFactory.h */,
+				156C312319F8AC4E00793C01 /* CHFactory.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9222E2B918734FF800A246C7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,8 +189,8 @@
 				15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */,
 				15DF950419F7A0AF00F06E8D /* CHCreateAvatarViewController.h */,
 				15DF950519F7A0AF00F06E8D /* CHCreateAvatarViewController.m */,
+				156C311519F88E5500793C01 /* Model */,
 				156C310B19F887F600793C01 /* Views */,
-				156C310719F87FB600793C01 /* Dependencies */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -202,6 +229,7 @@
 			children = (
 				15DF950219F7A06100F06E8D /* Storyboard.storyboard */,
 				B737893C1807616C0076A88C /* Source */,
+				156C310719F87FB600793C01 /* Dependencies */,
 				B77F1B4617B978D7009739AE /* Resources */,
 				9222E2B918734FF800A246C7 /* libs */,
 				B77F1CCF17B978D8009739AE /* Supporting Files */,
@@ -382,7 +410,11 @@
 				156C310A19F8857900793C01 /* CHCreateAvatarScene.m in Sources */,
 				15DF950119F7A03D00F06E8D /* CocosViewController.mm in Sources */,
 				15DF950019F7A03D00F06E8D /* AppDelegate.mm in Sources */,
+				156C312419F8AC4E00793C01 /* CHFactory.m in Sources */,
+				156C311B19F88F7600793C01 /* CHAttributeData.m in Sources */,
+				156C311419F88E3A00793C01 /* CHAvatarAttributeOption.m in Sources */,
 				15DF950619F7A0AF00F06E8D /* CHCreateAvatarViewController.m in Sources */,
+				156C310E19F88DF200793C01 /* CHAvatarAttributeType.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				156C310619F87F9900793C01 /* CHAvatar.m in Sources */,
 			);
