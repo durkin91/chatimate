@@ -22,15 +22,6 @@
 @implementation CHCreateAvatar
 
 
-- (void)createStartingAttachments
-{
-    self.attachments = [@[] mutableCopy];
-    NSArray *attachmentData = [CHAttributeData attachmentsData];
-    for (NSDictionary *dictionary in attachmentData) {
-        CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary];
-        [self.attachments addObject:attachment];
-    }
-}
 
 - (void)setActiveAttributeForIndex:(int)index
 {
@@ -42,6 +33,23 @@
     
     self.activeAttributeType = [[CHAvatarAttribute alloc] initWithData:data];
 
+}
+
+- (void)setupAttachments
+{
+    self.attachments = [@[] mutableCopy];
+    NSArray *attachmentData = [CHAttributeData attachmentsData];
+    for (NSDictionary *dictionary in attachmentData) {
+            CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary];
+            [self.attachments addObject:attachment];
+    }
+}
+
+- (void)updateAttachments
+{
+    for (CHAttachment *attachment in self.attachments) {
+        [attachment updateAttachment];
+    }
 }
 
 #pragma mark - Helper methods

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		155A243319F9060B000392AC /* AvatarColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A243219F9060B000392AC /* AvatarColors.m */; };
-		155A243819F92D10000392AC /* CHDrawingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A243719F92D10000392AC /* CHDrawingData.m */; };
 		155A244119F9F539000392AC /* CHAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A244019F9F539000392AC /* CHAttachment.m */; };
+		155A244419FA5166000392AC /* CHAvatarDrawingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A244319FA5166000392AC /* CHAvatarDrawingData.m */; };
 		156C310619F87F9900793C01 /* CHAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310519F87F9900793C01 /* CHAvatar.m */; };
 		156C310A19F8857900793C01 /* CHCreateAvatarScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310919F8857900793C01 /* CHCreateAvatarScene.m */; };
 		156C310E19F88DF200793C01 /* CHAvatarAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310D19F88DF200793C01 /* CHAvatarAttribute.m */; };
@@ -70,10 +70,10 @@
 /* Begin PBXFileReference section */
 		155A243119F9060B000392AC /* AvatarColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvatarColors.h; path = Source/AvatarColors.h; sourceTree = "<group>"; };
 		155A243219F9060B000392AC /* AvatarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvatarColors.m; path = Source/AvatarColors.m; sourceTree = "<group>"; };
-		155A243619F92D10000392AC /* CHDrawingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHDrawingData.h; path = Source/CHDrawingData.h; sourceTree = "<group>"; };
-		155A243719F92D10000392AC /* CHDrawingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHDrawingData.m; path = Source/CHDrawingData.m; sourceTree = "<group>"; };
 		155A243F19F9F539000392AC /* CHAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHAttachment.h; path = Source/CHAttachment.h; sourceTree = "<group>"; };
 		155A244019F9F539000392AC /* CHAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHAttachment.m; path = Source/CHAttachment.m; sourceTree = "<group>"; };
+		155A244219FA5166000392AC /* CHAvatarDrawingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHAvatarDrawingData.h; path = Source/CHAvatarDrawingData.h; sourceTree = "<group>"; };
+		155A244319FA5166000392AC /* CHAvatarDrawingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHAvatarDrawingData.m; path = Source/CHAvatarDrawingData.m; sourceTree = "<group>"; };
 		156C310419F87F9900793C01 /* CHAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAvatar.h; sourceTree = "<group>"; };
 		156C310519F87F9900793C01 /* CHAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatar.m; sourceTree = "<group>"; };
 		156C310819F8857900793C01 /* CHCreateAvatarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateAvatarScene.h; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 		155A243919F92D17000392AC /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				155A243619F92D10000392AC /* CHDrawingData.h */,
-				155A243719F92D10000392AC /* CHDrawingData.m */,
+				155A244219FA5166000392AC /* CHAvatarDrawingData.h */,
+				155A244319FA5166000392AC /* CHAvatarDrawingData.m */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -465,9 +465,9 @@
 				156C310A19F8857900793C01 /* CHCreateAvatarScene.m in Sources */,
 				15DF950119F7A03D00F06E8D /* CocosViewController.mm in Sources */,
 				15DF950019F7A03D00F06E8D /* AppDelegate.mm in Sources */,
-				155A243819F92D10000392AC /* CHDrawingData.m in Sources */,
 				156C312419F8AC4E00793C01 /* CHCreateAvatar.m in Sources */,
 				156C311B19F88F7600793C01 /* CHAttributeData.m in Sources */,
+				155A244419FA5166000392AC /* CHAvatarDrawingData.m in Sources */,
 				155A244119F9F539000392AC /* CHAttachment.m in Sources */,
 				156C311419F88E3A00793C01 /* CHAvatarAttributeOption.m in Sources */,
 				15DF950619F7A0AF00F06E8D /* CHCreateAvatarViewController.m in Sources */,

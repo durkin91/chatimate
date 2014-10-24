@@ -14,7 +14,8 @@
 @property (strong, nonatomic) CHAvatarAttribute *activeAttributeType;
 @property (strong, nonatomic) NSMutableArray *attachments;
 
-- (void)createStartingAttachments;
+- (void)setupAttachments;
+- (void)updateAttachments;
 - (void)setActiveAttributeForIndex:(int)index;
 
 @end

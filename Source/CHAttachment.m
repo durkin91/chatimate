@@ -83,17 +83,27 @@
         }
     }
     
+    [self drawAttachment];
+    
     
     return self;
     
 }
 
+-(void)updateAttachment
+{
+    [self drawAttachment];
+}
+//when I start adding options, remember to add these in here
 -(void)drawAttachment
 {
     UIGraphicsBeginImageContextWithOptions(self.frameSize, NO, 0.0f);
-    
+    [self.baseDrawing drawInRect:CGRectMake(0, 0, self.frameSize.width, self.frameSize.height)];
     self.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
+    self.texture = [[CCTexture alloc] initWithCGImage:self.image.CGImage contentScale:1.0];
 }
+
 
 @end

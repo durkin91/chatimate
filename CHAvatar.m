@@ -7,7 +7,20 @@
 //
 
 #import "CHAvatar.h"
+#import "CHAttachment.h"
 
-@implementation CHAvatar
+@implementation CHAvatar {
+    CCSprite *_shoulders;
+    CCSprite *_neck;
+    CCSprite *_head;
+}
+
+//Have left off the head for now just to get this working.
+-(void)didLoadFromCCB
+{
+    self.attachmentSprites = [@[_shoulders, _neck] mutableCopy];
+}
+
+
 
 @end

@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>shoulders</string>
 				<key>memberVarAssignmentName</key>
-				<string>shoulders</string>
+				<string>_shoulders</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -140,7 +140,7 @@
 				<key>displayName</key>
 				<string>neck</string>
 				<key>memberVarAssignmentName</key>
-				<string>neck</string>
+				<string>_neck</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -227,9 +227,9 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>face</string>
-				<key>memberVarAssignmentName</key>
 				<string>head</string>
+				<key>memberVarAssignmentName</key>
+				<string>_head</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>

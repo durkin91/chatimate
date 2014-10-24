@@ -10,5 +10,6 @@
 
 @interface CHCreateAvatarScene : CCNode
 
+@property (strong, nonatomic) CCNode *avatar;
 
 @end

@@ -15,8 +15,8 @@
 
 -(void)didLoadFromCCB
 {
-    CCNode *avatar = [CCBReader load:@"Avatar"];
-    [avatarNode addChild:avatar];
+    self.avatar = [CCBReader load:@"Avatar"];
+    [avatarNode addChild:self.avatar];
 }
 
 @end

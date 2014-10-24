@@ -10,4 +10,6 @@
 
 @interface CHAvatar : CCNode
 
+@property (strong, nonatomic) NSMutableArray *attachmentSprites;
+
 @end

@@ -11,6 +11,7 @@
 #import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
 #import "CHAttributeData.h"
+#import "CHCreateAvatarScene.h"
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -20,6 +21,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UICollectionViewCell *collectionViewCell;
+
+@property (strong, nonatomic) CCScene *currentScene;
 
 
 - (IBAction)tickButtonPressed:(UIButton *)sender;
@@ -45,8 +48,10 @@
     //retrieve the currently active attribute and setup the collection view with starting index of 0.
     self.currentAttributeIndex = 0;
     self.factory = [[CHCreateAvatar alloc] init];
-    [self.factory createStartingAttachments];
+    [self.factory setupAttachments];
     [self setupCollectionView];
+    
+    //setup the sprites
     
 }
 
@@ -68,6 +73,11 @@
 {
     [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
     self.titleLabel.text = [self.factory.activeAttributeType.name uppercaseString];
+}
+
+-(void)setupSpritesWithAttachments:(NSMutableArray *)attachments
+{
+    //for (CCSprite *sprite in self.currentScene. )
 }
 
 #pragma mark - CollectionView Data Source
@@ -99,7 +109,8 @@
 
 -(CCScene *)cocosViewControllerSceneToRun:(CocosViewController *)cocosViewController
 {
-    return [CCBReader loadAsScene:@"CreateAvatarScene"];
+    self.currentScene = [CCBReader loadAsScene:@"CreateAvatarScene"];
+    return self.currentScene;
 }
 
 #pragma mark - UICollectionViewFlowLayout Delegate
