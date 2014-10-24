@@ -17,6 +17,7 @@
 {
     self.avatar = [CCBReader load:@"Avatar"];
     [avatarNode addChild:self.avatar];
+    
 }
 
 @end

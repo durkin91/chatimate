@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CCNode.h"
+#import "CCScene.h"
+#import "CHAvatar.h"
 
-@interface CHCreateAvatarScene : CCNode
+@interface CHCreateAvatarScene : CCScene
 
-@property (strong, nonatomic) CCNode *avatar;
+@property (strong, nonatomic) CHAvatar *avatar;
 
 @end

@@ -12,6 +12,7 @@
 #import "CHAvatarAttributeOption.h"
 #import "CHAttributeData.h"
 #import "CHCreateAvatarScene.h"
+#import "CHAttachment.h"
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -22,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UICollectionViewCell *collectionViewCell;
 
-@property (strong, nonatomic) CCScene *currentScene;
+@property (strong, nonatomic) CHCreateAvatarScene *currentScene;
 
 
 - (IBAction)tickButtonPressed:(UIButton *)sender;
@@ -52,7 +53,7 @@
     [self setupCollectionView];
     
     //setup the sprites
-    
+    [self setupSpritesWithAttachments:self.factory.attachments];
 }
 
 
@@ -77,7 +78,12 @@
 
 -(void)setupSpritesWithAttachments:(NSMutableArray *)attachments
 {
-    //for (CCSprite *sprite in self.currentScene. )
+    int i = 0;
+    for (CCSprite __strong *sprite in self.currentScene.avatar.attachmentSprites) {
+        CHAttachment *attachment = attachments[i];
+        sprite.texture = attachment.texture;
+        i++;
+    }
 }
 
 #pragma mark - CollectionView Data Source

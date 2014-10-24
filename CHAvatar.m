@@ -19,6 +19,7 @@
 -(void)didLoadFromCCB
 {
     self.attachmentSprites = [@[_shoulders, _neck] mutableCopy];
+    
 }
 
 
