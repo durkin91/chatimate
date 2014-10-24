@@ -8,20 +8,48 @@
 
 #import <Foundation/Foundation.h>
 
-//Keys for Attribute Option dictionary
-#define CELL_COLOR @"Cell Color"
+//OPTIONS DATA
+//Keys
+#define OPTION_COLOR @"Color"
+#define OPTION_PATHS @"Paths"
 
-//Keys for Attribute Type dictionary
+//ATTRIBUTES DATA
+//Keys
 #define ATTRIBUTE_NAME @"Attribute Name"
+#define ATTRIBUTE_TYPE @"Attribute Type"
+#define ATTRIBUTE_ATTACHMENTS @"Attribute Attachments"
 
-//Attribute Type names
+//Names
 #define SKIN_COLOR @"Skin Color"
+#define JAW_SHAPE @"Jaw Shape"
+#define NOSE @"Nose"
+#define CHEEKBONES @"Cheekbones"
+#define EARS @"Ears"
+
+//Types
+#define COLOR_ATTRIBUTE_TYPE @"Color"
+#define PATH_ATTRIBUTE_TYPE @"Path"
+
+//ATTACHMENTS DATA
+//Keys
+#define ATTACHMENT_NAME @"Name"
+#define ATTACHMENT_FRAME_SIZE @"Frame Size"
+#define ATTACHMENT_OPTIONS @"Options"
+
+//Names
+#define SHOULDERS_ATTACHMENT @"shoulders"
+#define NECK_ATTACHMENT @"neck"
+#define HEAD_ATTACHMENT @"head"
+
+
+
 
 
 @interface CHAttributeData : NSObject
 
-+ (NSArray *)optionsForAttributeType:(NSString *)name;
++ (NSArray *)optionsForAttribute:(NSString *)name;
 
 + (NSArray *)attributes;
++ (NSArray *)attachmentsData;
 
 @end

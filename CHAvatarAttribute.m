@@ -22,9 +22,10 @@
 {
     self = [super init];
     self.name = data[ATTRIBUTE_NAME];
+    self.type = data[ATTRIBUTE_TYPE];
     
     //create the options
-    NSArray *optionsData = [CHAttributeData optionsForAttributeType:self.name];
+    NSArray *optionsData = [CHAttributeData optionsForAttribute:self.name];
     NSMutableArray *allOptions = [@[] mutableCopy];
     for (NSDictionary *data in optionsData) {
         CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:data];

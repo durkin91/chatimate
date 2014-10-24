@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define COLOR_ATTRIBUTE_TYPE @"Color"
-#define PATH_ATTRIBUTE_TYPE @"Path"
-
 @interface CHAvatarAttribute : NSObject
 
 @property (strong, nonatomic) NSString *name;
