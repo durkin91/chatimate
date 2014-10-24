@@ -60,6 +60,6 @@
 + (NSMutableDictionary *)univeralColors;
 + (NSArray *)optionsForAttribute:(NSString *)name;
 + (NSArray *)attributes;
-+ (NSArray *)attachmentsData;
++ (NSArray *)attachmentsData:(CHCreateAvatar *)instance;
 
 @end

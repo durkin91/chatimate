@@ -37,16 +37,18 @@
 
 - (void)setupAttachmentsAndColors
 {
+    //setup universal colors
+    self.universalColors = [CHAttributeData univeralColors];
+    
     //setup attachments
     self.attachments = [@[] mutableCopy];
-    NSArray *attachmentData = [CHAttributeData attachmentsData];
+    NSArray *attachmentData = [CHAttributeData attachmentsData:self];
     for (NSDictionary *dictionary in attachmentData) {
             CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary];
             [self.attachments addObject:attachment];
     }
-    
-    //setup universal colors
-    self.universalColors = [CHAttributeData univeralColors];
+    NSLog(@"Attachments: %@", self.attachments);
+    NSLog(@"Universal Colors: %@", self.universalColors);
 }
 
 - (void)updateAttachments

@@ -203,7 +203,7 @@
 
 #pragma mark - Attachment Data
 
-+ (NSArray *)attachmentsData
++ (NSArray *)attachmentsData:(CHCreateAvatar *)instance
 {
     NSArray *attachmentsData;
     
@@ -211,14 +211,14 @@
                                 ATTACHMENT_NAME : SHOULDERS_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(712, 212)],
                                 ATTACHMENT_OPTIONS : @[],
-                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData imageOfShoulders]
+                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData imageOfShoulders:instance]
                                 };
     
     NSDictionary *neck = @{
                                 ATTACHMENT_NAME : NECK_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(208, 228)],
                                 ATTACHMENT_OPTIONS : @[],
-                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData imageOfNeck]
+                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData imageOfNeck:instance]
                                 };
     
 //    NSDictionary *head = @{
