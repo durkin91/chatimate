@@ -49,7 +49,7 @@
     //retrieve the currently active attribute and setup the collection view with starting index of 0.
     self.currentAttributeIndex = 0;
     self.factory = [[CHCreateAvatar alloc] init];
-    [self.factory setupAttachments];
+    [self.factory setupAttachmentsAndColors];
     [self setupCollectionView];
     
     //setup the sprites
@@ -73,7 +73,7 @@
 -(void)setupCollectionView
 {
     [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
-    self.titleLabel.text = [self.factory.activeAttributeType.name uppercaseString];
+    self.titleLabel.text = [self.factory.activeAttribute.name uppercaseString];
 }
 
 -(void)setupSpritesWithAttachments:(NSMutableArray *)attachments
@@ -90,14 +90,14 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.factory.activeAttributeType.options count];
+    return [self.factory.activeAttribute.options count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    CHAvatarAttributeOption *option = [self.factory.activeAttributeType.options objectAtIndex:indexPath.item];
+    CHAvatarAttributeOption *option = [self.factory.activeAttribute.options objectAtIndex:indexPath.item];
     
     [cell setBackgroundColor:option.color];
     
@@ -123,7 +123,7 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGSize cellSize;
-    if ([self.factory.activeAttributeType.name isEqualToString:SKIN_COLOR]) {
+    if ([self.factory.activeAttribute.name isEqualToString:SKIN_COLOR]) {
         cellSize = CGSizeMake(81, 81);
     }
     else {

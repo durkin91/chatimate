@@ -11,10 +11,11 @@
 
 @interface CHCreateAvatar : NSObject
 
-@property (strong, nonatomic) CHAvatarAttribute *activeAttributeType;
+@property (strong, nonatomic) CHAvatarAttribute *activeAttribute;
 @property (strong, nonatomic) NSMutableArray *attachments;
+@property (strong, nonatomic) NSMutableDictionary *universalColors;
 
-- (void)setupAttachments;
+- (void)setupAttachmentsAndColors;
 - (void)updateAttachments;
 - (void)setActiveAttributeForIndex:(int)index;
 

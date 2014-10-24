@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+//UNIVERSAL COLORS DATA
+#define UNIVERSAL_SKIN_BASE_COLOR @"Skin Base Color"
+
 //OPTIONS DATA
 //Keys
 #define OPTION_COLOR @"Color"
@@ -53,8 +56,8 @@
 
 @interface CHAttributeData : NSObject
 
++ (NSMutableDictionary *)univeralColors;
 + (NSArray *)optionsForAttribute:(NSString *)name;
-
 + (NSArray *)attributes;
 + (NSArray *)attachmentsData;
 

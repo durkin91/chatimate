@@ -42,8 +42,6 @@ static UIColor* _skinTone24 = nil;
 static UIColor* _skinTone25 = nil;
 static UIColor* _skinTone26 = nil;
 static UIColor* _skinTone27 = nil;
-
-//Universal Colors
 static UIColor* _skinBaseColor = nil;
 static UIColor* _skinShadowColor = nil;
 
@@ -85,7 +83,6 @@ static UIImage* _imageOfNeck = nil;
     _skinBaseColor = [UIColor colorWithRed: 0.836 green: 0.66 blue: 0.444 alpha: 1];
     CGFloat skinBaseColorRGBA[4];
     [_skinBaseColor getRed: &skinBaseColorRGBA[0] green: &skinBaseColorRGBA[1] blue: &skinBaseColorRGBA[2] alpha: &skinBaseColorRGBA[3]];
-    
 
     _skinShadowColor = [UIColor colorWithRed: (skinBaseColorRGBA[0] * 0.8) green: (skinBaseColorRGBA[1] * 0.8) blue: (skinBaseColorRGBA[2] * 0.8) alpha: (skinBaseColorRGBA[3] * 0.8 + 0.2)];
 
@@ -578,6 +575,24 @@ static UIImage* _imageOfNeck = nil;
     UIGraphicsEndImageContext();
 
     return _imageOfNeck;
+}
+
+#pragma mark Customization Infrastructure
+
+- (void)setShouldersTargets: (NSArray*)shouldersTargets
+{
+    _shouldersTargets = shouldersTargets;
+
+    for (id target in self.shouldersTargets)
+        [target setImage: CHAvatarDrawingData.imageOfShoulders];
+}
+
+- (void)setNeckTargets: (NSArray*)neckTargets
+{
+    _neckTargets = neckTargets;
+
+    for (id target in self.neckTargets)
+        [target setImage: CHAvatarDrawingData.imageOfNeck];
 }
 
 

@@ -11,6 +11,16 @@
 
 @implementation CHAttributeData
 
+#pragma mark - Universal Colors Data
+
++ (NSMutableDictionary *)univeralColors
+{
+    NSMutableDictionary *colors = [@{
+                                     UNIVERSAL_SKIN_BASE_COLOR : [CHAvatarDrawingData skinTone26]
+                                     } mutableCopy];
+    return colors;
+}
+
 #pragma mark - Attribute Option Data
 
 //will return the correct array of options data based on the attribute type specified

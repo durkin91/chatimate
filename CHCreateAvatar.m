@@ -31,18 +31,22 @@
     
     NSDictionary *data = self.attributeTypeData[index];
     
-    self.activeAttributeType = [[CHAvatarAttribute alloc] initWithData:data];
+    self.activeAttribute = [[CHAvatarAttribute alloc] initWithData:data];
 
 }
 
-- (void)setupAttachments
+- (void)setupAttachmentsAndColors
 {
+    //setup attachments
     self.attachments = [@[] mutableCopy];
     NSArray *attachmentData = [CHAttributeData attachmentsData];
     for (NSDictionary *dictionary in attachmentData) {
             CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary];
             [self.attachments addObject:attachment];
     }
+    
+    //setup universal colors
+    self.universalColors = [CHAttributeData univeralColors];
 }
 
 - (void)updateAttachments
@@ -54,9 +58,6 @@
 
 #pragma mark - Helper methods
 
--(void)setColorProperties:(CHAvatarAttributeOption *)option
-{
-    
-}
+
 
 @end

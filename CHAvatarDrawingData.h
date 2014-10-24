@@ -14,6 +14,9 @@
 
 @interface CHAvatarDrawingData : NSObject
 
+// iOS Controls Customization Outlets
+@property(strong, nonatomic) IBOutletCollection(NSObject) NSArray* shouldersTargets;
+@property(strong, nonatomic) IBOutletCollection(NSObject) NSArray* neckTargets;
 
 // Colors
 + (UIColor*)skinTone1;
