@@ -45,6 +45,7 @@
     //retrieve the currently active attribute and setup the collection view with starting index of 0.
     self.currentAttributeIndex = 0;
     self.factory = [[CHCreateAvatar alloc] init];
+    [self.factory createStartingAttachments];
     [self setupCollectionView];
     
 }

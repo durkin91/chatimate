@@ -1,5 +1,5 @@
 //
-//  CHFactory.m
+//  CHCreateAvatar.m
 //  Chatimate
 //
 //  Created by Nikki Durkin on 10/23/14.
@@ -10,6 +10,7 @@
 #import "CHAttributeData.h"
 #import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
+#import "CHAttachment.h"
 
 @interface CHCreateAvatar ()
 
@@ -20,6 +21,16 @@
 
 @implementation CHCreateAvatar
 
+
+- (void)createStartingAttachments
+{
+    self.attachments = [@[] mutableCopy];
+    NSArray *attachmentData = [CHAttributeData attachmentsData];
+    for (NSDictionary *dictionary in attachmentData) {
+        CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary];
+        [self.attachments addObject:attachment];
+    }
+}
 
 - (void)setActiveAttributeForIndex:(int)index
 {

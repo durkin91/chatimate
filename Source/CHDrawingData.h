@@ -10,6 +10,7 @@
 
 @interface CHDrawingData : NSObject
 
-- (NSMutableArray *)drawShoulders;
++ (NSMutableArray *)drawShoulders;
++ (NSMutableArray *)drawNeck;
 
 @end

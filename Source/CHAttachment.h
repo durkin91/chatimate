@@ -12,8 +12,11 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) CGSize frameSize;
-@property (strong, nonatomic) NSArray *currentOptionNames;
+@property (strong, nonatomic) NSMutableArray *currentOptions;
+@property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSMutableArray *baseDrawing;
 
-
+-(id)initWithData:(NSDictionary *)data;
+-(UIImage *)drawAttachment;
 
 @end

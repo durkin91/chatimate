@@ -1,5 +1,5 @@
 //
-//  CHFactory.h
+//  CHCreateAvatar.h
 //  Chatimate
 //
 //  Created by Nikki Durkin on 10/23/14.
@@ -12,7 +12,9 @@
 @interface CHCreateAvatar : NSObject
 
 @property (strong, nonatomic) CHAvatarAttribute *activeAttributeType;
+@property (strong, nonatomic) NSMutableArray *attachments;
 
+- (void)createStartingAttachments;
 - (void)setActiveAttributeForIndex:(int)index;
 
 @end

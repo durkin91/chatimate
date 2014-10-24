@@ -8,6 +8,7 @@
 
 #import "CHAttributeData.h"
 #import "AvatarColors.h"
+#import "CHDrawingData.h"
 
 @implementation CHAttributeData
 
@@ -16,152 +17,135 @@
 //will return the correct array of options data based on the attribute type specified
 + (NSArray *)optionsForAttribute:(NSString *)name
 {
-    NSArray *optionsData;
-    int i = 0;
+    NSMutableArray *optionsData;
     
     if ([name isEqualToString:SKIN_COLOR]) {
-        NSDictionary *option1 = @{
+        NSMutableDictionary *option1 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone19],
-                                  OPTION_NAME : [NSString stringWithFormat:SKIN_COLOR_OPTION_NAME, i]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option2 = @{
+        NSMutableDictionary *option2 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone20]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option3 = @{
+        NSMutableDictionary *option3 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone21]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option4 = @{
+        NSMutableDictionary *option4 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone22]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option5 = @{
+        NSMutableDictionary *option5 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone23]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option6 = @{
+        NSMutableDictionary *option6 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone24]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option7 = @{
+        NSMutableDictionary *option7 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone25]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option8 = @{
+        NSMutableDictionary *option8 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone26]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option9 = @{
+        NSMutableDictionary *option9 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone27]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option10 = @{
+        NSMutableDictionary *option10 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone18]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option11 = @{
+        NSMutableDictionary *option11 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone17]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option12 = @{
+        NSMutableDictionary *option12 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone16]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option13 = @{
+        NSMutableDictionary *option13 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone15]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option14 = @{
+        NSMutableDictionary *option14 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone14]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option15 = @{
+        NSMutableDictionary *option15 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone13]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option16 = @{
+        NSMutableDictionary *option16 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone12]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option17 = @{
+        NSMutableDictionary *option17 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone11]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option18 = @{
+        NSMutableDictionary *option18 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone10]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option19 = @{
+        NSMutableDictionary *option19 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone9]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option20 = @{
+        NSMutableDictionary *option20 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone8]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option21 = @{
+        NSMutableDictionary *option21 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone7]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option22 = @{
+        NSMutableDictionary *option22 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone6]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option23 = @{
+        NSMutableDictionary *option23 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone5]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option24 = @{
+        NSMutableDictionary *option24 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone4]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option25 = @{
+        NSMutableDictionary *option25 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone3]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option26 = @{
+        NSMutableDictionary *option26 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone2]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        NSDictionary *option27 = @{
+        NSMutableDictionary *option27 = [@{
                                   OPTION_COLOR : [AvatarColors skinTone1]
-                                  };
-        i ++;
+                                  } mutableCopy];
         
-        optionsData = @[option1, option2, option3, option4, option5, option6, option7, option8, option9, option10, option11, option12, option13, option14, option15, option16, option17, option18, option19, option20, option21, option22, option23, option24, option25, option26, option27];
+        optionsData = [@[option1, option2, option3, option4, option5, option6, option7, option8, option9, option10, option11, option12, option13, option14, option15, option16, option17, option18, option19, option20, option21, option22, option23, option24, option25, option26, option27] mutableCopy];
+        
+        [self giveOptions:optionsData aName:SKIN_COLOR_OPTION_NAME];
 
     }
     
     return optionsData;
     
+}
+
++ (void)giveOptions:(NSMutableArray *)options aName:(NSString *)name
+{
+    int i = 0;
+    for (NSMutableDictionary *dictionary in options) {
+        [dictionary setObject:[NSString stringWithFormat:name, i] forKey:OPTION_NAME];
+        i++;
+    }
+
 }
 
 #pragma mark - Attribute Type Data
@@ -184,27 +168,26 @@
                                 };
     
     NSDictionary *nose = @{
-                               ATTRIBUTE_NAME : NOSE,
-                               ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
-                               ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
+                                ATTRIBUTE_NAME : NOSE,
+                                ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
+                                ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
                                };
     
     NSDictionary *cheekbones = @{
-                           ATTRIBUTE_NAME : CHEEKBONES,
-                           ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
-                           ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
+                                ATTRIBUTE_NAME : CHEEKBONES,
+                                ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
+                                ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
                            };
     
     NSDictionary *ears = @{
-                           ATTRIBUTE_NAME : EARS,
-                           ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
-                           ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
+                                ATTRIBUTE_NAME : EARS,
+                                ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
+                                ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
                            };
     
     //return data
     NSArray *attributesData = @[skinColor, jawShape, nose, cheekbones, ears];
     
-    NSLog(@"Attributes data: %@", attributesData);
     
     return attributesData;
 }
@@ -218,13 +201,15 @@
     NSDictionary *shoulders = @{
                                 ATTACHMENT_NAME : SHOULDERS_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(712, 212)],
-                                ATTACHMENT_OPTIONS : @[]
+                                ATTACHMENT_OPTIONS : @[],
+                                ATTACHMENT_BASE_DRAWING : [CHDrawingData drawShoulders]
                                 };
     
     NSDictionary *neck = @{
                                 ATTACHMENT_NAME : NECK_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(208, 228)],
-                                ATTACHMENT_OPTIONS : @[]
+                                ATTACHMENT_OPTIONS : @[],
+                                ATTACHMENT_BASE_DRAWING : [CHDrawingData drawNeck]
                                 };
     
 //    NSDictionary *head = @{

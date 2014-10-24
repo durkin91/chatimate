@@ -14,6 +14,7 @@
 #define OPTION_PATHS @"Paths"
 #define OPTION_NAME @"Name"
 
+
 //Names
 #define SKIN_COLOR_OPTION_NAME @"skinColor%i"
 
@@ -39,6 +40,7 @@
 #define ATTACHMENT_NAME @"Name"
 #define ATTACHMENT_FRAME_SIZE @"Frame Size"
 #define ATTACHMENT_OPTIONS @"Options"
+#define ATTACHMENT_BASE_DRAWING @"Base Drawing"
 
 //Names
 #define SHOULDERS_ATTACHMENT @"shoulders"
