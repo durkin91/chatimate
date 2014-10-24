@@ -20,7 +20,7 @@
 -(id)initWithData:(NSDictionary *)data
 {
     self = [super init];
-    self.cellColor = data[OPTION_COLOR];
+    self.color = data[OPTION_COLOR];
     
     return self;
 }

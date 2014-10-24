@@ -10,7 +10,7 @@
 
 @interface CHAvatarAttributeOption : NSObject
 
-@property (strong, nonatomic) UIColor *cellColor;
+@property (strong, nonatomic) UIColor *color;
 
 - (id)initWithData:(NSDictionary *)data;
 

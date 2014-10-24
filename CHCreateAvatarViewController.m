@@ -82,7 +82,7 @@
     
     CHAvatarAttributeOption *option = [self.factory.activeAttributeType.options objectAtIndex:indexPath.item];
     
-    [cell setBackgroundColor:option.cellColor];
+    [cell setBackgroundColor:option.color];
     
     return cell;
 }

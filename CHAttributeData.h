@@ -12,6 +12,10 @@
 //Keys
 #define OPTION_COLOR @"Color"
 #define OPTION_PATHS @"Paths"
+#define OPTION_NAME @"Name"
+
+//Names
+#define SKIN_COLOR_OPTION_NAME @"skinColor%i"
 
 //ATTRIBUTES DATA
 //Keys
