@@ -7,7 +7,7 @@
 //
 
 #import "CHAttributeData.h"
-#import "CHAvatarDrawingData.h"
+
 
 @implementation CHAttributeData
 

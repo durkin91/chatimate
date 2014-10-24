@@ -10,7 +10,6 @@
 
 #import "CHAvatarDrawingData.h"
 
-
 @implementation CHAvatarDrawingData
 
 #pragma mark Cache
@@ -44,6 +43,7 @@ static UIColor* _skinTone26 = nil;
 static UIColor* _skinTone27 = nil;
 
 //Universal Colors
+static UIColor* _outlineColor = nil;
 static UIColor* _skinBaseColor = nil;
 static UIColor* _skinShadowColor = nil;
 
@@ -82,12 +82,16 @@ static UIImage* _imageOfNeck = nil;
     _skinTone25 = [UIColor colorWithRed: 0.381 green: 0.201 blue: 0.062 alpha: 1];
     _skinTone26 = [UIColor colorWithRed: 0.265 green: 0.122 blue: 0.013 alpha: 1];
     _skinTone27 = [UIColor colorWithRed: 0.206 green: 0.094 blue: 0.008 alpha: 1];
-    _skinBaseColor = [UIColor colorWithRed: 0.836 green: 0.66 blue: 0.444 alpha: 1];
+    _outlineColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
+    _skinBaseColor = _skinTone26;
+    
     CGFloat skinBaseColorRGBA[4];
     [_skinBaseColor getRed: &skinBaseColorRGBA[0] green: &skinBaseColorRGBA[1] blue: &skinBaseColorRGBA[2] alpha: &skinBaseColorRGBA[3]];
     
 
     _skinShadowColor = [UIColor colorWithRed: (skinBaseColorRGBA[0] * 0.8) green: (skinBaseColorRGBA[1] * 0.8) blue: (skinBaseColorRGBA[2] * 0.8) alpha: (skinBaseColorRGBA[3] * 0.8 + 0.2)];
+    
+
 
 }
 
@@ -120,15 +124,26 @@ static UIImage* _imageOfNeck = nil;
 + (UIColor*)skinTone25 { return _skinTone25; }
 + (UIColor*)skinTone26 { return _skinTone26; }
 + (UIColor*)skinTone27 { return _skinTone27; }
++ (UIColor*)outlineColor { return _outlineColor; }
 + (UIColor*)skinBaseColor { return _skinBaseColor; }
 + (UIColor*)skinShadowColor { return _skinShadowColor; }
 
+-(void)setSkinBaseColor:(UIColor *)skinBaseColor
+{
+    self.skinBaseColor = skinBaseColor;
+    
+    CGFloat skinBaseColorRGBA[4];
+    [skinBaseColor getRed: &skinBaseColorRGBA[0] green: &skinBaseColorRGBA[1] blue: &skinBaseColorRGBA[2] alpha: &skinBaseColorRGBA[3]];
+    
+    
+    _skinShadowColor = [UIColor colorWithRed: (skinBaseColorRGBA[0] * 0.8) green: (skinBaseColorRGBA[1] * 0.8) blue: (skinBaseColorRGBA[2] * 0.8) alpha: (skinBaseColorRGBA[3] * 0.8 + 0.2)];
+
+}
+
 #pragma mark Drawing Methods
 
-+ (void)drawShoulders;
+- (void)drawShoulders;
 {
-    //// Color Declarations
-    UIColor* black = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
 
     //// Skin Color
     {
@@ -146,7 +161,7 @@ static UIImage* _imageOfNeck = nil;
         [skinPath closePath];
         skinPath.miterLimit = 4;
 
-        [CHAvatarDrawingData.skinBaseColor setFill];
+        [self.skinBaseColor setFill];
         [skinPath fill];
     }
 
@@ -173,7 +188,7 @@ static UIImage* _imageOfNeck = nil;
         [mainShadowPath closePath];
         mainShadowPath.miterLimit = 4;
 
-        [CHAvatarDrawingData.skinShadowColor setFill];
+        [_skinShadowColor setFill];
         [mainShadowPath fill];
 
 
@@ -183,7 +198,7 @@ static UIImage* _imageOfNeck = nil;
         [leftNeckDetailPath addCurveToPoint: CGPointMake(341.52, 165.49) controlPoint1: CGPointMake(319.45, 161.08) controlPoint2: CGPointMake(341.52, 165.49)];
         leftNeckDetailPath.miterLimit = 4;
 
-        [CHAvatarDrawingData.skinShadowColor setFill];
+        [_skinShadowColor setFill];
         [leftNeckDetailPath fill];
 
 
@@ -193,7 +208,7 @@ static UIImage* _imageOfNeck = nil;
         [rightNeckDetailPath addCurveToPoint: CGPointMake(361.86, 165.49) controlPoint1: CGPointMake(383.94, 161.08) controlPoint2: CGPointMake(361.86, 165.49)];
         rightNeckDetailPath.miterLimit = 4;
 
-        [CHAvatarDrawingData.skinShadowColor setFill];
+        [_skinShadowColor setFill];
         [rightNeckDetailPath fill];
 
 
@@ -208,7 +223,7 @@ static UIImage* _imageOfNeck = nil;
         [rightCollarboneShadowPath closePath];
         rightCollarboneShadowPath.miterLimit = 4;
 
-        [CHAvatarDrawingData.skinShadowColor setFill];
+        [_skinShadowColor setFill];
         [rightCollarboneShadowPath fill];
     }
 
@@ -236,7 +251,7 @@ static UIImage* _imageOfNeck = nil;
         [rightShoulderPath closePath];
         rightShoulderPath.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [rightShoulderPath fill];
 
 
@@ -262,7 +277,7 @@ static UIImage* _imageOfNeck = nil;
         [leftUpperShoulderPath closePath];
         leftUpperShoulderPath.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [leftUpperShoulderPath fill];
 
 
@@ -293,7 +308,7 @@ static UIImage* _imageOfNeck = nil;
         [rightUpperShoulderPath closePath];
         rightUpperShoulderPath.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [rightUpperShoulderPath fill];
 
 
@@ -324,7 +339,7 @@ static UIImage* _imageOfNeck = nil;
         [rightCollarbonePath closePath];
         rightCollarbonePath.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [rightCollarbonePath fill];
 
 
@@ -355,7 +370,7 @@ static UIImage* _imageOfNeck = nil;
         [leftCollarbonePath closePath];
         leftCollarbonePath.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [leftCollarbonePath fill];
 
 
@@ -377,15 +392,13 @@ static UIImage* _imageOfNeck = nil;
         [leftShoulderPath closePath];
         leftShoulderPath.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [leftShoulderPath fill];
     }
 }
 
-+ (void)drawNeck;
+- (void)drawNeck;
 {
-    //// Color Declarations
-    UIColor* black = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
 
     //// Skin
     {
@@ -451,7 +464,7 @@ static UIImage* _imageOfNeck = nil;
         [bezier28Path closePath];
         bezier28Path.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [bezier28Path fill];
 
 
@@ -491,7 +504,7 @@ static UIImage* _imageOfNeck = nil;
         [bezier30Path closePath];
         bezier30Path.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [bezier30Path fill];
 
 
@@ -518,7 +531,7 @@ static UIImage* _imageOfNeck = nil;
         [bezier32Path closePath];
         bezier32Path.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [bezier32Path fill];
 
 
@@ -547,33 +560,33 @@ static UIImage* _imageOfNeck = nil;
         [bezier34Path closePath];
         bezier34Path.miterLimit = 4;
 
-        [black setFill];
+        [_outlineColor setFill];
         [bezier34Path fill];
     }
 }
 
 #pragma mark Generated Images
 
-+ (UIImage*)imageOfShoulders;
+- (UIImage*)imageOfShoulders;
 {
     if (_imageOfShoulders)
         return _imageOfShoulders;
 
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(712, 212), NO, 0.0f);
-    [CHAvatarDrawingData drawShoulders];
+    [self drawShoulders];
     _imageOfShoulders = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
     return _imageOfShoulders;
 }
 
-+ (UIImage*)imageOfNeck;
+- (UIImage*)imageOfNeck;
 {
     if (_imageOfNeck)
         return _imageOfNeck;
 
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(208, 228), NO, 0.0f);
-    [CHAvatarDrawingData drawNeck];
+    [self drawNeck];
     _imageOfNeck = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 

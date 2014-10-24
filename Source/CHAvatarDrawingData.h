@@ -14,6 +14,7 @@
 
 @interface CHAvatarDrawingData : NSObject
 
+@property (strong, nonatomic) UIColor *skinBaseColor;
 
 // Colors
 + (UIColor*)skinTone1;
@@ -47,11 +48,11 @@
 + (UIColor*)skinShadowColor;
 
 // Drawing Methods
-+ (void)drawShoulders;
-+ (void)drawNeck;
+- (void)drawShoulders;
+- (void)drawNeck;
 
 // Generated Images
-+ (UIImage*)imageOfShoulders;
-+ (UIImage*)imageOfNeck;
+- (UIImage*)imageOfShoulders;
+- (UIImage*)imageOfNeck;
 
 @end

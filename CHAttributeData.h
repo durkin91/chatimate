@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CHAvatarDrawingData.h"
 
 //UNIVERSAL COLORS DATA
 #define UNIVERSAL_SKIN_BASE_COLOR @"Skin Base Color"
