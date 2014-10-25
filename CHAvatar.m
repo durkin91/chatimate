@@ -7,7 +7,6 @@
 //
 
 #import "CHAvatar.h"
-#import "CHAttachment.h"
 
 @implementation CHAvatar {
     CCSprite *_shoulders;

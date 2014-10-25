@@ -52,8 +52,6 @@
     [self.factory setupAttachmentsAndColors];
     [self setupCollectionView];
     
-    //setup the sprites
-    [self setupSpritesWithAttachments:self.factory.attachments];
 }
 
 
@@ -79,7 +77,7 @@
 -(void)setupSpritesWithAttachments:(NSMutableArray *)attachments
 {
     int i = 0;
-    for (CCSprite __strong *sprite in self.currentScene.avatar.attachmentSprites) {
+    for (CCSprite  __strong *sprite in self.currentScene.avatar.attachmentSprites) {
         CHAttachment *attachment = attachments[i];
         sprite.texture = attachment.texture;
         i++;
@@ -113,9 +111,13 @@
 
 #pragma mark - CocosViewControllerDelegate
 
--(CCScene *)cocosViewControllerSceneToRun:(CocosViewController *)cocosViewController
+-(CHCreateAvatarScene *)cocosViewControllerSceneToRun:(CocosViewController *)cocosViewController
 {
     self.currentScene = [CCBReader loadAsScene:@"CreateAvatarScene"];
+    
+    //setup the sprites
+    [self setupSpritesWithAttachments:self.factory.attachments];
+    
     return self.currentScene;
 }
 
