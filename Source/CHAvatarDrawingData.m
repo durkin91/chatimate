@@ -125,14 +125,14 @@ static UIImage* _imageOfFace = nil;
     return skinBaseColor;
 }
 
-+(UIColor *)skinShadowColor:(UIColor *)skinBaseColor
++(UIColor *)shadowColor:(UIColor *)baseColor
 {
-    CGFloat skinBaseColorRGBA[4];
-    [skinBaseColor getRed: &skinBaseColorRGBA[0] green: &skinBaseColorRGBA[1] blue: &skinBaseColorRGBA[2] alpha: &skinBaseColorRGBA[3]];
+    CGFloat baseColorRGBA[4];
+    [baseColor getRed: &baseColorRGBA[0] green: &baseColorRGBA[1] blue: &baseColorRGBA[2] alpha: &baseColorRGBA[3]];
     
-    UIColor* skinShadowColor = [UIColor colorWithRed: (skinBaseColorRGBA[0] * 0.8) green: (skinBaseColorRGBA[1] * 0.8) blue: (skinBaseColorRGBA[2] * 0.8) alpha: (skinBaseColorRGBA[3] * 0.8 + 0.2)];
+    UIColor* shadowColor = [UIColor colorWithRed: (baseColorRGBA[0] * 0.8) green: (baseColorRGBA[1] * 0.8) blue: (baseColorRGBA[2] * 0.8) alpha: (baseColorRGBA[3] * 0.8 + 0.2)];
     
-    return skinShadowColor;
+    return shadowColor;
 }
 
 
@@ -141,8 +141,8 @@ static UIImage* _imageOfFace = nil;
 + (void)drawShoulders:(NSMutableDictionary *)universalColors
 {
     //// Color Declarations
-    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:universalColors];
-    UIColor* skinShadowColor = [CHAvatarDrawingData skinShadowColor:skinBaseColor];
+    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
 
     //// Skin Color
     {
@@ -399,8 +399,8 @@ static UIImage* _imageOfFace = nil;
 + (void)drawNeck:(NSMutableDictionary *)universalColors
 {
     //// Color Declarations
-    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:universalColors];
-    UIColor* skinShadowColor = [CHAvatarDrawingData skinShadowColor:skinBaseColor];
+    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
     
     //// Skin
     {
@@ -570,8 +570,8 @@ static UIImage* _imageOfFace = nil;
 + (void)drawHead:(NSMutableDictionary *)universalColors
 {
     //// Color Declarations
-    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:universalColors];
-    UIColor* skinShadowColor = [CHAvatarDrawingData skinShadowColor:skinBaseColor];
+    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
 
     //// Upper head
     {
@@ -1668,7 +1668,7 @@ static UIImage* _imageOfFace = nil;
 {
     //// Color Declarations
     UIColor* baseColor = color;
-    UIColor* shadowColor = [CHAvatarDrawingData skinShadowColor:baseColor];
+    UIColor* shadowColor = [CHAvatarDrawingData shadowColor:baseColor];
     
     //// Oval Drawing
     UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(5, 5, 70, 70)];
