@@ -7,7 +7,9 @@
 //
 
 #import "CocosViewController.h"
+#import "CHCreateAvatarNode.h"
 
 @interface CHCreateAvatarViewController : CocosViewController
+
 
 @end

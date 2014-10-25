@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CHCreateAvatarScene.h"
+#import "CHCreateAvatarNode.h"
 
 
-@implementation CHCreateAvatarScene {
+@implementation CHCreateAvatarNode {
     CCNode *avatarNode;
 }
 

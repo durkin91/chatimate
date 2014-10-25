@@ -11,7 +11,7 @@
 #import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
 #import "CHAttributeData.h"
-#import "CHCreateAvatarScene.h"
+#import "CHCreateAvatarNode.h"
 #import "CHAttachment.h"
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -23,7 +23,8 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UICollectionViewCell *collectionViewCell;
 
-@property (strong, nonatomic) CHCreateAvatarScene *currentScene;
+@property (strong, nonatomic) CCScene *currentScene;
+@property (strong, nonatomic) CHCreateAvatarNode *avatarNode;
 
 
 - (IBAction)tickButtonPressed:(UIButton *)sender;
@@ -54,6 +55,14 @@
     
 }
 
+-(void)didLoadFromCCB
+{
+    self.avatarNode = [[CHCreateAvatarNode alloc] init];
+    
+    //setup the sprites
+    [self setupSpritesWithAttachments:self.factory.attachments];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -66,23 +75,6 @@
     return NO;
 }
 
-#pragma mark - Helper Methods
-
--(void)setupCollectionView
-{
-    [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
-    self.titleLabel.text = [self.factory.activeAttribute.name uppercaseString];
-}
-
--(void)setupSpritesWithAttachments:(NSMutableArray *)attachments
-{
-    int i = 0;
-    for (CCSprite  __strong *sprite in self.currentScene.avatar.attachmentSprites) {
-        CHAttachment *attachment = attachments[i];
-        sprite.texture = attachment.texture;
-        i++;
-    }
-}
 
 #pragma mark - CollectionView Data Source
 
@@ -111,12 +103,9 @@
 
 #pragma mark - CocosViewControllerDelegate
 
--(CHCreateAvatarScene *)cocosViewControllerSceneToRun:(CocosViewController *)cocosViewController
+-(CCScene *)cocosViewControllerSceneToRun:(CocosViewController *)cocosViewController
 {
     self.currentScene = [CCBReader loadAsScene:@"CreateAvatarScene"];
-    
-    //setup the sprites
-    [self setupSpritesWithAttachments:self.factory.attachments];
     
     return self.currentScene;
 }
@@ -137,6 +126,24 @@
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     return 1.0f;
+}
+
+#pragma mark - Helper Methods
+
+-(void)setupCollectionView
+{
+    [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
+    self.titleLabel.text = [self.factory.activeAttribute.name uppercaseString];
+}
+
+-(void)setupSpritesWithAttachments:(NSMutableArray *)attachments
+{
+    int i = 0;
+    for (CCSprite  __strong *sprite in self.avatarNode.avatar.attachmentSprites) {
+        CHAttachment *attachment = attachments[i];
+        sprite.texture = attachment.texture;
+        i++;
+    }
 }
 
 #pragma mark - IBActions
