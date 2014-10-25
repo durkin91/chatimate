@@ -48,8 +48,8 @@
 + (UIColor*)outlineColor;
 
 // Generated Images
-+ (UIImage*)imageOfShoulders:(CHCreateAvatar *)CHCreateAvatarInstance;
-+ (UIImage*)imageOfNeck:(CHCreateAvatar *)CHCreateAvatarInstance;
-+ (UIImage*)imageOfFace:(CHCreateAvatar *)CHCreateAvatarInstance;
++ (UIImage*)imageOfShoulders:(NSMutableDictionary *)universalColors;
++ (UIImage*)imageOfNeck:(NSMutableDictionary *)universalColors;
++ (UIImage*)imageOfHead:(NSMutableDictionary *)universalColors;
 
 @end

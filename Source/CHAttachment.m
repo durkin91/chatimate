@@ -107,10 +107,10 @@
     
     //redraw base drawing. This is a hack for now. Figure out how to use @selector
     if ([self.name isEqualToString:SHOULDERS_ATTACHMENT]) {
-        self.baseDrawing = [CHAvatarDrawingData imageOfShoulders:instance];
+        self.baseDrawing = [CHAvatarDrawingData imageOfShoulders:instance.universalColors];
     }
     else if ([self.name isEqualToString:NECK_ATTACHMENT]) {
-        self.baseDrawing = [CHAvatarDrawingData imageOfNeck:instance];
+        self.baseDrawing = [CHAvatarDrawingData imageOfNeck:instance.universalColors];
     }
     
     

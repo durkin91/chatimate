@@ -119,9 +119,9 @@ static UIImage* _imageOfFace = nil;
 
 #pragma mark - Helper Methods
 
-+ (UIColor *)skinBaseColor:(CHCreateAvatar *)CHCreateAvatarInstance
++ (UIColor *)skinBaseColor:(NSMutableDictionary *)universalColors
 {
-    UIColor *skinBaseColor = CHCreateAvatarInstance.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor *skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
     return skinBaseColor;
 }
 
@@ -138,10 +138,10 @@ static UIImage* _imageOfFace = nil;
 
 #pragma mark Drawing Methods
 
-+ (void)drawShoulders:(CHCreateAvatar *)CHCreateAvatarInstance
++ (void)drawShoulders:(NSMutableDictionary *)universalColors
 {
     //// Color Declarations
-    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:CHCreateAvatarInstance];
+    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:universalColors];
     UIColor* skinShadowColor = [CHAvatarDrawingData skinShadowColor:skinBaseColor];
 
     //// Skin Color
@@ -396,10 +396,10 @@ static UIImage* _imageOfFace = nil;
     }
 }
 
-+ (void)drawNeck:(CHCreateAvatar *)CHCreateAvatarInstance
++ (void)drawNeck:(NSMutableDictionary *)universalColors
 {
     //// Color Declarations
-    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:CHCreateAvatarInstance];
+    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:universalColors];
     UIColor* skinShadowColor = [CHAvatarDrawingData skinShadowColor:skinBaseColor];
     
     //// Skin
@@ -567,10 +567,10 @@ static UIImage* _imageOfFace = nil;
     }
 }
 
-+ (void)drawFace:(CHCreateAvatar *)CHCreateAvatarInstance
++ (void)drawHead:(NSMutableDictionary *)universalColors
 {
     //// Color Declarations
-    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:CHCreateAvatarInstance];
+    UIColor* skinBaseColor = [CHAvatarDrawingData skinBaseColor:universalColors];
     UIColor* skinShadowColor = [CHAvatarDrawingData skinShadowColor:skinBaseColor];
 
     //// Upper head
@@ -1627,43 +1627,34 @@ static UIImage* _imageOfFace = nil;
 
 #pragma mark Generated Images
 
-+ (UIImage*)imageOfShoulders:(CHCreateAvatar *)CHCreateAvatarInstance
++ (UIImage*)imageOfShoulders:(NSMutableDictionary *)universalColors
 {
-//    if (_imageOfShoulders)
-//        return _imageOfShoulders;
-
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(712, 212), NO, 0.0f);
-    [CHAvatarDrawingData drawShoulders:CHCreateAvatarInstance];
+    [CHAvatarDrawingData drawShoulders:universalColors];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
     return image;
 }
 
-+ (UIImage*)imageOfNeck:(CHCreateAvatar *)CHCreateAvatarInstance
++ (UIImage*)imageOfNeck:(NSMutableDictionary *)universalColors
 {
-//    if (_imageOfNeck)
-//        return _imageOfNeck;
-
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(208, 228), NO, 0.0f);
-    [CHAvatarDrawingData drawNeck:CHCreateAvatarInstance];
+    [CHAvatarDrawingData drawNeck:universalColors];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
     return image;
 }
 
-+ (UIImage*)imageOfFace:(CHCreateAvatar *)CHCreateAvatarInstance
++ (UIImage*)imageOfHead:(NSMutableDictionary *)universalColors
 {
-    if (_imageOfFace)
-        return _imageOfFace;
-
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(284, 366), NO, 0.0f);
-    [CHAvatarDrawingData drawFace:CHCreateAvatarInstance];
-    _imageOfFace = UIGraphicsGetImageFromCurrentImageContext();
+    [CHAvatarDrawingData drawHead:universalColors];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    return _imageOfFace;
+    return image;
 }
 
 
