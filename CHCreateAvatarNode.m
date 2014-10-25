@@ -10,13 +10,13 @@
 
 
 @implementation CHCreateAvatarNode {
-    CCNode *avatarNode;
+    CCNode *_avatar;
 }
 
 -(void)didLoadFromCCB
 {
-    self.avatar = (CHAvatar *)[CCBReader load:@"Avatar"];
-    [avatarNode addChild:self.avatar];
+    _avatar = [CCBReader load:@"Avatar"];
+    [self addChild:_avatar];
     
 }
 

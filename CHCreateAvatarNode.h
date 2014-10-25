@@ -11,12 +11,12 @@
 
 
 #define CREATE_AVATAR_SCENE_ROOT_NODE_NAME @"CHCreateAvatarSceneRootNode"
-#define AVATAR_NODE_NAME @"avatarNode"
+#define AVATAR_NODE_NAME @"avatar"
 
 
 
 @interface CHCreateAvatarNode : CCNode
 
-@property (strong, nonatomic) CHAvatar *avatar;
+@property (strong, nonatomic) CCNode *avatar;
 
 @end

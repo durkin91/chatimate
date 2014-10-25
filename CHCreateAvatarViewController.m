@@ -98,7 +98,7 @@
 
 -(CCScene *)cocosViewControllerSceneToRun:(CocosViewController *)cocosViewController
 {
-    self.currentScene = [CCBReader loadAsScene:@"CreateAvatarScene"];
+    self.currentScene = [CCBReader loadAsScene:@"CreateAvatarNode"];
     
     //setup the sprites
     [self getAvatarNodeFromScene];
@@ -144,8 +144,8 @@
 {
 
     CCNode *CHCreateAvatarRootNode = [self findNodeWithName:CREATE_AVATAR_SCENE_ROOT_NODE_NAME inArrayOfChildren:self.currentScene.children];
-    CCNode *avatarNode = [self findNodeWithName:AVATAR_NODE_NAME inArrayOfChildren:CHCreateAvatarRootNode.children];
-    self.avatar = [self findNodeWithName:AVATAR_ROOT_NODE_NAME inArrayOfChildren:avatarNode.children];
+    //CCNode *avatarNode = [self findNodeWithName:AVATAR_NODE_NAME inArrayOfChildren:CHCreateAvatarRootNode.children];
+    self.avatar = [self findNodeWithName:AVATAR_ROOT_NODE_NAME inArrayOfChildren:CHCreateAvatarRootNode.children];
 }
 
 -(CCSprite *)attachmentSpriteWithName:(NSString *)name
