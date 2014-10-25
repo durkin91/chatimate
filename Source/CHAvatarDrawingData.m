@@ -1625,7 +1625,9 @@ static UIImage* _imageOfFace = nil;
     }
 }
 
-#pragma mark Generated Images
+
+
+#pragma mark - Generated Images Of Options
 
 + (UIImage*)imageOfShoulders:(NSMutableDictionary *)universalColors
 {
@@ -1656,6 +1658,61 @@ static UIImage* _imageOfFace = nil;
 
     return image;
 }
+
+////////////////////***********************************************////////////////////
+/////////////////////// DRAWING METHODS FOR OPTION THUMBNAILS /////////////////////////
+////////////////////***********************************************////////////////////
+
+#pragma mark - Skin Color Thumbnail
++ (void)drawColorThumbnail:(UIColor *)color
+{
+    //// Color Declarations
+    UIColor* baseColor = color;
+    UIColor* shadowColor = [CHAvatarDrawingData skinShadowColor:baseColor];
+    
+    //// Oval Drawing
+    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(5, 5, 70, 70)];
+    [baseColor setFill];
+    [ovalPath fill];
+    
+    [shadowColor setStroke];
+    ovalPath.lineWidth = 2;
+    [ovalPath stroke];
+    
+    
+    //// Bezier Drawing
+    UIBezierPath* bezierPath = UIBezierPath.bezierPath;
+    [bezierPath moveToPoint: CGPointMake(64.75, 15.25)];
+    [bezierPath addCurveToPoint: CGPointMake(69.24, 20.76) controlPoint1: CGPointMake(66.46, 16.96) controlPoint2: CGPointMake(67.96, 18.81)];
+    [bezierPath addCurveToPoint: CGPointMake(25.25, 25.25) controlPoint1: CGPointMake(55.66, 11.8) controlPoint2: CGPointMake(37.21, 13.3)];
+    [bezierPath addCurveToPoint: CGPointMake(20.76, 69.24) controlPoint1: CGPointMake(13.3, 37.21) controlPoint2: CGPointMake(11.8, 55.66)];
+    [bezierPath addCurveToPoint: CGPointMake(15.25, 64.75) controlPoint1: CGPointMake(18.81, 67.96) controlPoint2: CGPointMake(16.96, 66.46)];
+    [bezierPath addCurveToPoint: CGPointMake(15.25, 15.25) controlPoint1: CGPointMake(1.58, 51.08) controlPoint2: CGPointMake(1.58, 28.92)];
+    [bezierPath addCurveToPoint: CGPointMake(64.75, 15.25) controlPoint1: CGPointMake(28.92, 1.58) controlPoint2: CGPointMake(51.08, 1.58)];
+    [bezierPath closePath];
+    [shadowColor setFill];
+    [bezierPath fill];
+}
+
+
+
+////////////////////***********************************************////////////////////
+/////////////////////// GENERATED IMAGES OF OPTION THUMBNAILS /////////////////////////
+////////////////////***********************************************////////////////////
+
+#pragma mark - Color Thumbnail
+
++ (UIImage*)imageOfColorThumbnail:(UIColor *)color
+{
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(80, 80), NO, 0.0f);
+    [CHAvatarDrawingData drawColorThumbnail:color];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+
 
 
 

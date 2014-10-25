@@ -52,4 +52,7 @@
 + (UIImage*)imageOfNeck:(NSMutableDictionary *)universalColors;
 + (UIImage*)imageOfHead:(NSMutableDictionary *)universalColors;
 
+// Thumbnails
++ (UIImage*)imageOfColorThumbnail:(UIColor *)color;
+
 @end
