@@ -105,11 +105,18 @@
         }
     }
     
-    //redraw base drawing
+    //redraw base drawing. This is a hack for now. Figure out how to use @selector
+    if ([self.name isEqualToString:SHOULDERS_ATTACHMENT]) {
+        self.baseDrawing = [CHAvatarDrawingData imageOfShoulders:instance];
+    }
+    else if ([self.name isEqualToString:NECK_ATTACHMENT]) {
+        self.baseDrawing = [CHAvatarDrawingData imageOfNeck:instance];
+    }
     
-    NSString *selectorString = [NSString stringWithFormat:@"imageOf%@:", [self.name capitalizedString]];
-    SEL imageSelector = NSSelectorFromString(selectorString);
-    self.baseDrawing = [CHAvatarDrawingData performSelector:imageSelector];
+    
+//    NSString *selectorString = [NSString stringWithFormat:@"imageOf%@:", [self.name capitalizedString]];
+//    SEL imageSelector = NSSelectorFromString(selectorString);
+//    self.baseDrawing = [[CHAvatarDrawingData class] performSelector:@selector(imageSelector)];
     
     //redraw attachment
     [self drawAttachment];

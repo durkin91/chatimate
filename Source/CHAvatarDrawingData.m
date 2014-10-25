@@ -1629,28 +1629,28 @@ static UIImage* _imageOfFace = nil;
 
 + (UIImage*)imageOfShoulders:(CHCreateAvatar *)CHCreateAvatarInstance
 {
-    if (_imageOfShoulders)
-        return _imageOfShoulders;
+//    if (_imageOfShoulders)
+//        return _imageOfShoulders;
 
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(712, 212), NO, 0.0f);
     [CHAvatarDrawingData drawShoulders:CHCreateAvatarInstance];
-    _imageOfShoulders = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    return _imageOfShoulders;
+    return image;
 }
 
 + (UIImage*)imageOfNeck:(CHCreateAvatar *)CHCreateAvatarInstance
 {
-    if (_imageOfNeck)
-        return _imageOfNeck;
+//    if (_imageOfNeck)
+//        return _imageOfNeck;
 
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(208, 228), NO, 0.0f);
     [CHAvatarDrawingData drawNeck:CHCreateAvatarInstance];
-    _imageOfNeck = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    return _imageOfNeck;
+    return image;
 }
 
 + (UIImage*)imageOfFace:(CHCreateAvatar *)CHCreateAvatarInstance
