@@ -11,6 +11,8 @@
 @interface CHAvatarAttributeOption : NSObject
 
 @property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) NSString *attribute;
+@property (strong, nonatomic) NSString *name;
 
 - (id)initWithData:(NSDictionary *)data;
 

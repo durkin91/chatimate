@@ -88,9 +88,10 @@
 }
 
 #pragma mark - CollectionView Delegate
--(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self.factory updateAttachmentsForOption:indexPath.item];
+    [self setupSpritesWithAttachments:self.factory.attachments];
 }
 
 

@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSMutableDictionary *universalColors;
 
 - (void)setupAttachmentsAndColors;
-- (void)updateAttachments;
+- (void)updateAttachmentsForOption:(int)optionNumber;
 - (void)setActiveAttributeForIndex:(int)index;
 
 @end

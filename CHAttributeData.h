@@ -17,6 +17,7 @@
 #define OPTION_COLOR @"Color"
 #define OPTION_PATHS @"Paths"
 #define OPTION_NAME @"Name"
+#define OPTION_ATTRIBUTE @"Attribute"
 
 
 //Names

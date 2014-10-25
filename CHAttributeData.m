@@ -140,6 +140,7 @@
         optionsData = [@[option1, option2, option3, option4, option5, option6, option7, option8, option9, option10, option11, option12, option13, option14, option15, option16, option17, option18, option19, option20, option21, option22, option23, option24, option25, option26, option27] mutableCopy];
         
         [self giveOptions:optionsData aName:SKIN_COLOR_OPTION_NAME];
+        [self giveOptions:optionsData aString:SKIN_COLOR forCommonKey:OPTION_ATTRIBUTE];
 
     }
     
@@ -155,6 +156,16 @@
         i++;
     }
 
+}
+
++ (void)giveOptions:(NSMutableArray *)options aString:(NSString *)string forCommonKey:(NSString *)key
+{
+    int i = 0;
+    for (NSMutableDictionary *dictionary in options) {
+        [dictionary setObject:string forKey:key];
+        i++;
+    }
+    
 }
 
 #pragma mark - Attribute Type Data

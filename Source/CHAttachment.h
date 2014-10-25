@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CHAvatarAttributeOption.h"
+#import "CHAvatarAttribute.h"
+
+@class CHCreateAvatar;
 
 @interface CHAttachment : NSObject
 
@@ -19,6 +23,7 @@
 
 -(id)initWithData:(NSDictionary *)data;
 -(void)drawAttachment;
--(void)updateAttachment;
+-(void)updateAttachmentForOption:(CHAvatarAttributeOption *)option instance:(CHCreateAvatar *)instance;
+
 
 @end

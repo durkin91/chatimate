@@ -22,6 +22,26 @@
 @implementation CHCreateAvatar
 
 
+#pragma mark - Setup
+
+- (void)setupAttachmentsAndColors
+{
+    //setup universal colors
+    self.universalColors = [CHAttributeData univeralColors];
+    
+    //setup attachments
+    self.attachments = [@[] mutableCopy];
+    NSArray *attachmentData = [CHAttributeData attachmentsData:self];
+    for (NSDictionary *dictionary in attachmentData) {
+        CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary];
+        [self.attachments addObject:attachment];
+    }
+    NSLog(@"Attachments: %@", self.attachments);
+    NSLog(@"Universal Colors: %@", self.universalColors);
+}
+
+
+#pragma mark - Communicating with VC
 
 - (void)setActiveAttributeForIndex:(int)index
 {
@@ -35,30 +55,23 @@
 
 }
 
-- (void)setupAttachmentsAndColors
+
+- (void)updateAttachmentsForOption:(int)optionNumber
 {
-    //setup universal colors
-    self.universalColors = [CHAttributeData univeralColors];
+    CHAvatarAttributeOption *option = self.activeAttribute.options[optionNumber];
     
-    //setup attachments
-    self.attachments = [@[] mutableCopy];
-    NSArray *attachmentData = [CHAttributeData attachmentsData:self];
-    for (NSDictionary *dictionary in attachmentData) {
-            CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary];
-            [self.attachments addObject:attachment];
+    //this is not very modular. Can edit when I add another universal color
+    if ([self.activeAttribute.type isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
+        [self.universalColors setObject:option.color forKey:UNIVERSAL_SKIN_BASE_COLOR];
     }
-    NSLog(@"Attachments: %@", self.attachments);
-    NSLog(@"Universal Colors: %@", self.universalColors);
-}
-
-- (void)updateAttachments
-{
+    
+    //update attachment
     for (CHAttachment *attachment in self.attachments) {
-        [attachment updateAttachment];
+        [attachment updateAttachmentForOption:option instance:self];
     }
+    
 }
 
-#pragma mark - Helper methods
 
 
 

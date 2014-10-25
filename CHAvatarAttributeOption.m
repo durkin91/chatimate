@@ -21,6 +21,8 @@
 {
     self = [super init];
     self.color = data[OPTION_COLOR];
+    self.attribute = data[OPTION_ATTRIBUTE];
+    self.name = data[OPTION_NAME];
     
     return self;
 }

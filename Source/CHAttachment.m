@@ -8,11 +8,13 @@
 
 #import "CHAttachment.h"
 #import "CHAttributeData.h"
-#import "CHAvatarAttributeOption.h"
 
 
 
 @implementation CHAttachment
+
+
+#pragma mark - Setup
 
 - (id)init
 {
@@ -90,18 +92,39 @@
     
 }
 
--(void)updateAttachment
+#pragma mark - Update
+
+-(void)updateAttachmentForOption:(CHAvatarAttributeOption *)option instance:(CHCreateAvatar *)instance
 {
+    //change the options to the currently selected option
+    for (CHAvatarAttributeOption __strong *currentOption in self.currentOptions)
+    {
+        if ([currentOption.name isEqualToString:instance.activeAttribute.name]) {
+            currentOption = option;
+            break;
+        }
+    }
+    
+    //redraw base drawing
+    
+    NSString *selectorString = [NSString stringWithFormat:@"imageOf%@:", [self.name capitalizedString]];
+    SEL imageSelector = NSSelectorFromString(selectorString);
+    self.baseDrawing = [CHAvatarDrawingData performSelector:imageSelector];
+    
+    //redraw attachment
     [self drawAttachment];
 }
+
 //when I start adding options, remember to add these in here
 -(void)drawAttachment
 {
+    //draw and assign the UIImage
     UIGraphicsBeginImageContextWithOptions(self.frameSize, NO, 0.0f);
     [self.baseDrawing drawInRect:CGRectMake(0, 0, self.frameSize.width, self.frameSize.height)];
     self.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
+    //Convert into a texture
     self.texture = [[CCTexture alloc] initWithCGImage:self.image.CGImage contentScale:1.0];
 }
 
