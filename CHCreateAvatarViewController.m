@@ -13,6 +13,7 @@
 #import "CHAttributeData.h"
 #import "CHCreateAvatarNode.h"
 #import "CHAttachment.h"
+#import "CHAvatar.h"
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -24,7 +25,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionViewCell *collectionViewCell;
 
 @property (strong, nonatomic) CCScene *currentScene;
-@property (strong, nonatomic) CHCreateAvatarNode *avatarNode;
+@property (strong, nonatomic) CCNode *avatar;
 
 
 - (IBAction)tickButtonPressed:(UIButton *)sender;
@@ -52,17 +53,9 @@
     self.factory = [[CHCreateAvatar alloc] init];
     [self.factory setupAttachmentsAndColors];
     [self setupCollectionView];
+
     
 }
-
--(void)didLoadFromCCB
-{
-    self.avatarNode = [[CHCreateAvatarNode alloc] init];
-    
-    //setup the sprites
-    [self setupSpritesWithAttachments:self.factory.attachments];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -107,6 +100,10 @@
 {
     self.currentScene = [CCBReader loadAsScene:@"CreateAvatarScene"];
     
+    //setup the sprites
+    [self getAvatarNodeFromScene];
+    [self setupSpritesWithAttachments:self.factory.attachments];
+    
     return self.currentScene;
 }
 
@@ -130,6 +127,41 @@
 
 #pragma mark - Helper Methods
 
+-(CCNode *)findNodeWithName:(NSString *)name inArrayOfChildren:(NSArray *)children
+{
+    for (CCNode *node in children) {
+        if ([node.name isEqualToString:name]) {
+            return node;
+        }
+    }
+    
+    //Node not found
+    NSLog(@"Could not find node %@ in children array %@", name, children);
+    return nil;
+}
+
+- (void)getAvatarNodeFromScene
+{
+
+    CCNode *CHCreateAvatarRootNode = [self findNodeWithName:CREATE_AVATAR_SCENE_ROOT_NODE_NAME inArrayOfChildren:self.currentScene.children];
+    CCNode *avatarNode = [self findNodeWithName:AVATAR_NODE_NAME inArrayOfChildren:CHCreateAvatarRootNode.children];
+    self.avatar = [self findNodeWithName:AVATAR_ROOT_NODE_NAME inArrayOfChildren:avatarNode.children];
+}
+
+-(CCSprite *)attachmentSpriteWithName:(NSString *)name
+{
+    //find the correct sprite
+    for (CCSprite *sprite in self.avatar.children) {
+        if ([sprite.name isEqualToString:name]) {
+            return sprite;
+        }
+    }
+    
+    //error if the sprite wasn't found for that name
+    NSLog(@"No sprite found for attachment name: %@", name);
+    return nil;
+}
+
 -(void)setupCollectionView
 {
     [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
@@ -138,11 +170,9 @@
 
 -(void)setupSpritesWithAttachments:(NSMutableArray *)attachments
 {
-    int i = 0;
-    for (CCSprite  __strong *sprite in self.avatarNode.avatar.attachmentSprites) {
-        CHAttachment *attachment = attachments[i];
+    for (CHAttachment *attachment in attachments) {
+        CCSprite *sprite = [self attachmentSpriteWithName:attachment.name];
         sprite.texture = attachment.texture;
-        i++;
     }
 }
 

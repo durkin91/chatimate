@@ -8,8 +8,8 @@
 
 #import "CCNode.h"
 
-@interface CHAvatar : CCNode
+#define AVATAR_ROOT_NODE_NAME @"CHAvatarRootNode"
 
-@property (strong, nonatomic) NSMutableArray *attachmentSprites;
+@interface CHAvatar : CCNode
 
 @end
