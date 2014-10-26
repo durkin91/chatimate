@@ -231,9 +231,6 @@ static UIImage* _imageOfFace = nil;
         rightCollarboneShadowPath.miterLimit = 4;
         
         [paths addObject:[self addColor:skinShadowColor andPath:rightCollarboneShadowPath]];
-
-        [skinShadowColor setFill];
-        [rightCollarboneShadowPath fill];
     }
 
 

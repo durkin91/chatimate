@@ -125,7 +125,6 @@
 //when I start adding options, remember to add these in here
 -(void)drawAttachment
 {
-#warning There is something wrong here. Get someone more experienced to help me troubleshoot
     UIGraphicsBeginImageContext(self.frameSize);
     
     [self drawPaths:self.baseDrawing];
@@ -141,6 +140,7 @@
 
 -(void)drawPaths:(NSMutableArray *)arrayOfPaths
 {
+    
     for (NSDictionary *pathInfo in arrayOfPaths) {
         UIBezierPath *path = pathInfo[PATH];
         UIColor *color = pathInfo[FILL_COLOR];
