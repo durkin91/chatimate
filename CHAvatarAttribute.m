@@ -14,18 +14,18 @@
 
 -(id)init
 {
-    self = [self initWithData:nil];
+    self = [self initWithData:nil universalColors:nil];
     return self;
 }
 
--(id)initWithData:(NSDictionary *)data
+-(id)initWithData:(NSDictionary *)data universalColors:(NSMutableDictionary *)universalColors
 {
     self = [super init];
     self.name = data[ATTRIBUTE_NAME];
     self.type = data[ATTRIBUTE_TYPE];
     
     //create the options
-    NSArray *optionsData = [CHAttributeData optionsForAttribute:self.name];
+    NSArray *optionsData = [CHAttributeData optionsForAttribute:self.name universalColors:universalColors];
     NSMutableArray *allOptions = [@[] mutableCopy];
     for (NSMutableDictionary *data in optionsData) {
         CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:data];

@@ -13,7 +13,7 @@
 
 @implementation CHAvatarAttributeOption
 
-static float _colorThumbnailSize = 80;
+static float _colorThumbnailSize = 90;
 static float _pathThumbnailSize = 212;
 
 -(id)init

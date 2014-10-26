@@ -13,7 +13,7 @@
 
 #pragma mark - Universal Colors Data
 
-+ (NSMutableDictionary *)univeralColors
++ (NSMutableDictionary *)universalColors
 {
     NSMutableDictionary *colors = [@{
                                      UNIVERSAL_SKIN_BASE_COLOR : [CHAvatarDrawingData skinTone26]
@@ -24,7 +24,7 @@
 #pragma mark - Attribute Option Data
 
 //will return the correct array of options data based on the attribute type specified
-+ (NSArray *)optionsForAttribute:(NSString *)name
++ (NSArray *)optionsForAttribute:(NSString *)name universalColors:(NSMutableDictionary *)universalColors
 {
     NSMutableArray *optionsData;
     
@@ -141,12 +141,90 @@
         
         [self giveOptions:optionsData aName:SKIN_COLOR_OPTION_NAME];
         [self giveOptions:optionsData aString:SKIN_COLOR forCommonKey:OPTION_ATTRIBUTE];
+        [self giveOptions:optionsData aNilValueForKey:OPTION_PATHS];
         [self giveOptionsAThumbnail:optionsData];
+        
+        CGSize thumbnailFrame = CGSizeMake(90, 90);
+        [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
+
+    }
+    
+    if ([name isEqualToString:JAW_SHAPE]) {
+        NSMutableDictionary *jaw1 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw1:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw1Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        NSMutableDictionary *jaw2 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw2:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw2Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        NSMutableDictionary *jaw3 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw3:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw3Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        NSMutableDictionary *jaw4 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw4:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw4Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        NSMutableDictionary *jaw5 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw5:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw5Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        NSMutableDictionary *jaw6 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw6:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw6Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        NSMutableDictionary *jaw7 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw7:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw7Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        NSMutableDictionary *jaw8 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw8:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw8Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        NSMutableDictionary *jaw9 = [@{
+                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw9:universalColors],
+                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw9Thumbnail:universalColors]
+                                       } mutableCopy];
+        
+        optionsData = [@[jaw1, jaw2, jaw3, jaw4, jaw5, jaw6, jaw7, jaw8, jaw9] mutableCopy];
+        
+        [self giveOptions:optionsData aName:JAW_OPTION_NAME];
+        [self giveOptions:optionsData aString:JAW_SHAPE forCommonKey:OPTION_ATTRIBUTE];
+        [self giveOptions:optionsData aNilValueForKey:OPTION_COLOR];
+        
+        //set thumbnail frame size
+        CGSize thumbnailFrame = CGSizeMake(300, 380);
+        [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
 
     }
     
     return optionsData;
     
+}
+
+#pragma mark - Option helper methods
+
++ (void)giveOptions:(NSMutableArray *)options aThumbnailFrameSize:(CGSize)size
+{
+    for (NSMutableDictionary *option in options) {
+        [option setObject:[NSValue valueWithCGSize:size] forKey:OPTION_THUMBNAIL_FRAME_SIZE];
+    }
+}
+
++ (void)giveOptions:(NSMutableArray *)options aNilValueForKey:(NSString *)key
+{
+    for (NSMutableDictionary *option in options) {
+        [option setValue:nil forKey:key];
+    }
 }
 
 + (void)giveOptions:(NSMutableArray *)options aName:(NSString *)name

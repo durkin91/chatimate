@@ -14,6 +14,6 @@
 @property (strong, nonatomic) NSArray *options;
 @property (strong, nonatomic) NSString *type;
 
--(id)initWithData:(NSDictionary *)data;
+-(id)initWithData:(NSDictionary *)data universalColors:(NSMutableDictionary *)universalColors;
 
 @end

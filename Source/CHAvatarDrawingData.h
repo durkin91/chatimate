@@ -53,11 +53,46 @@
 //To draw an array of paths
 + (void)drawPaths:(NSMutableArray *)arrayOfPaths;
 
-// Draw Paths
+#pragma mark - Option Drawings
+
+//Shoulders
 + (NSMutableArray *)drawShoulders:(NSMutableDictionary *)universalColors;
+
+//Neck
 + (NSMutableArray *)drawNeck:(NSMutableDictionary *)universalColors;
 
-// Thumbnails
+//Upper Head
++ (NSMutableArray *)drawUpperHead:(NSMutableDictionary *)universalColors;
+
+//Jaws
++ (NSMutableArray *)drawJaw1:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw2:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw3:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw4:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw5:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw6:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw7:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw8:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw9:(NSMutableDictionary *)universalColors;
+
+//Ears
++ (NSMutableArray *)drawEars1:(NSMutableDictionary *)universalColors;
+
+
+#pragma mark - Thumbnails
+
+//Color thumbnails
 + (NSMutableArray *)drawColorThumbnail:(UIColor *)color;
+
+//Jaw thumbnails
++ (NSMutableArray *)drawJaw1Thumbnail:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw2Thumbnail:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw3Thumbnail:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw4Thumbnail:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw5Thumbnail:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw6Thumbnail:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw7Thumbnail:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw8Thumbnail:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawJaw9Thumbnail:(NSMutableDictionary *)universalColors;
 
 @end

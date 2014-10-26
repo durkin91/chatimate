@@ -18,11 +18,11 @@
 
 - (id)init
 {
-    self = [self initWithData:nil];
+    self = [self initWithData:nil universalColors:nil];
     return self;
 }
 
-- (id)initWithData:(NSDictionary *)data
+- (id)initWithData:(NSDictionary *)data universalColors:(NSMutableDictionary *)universalColors
 {
     self = [super init];
     if (!self) return nil;
@@ -40,7 +40,7 @@
         BOOL isFinished = NO;
         for (NSDictionary *attribute in attributesData) {
             NSString *attributeName = attribute[ATTRIBUTE_NAME];
-            NSArray *optionsForAttribute = [CHAttributeData optionsForAttribute:attributeName];
+            NSArray *optionsForAttribute = [CHAttributeData optionsForAttribute:attributeName universalColors:universalColors];
             
             for (NSMutableDictionary *option in optionsForAttribute) {
                 for (int i = 0; i < [currentOptionsNames count]; i++) {
@@ -127,7 +127,7 @@
 {
     UIGraphicsBeginImageContext(self.frameSize);
     
-    [self drawPaths:self.baseDrawing];
+    [CHAvatarDrawingData drawPaths:self.baseDrawing];
     
     self.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -136,19 +136,6 @@
     self.texture = [[CCTexture alloc] initWithCGImage:self.image.CGImage contentScale:1.0];
 }
 
-#pragma mark - Helper Methods
-
-- (void)drawPaths:(NSMutableArray *)arrayOfPaths
-{
-    
-    for (NSDictionary *pathInfo in arrayOfPaths) {
-        UIBezierPath *path = pathInfo[PATH];
-        UIColor *color = pathInfo[FILL_COLOR];
-        [color setFill];
-        [path fill];
-    }
-
-}
 
 
 @end

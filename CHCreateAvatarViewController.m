@@ -115,7 +115,7 @@
 {
     CGSize cellSize;
     if ([self.factory.activeAttribute.name isEqualToString:SKIN_COLOR]) {
-        cellSize = CGSizeMake(80, 80);
+        cellSize = CGSizeMake(77, 77);
     }
     else {
         cellSize = CGSizeMake(106, 106);

@@ -21,7 +21,7 @@
 @property (strong, nonatomic) NSMutableArray *baseDrawing;
 @property (strong, nonatomic) CCTexture *texture;
 
--(id)initWithData:(NSDictionary *)data;
+-(id)initWithData:(NSDictionary *)data universalColors:(NSMutableDictionary *)universalColors;
 -(void)drawAttachment;
 -(void)updateAttachmentForOption:(CHAvatarAttributeOption *)option instance:(CHCreateAvatar *)instance;
 

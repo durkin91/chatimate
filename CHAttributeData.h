@@ -19,10 +19,12 @@
 #define OPTION_NAME @"Name"
 #define OPTION_ATTRIBUTE @"Attribute"
 #define OPTION_THUMBNAIL_PATHS @"Thumbnail Paths"
+#define OPTION_THUMBNAIL_FRAME_SIZE @"Thumbnail Frame Size"
 
 
 //Names
 #define SKIN_COLOR_OPTION_NAME @"skinColor%i"
+#define JAW_OPTION_NAME @"jaw%i"
 
 //ATTRIBUTES DATA
 //Keys
@@ -59,8 +61,8 @@
 
 @interface CHAttributeData : NSObject
 
-+ (NSMutableDictionary *)univeralColors;
-+ (NSArray *)optionsForAttribute:(NSString *)name;
++ (NSMutableDictionary *)universalColors;
++ (NSArray *)optionsForAttribute:(NSString *)name universalColors:(NSMutableDictionary *)universalColors;
 + (NSArray *)attributes;
 + (NSArray *)attachmentsData:(CHCreateAvatar *)instance;
 
