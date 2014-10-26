@@ -138,7 +138,7 @@
 
 #pragma mark - Helper Methods
 
--(void)drawPaths:(NSMutableArray *)arrayOfPaths
+- (void)drawPaths:(NSMutableArray *)arrayOfPaths
 {
     
     for (NSDictionary *pathInfo in arrayOfPaths) {

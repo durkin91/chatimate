@@ -50,16 +50,14 @@
 + (UIColor*)skinTone27;
 + (UIColor*)outlineColor;
 
+//To draw an array of paths
++ (void)drawPaths:(NSMutableArray *)arrayOfPaths;
+
 // Draw Paths
 + (NSMutableArray *)drawShoulders:(NSMutableDictionary *)universalColors;
 + (NSMutableArray *)drawNeck:(NSMutableDictionary *)universalColors;
 
-// Generated Images
-+ (UIImage*)imageOfShoulders:(NSMutableDictionary *)universalColors;
-+ (UIImage*)imageOfNeck:(NSMutableDictionary *)universalColors;
-+ (UIImage*)imageOfHead:(NSMutableDictionary *)universalColors;
-
 // Thumbnails
-+ (UIImage*)imageOfColorThumbnail:(UIColor *)color;
++ (NSMutableArray *)drawColorThumbnail:(UIColor *)color;
 
 @end

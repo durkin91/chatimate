@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIColor *color;
 @property (strong, nonatomic) NSString *attribute;
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) UIImage *thumbnailImage;
 
 - (id)initWithData:(NSDictionary *)data;
 

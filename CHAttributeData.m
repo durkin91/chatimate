@@ -141,6 +141,7 @@
         
         [self giveOptions:optionsData aName:SKIN_COLOR_OPTION_NAME];
         [self giveOptions:optionsData aString:SKIN_COLOR forCommonKey:OPTION_ATTRIBUTE];
+        [self giveOptionsAThumbnail:optionsData];
 
     }
     
@@ -166,6 +167,30 @@
         i++;
     }
     
+}
+
++ (void)giveOptionsAThumbnail:(NSMutableArray *)options
+{
+    NSArray *attributes = [self attributes];
+    for (NSMutableDictionary *option in options) {
+        for (NSDictionary *attribute in attributes) {
+            
+            //find the right attribute for this option
+            if ([attribute[ATTRIBUTE_NAME] isEqualToString:option[OPTION_ATTRIBUTE]]) {
+                
+                //check the type of attribute
+                if ([attribute[ATTRIBUTE_TYPE] isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
+                    NSMutableArray *thumbnail = [CHAvatarDrawingData drawColorThumbnail:option[OPTION_COLOR]];
+                    [option setObject:thumbnail forKey:OPTION_THUMBNAIL_PATHS];
+                    break;
+                }
+                else if ([attribute[ATTRIBUTE_TYPE] isEqualToString:PATH_ATTRIBUTE_TYPE]) {
+                    //FILL THIS IN ONCE I START DEALING WITH PATH TYPES
+                    break;
+                }
+            }
+        }
+    }
 }
 
 #pragma mark - Attribute Type Data

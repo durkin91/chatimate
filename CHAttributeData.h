@@ -18,6 +18,7 @@
 #define OPTION_PATHS @"Paths"
 #define OPTION_NAME @"Name"
 #define OPTION_ATTRIBUTE @"Attribute"
+#define OPTION_THUMBNAIL_PATHS @"Thumbnail Paths"
 
 
 //Names

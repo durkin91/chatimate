@@ -8,8 +8,13 @@
 
 #import "CHAvatarAttributeOption.h"
 #import "CHAttributeData.h"
+#import "CHAvatarDrawingData.h"
+
 
 @implementation CHAvatarAttributeOption
+
+static float _thumbnailWidth = 80;
+static float _thumbnailHeight = 80;
 
 -(id)init
 {
@@ -24,6 +29,12 @@
     self.attribute = data[OPTION_ATTRIBUTE];
     self.name = data[OPTION_NAME];
     
+    //Draw the thumbnail image
+    UIGraphicsBeginImageContext(CGSizeMake(_thumbnailWidth, _thumbnailHeight));
+    [CHAvatarDrawingData drawPaths:data[OPTION_THUMBNAIL_PATHS]];
+    self.thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
     return self;
 }
 
