@@ -25,6 +25,7 @@
 //Names
 #define SKIN_COLOR_OPTION_NAME @"skinColor%i"
 #define JAW_OPTION_NAME @"jaw%i"
+#define EARS_OPTION_NAME @"ears%i"
 
 //ATTRIBUTES DATA
 //Keys

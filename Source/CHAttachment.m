@@ -99,7 +99,7 @@
     //change the options to the currently selected option
     for (CHAvatarAttributeOption __strong *currentOption in self.currentOptions)
     {
-        if ([currentOption.name isEqualToString:instance.activeAttribute.name]) {
+        if ([currentOption.attribute isEqualToString:instance.activeAttribute.name]) {
             currentOption = option;
             break;
         }

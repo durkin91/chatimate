@@ -30,112 +30,112 @@
     
     if ([name isEqualToString:SKIN_COLOR]) {
         NSMutableDictionary *option1 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone19],
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone19],
+                                          } mutableCopy];
         
         NSMutableDictionary *option2 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone20]
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone20]
+                                          } mutableCopy];
         
         NSMutableDictionary *option3 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone21]
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone21]
+                                          } mutableCopy];
         
         NSMutableDictionary *option4 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone22]
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone22]
+                                          } mutableCopy];
         
         NSMutableDictionary *option5 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone23]
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone23]
+                                          } mutableCopy];
         
         NSMutableDictionary *option6 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone24]
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone24]
+                                          } mutableCopy];
         
         NSMutableDictionary *option7 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone25]
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone25]
+                                          } mutableCopy];
         
         NSMutableDictionary *option8 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone26]
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone26]
+                                          } mutableCopy];
         
         NSMutableDictionary *option9 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone27]
-                                  } mutableCopy];
+                                          OPTION_COLOR : [CHAvatarDrawingData skinTone27]
+                                          } mutableCopy];
         
         NSMutableDictionary *option10 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone18]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone18]
+                                           } mutableCopy];
         
         NSMutableDictionary *option11 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone17]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone17]
+                                           } mutableCopy];
         
         NSMutableDictionary *option12 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone16]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone16]
+                                           } mutableCopy];
         
         NSMutableDictionary *option13 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone15]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone15]
+                                           } mutableCopy];
         
         NSMutableDictionary *option14 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone14]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone14]
+                                           } mutableCopy];
         
         NSMutableDictionary *option15 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone13]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone13]
+                                           } mutableCopy];
         
         NSMutableDictionary *option16 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone12]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone12]
+                                           } mutableCopy];
         
         NSMutableDictionary *option17 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone11]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone11]
+                                           } mutableCopy];
         
         NSMutableDictionary *option18 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone10]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone10]
+                                           } mutableCopy];
         
         NSMutableDictionary *option19 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone9]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone9]
+                                           } mutableCopy];
         
         NSMutableDictionary *option20 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone8]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone8]
+                                           } mutableCopy];
         
         NSMutableDictionary *option21 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone7]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone7]
+                                           } mutableCopy];
         
         NSMutableDictionary *option22 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone6]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone6]
+                                           } mutableCopy];
         
         NSMutableDictionary *option23 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone5]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone5]
+                                           } mutableCopy];
         
         NSMutableDictionary *option24 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone4]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone4]
+                                           } mutableCopy];
         
         NSMutableDictionary *option25 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone3]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone3]
+                                           } mutableCopy];
         
         NSMutableDictionary *option26 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone2]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone2]
+                                           } mutableCopy];
         
         NSMutableDictionary *option27 = [@{
-                                  OPTION_COLOR : [CHAvatarDrawingData skinTone1]
-                                  } mutableCopy];
+                                           OPTION_COLOR : [CHAvatarDrawingData skinTone1]
+                                           } mutableCopy];
         
         optionsData = [@[option1, option2, option3, option4, option5, option6, option7, option8, option9, option10, option11, option12, option13, option14, option15, option16, option17, option18, option19, option20, option21, option22, option23, option24, option25, option26, option27] mutableCopy];
         
@@ -146,10 +146,10 @@
         
         CGSize thumbnailFrame = CGSizeMake(90, 90);
         [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
-
+        
     }
     
-    if ([name isEqualToString:JAW_SHAPE]) {
+    else if ([name isEqualToString:JAW_SHAPE]) {
         NSMutableDictionary *jaw1 = [@{
                                        OPTION_PATHS : [CHAvatarDrawingData drawJaw1:universalColors],
                                        OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw1Thumbnail:universalColors]
@@ -204,11 +204,25 @@
         //set thumbnail frame size
         CGSize thumbnailFrame = CGSizeMake(300, 380);
         [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
-
+        
+    }
+    
+    else if ([name isEqualToString:EARS]) {
+        NSMutableDictionary *ears1 = [@{
+                                        OPTION_PATHS : [CHAvatarDrawingData drawEars1:universalColors]
+                                        } mutableCopy];
+        
+        optionsData = [@[ears1] mutableCopy];
+        [self giveOptions:optionsData aName:EARS_OPTION_NAME];
+        [self giveOptions:optionsData aString:EARS forCommonKey:OPTION_ATTRIBUTE];
+        [self giveOptions:optionsData aNilValueForKey:OPTION_COLOR];
+        
+        //set thumbnail frame size
+        CGSize thumbnailFrame = CGSizeMake(300, 380);
+        [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
     }
     
     return optionsData;
-    
 }
 
 #pragma mark - Option helper methods
@@ -335,14 +349,15 @@
                                 ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawNeck:instance.universalColors]
                                 };
     
-//    NSDictionary *head = @{
-//                                ATTACHMENT_NAME : HEAD_ATTACHMENT,
-//                                ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(712, 212)],
-//                                ATTACHMENT_OPTIONS : @[]
-//                                };
+    NSDictionary *head = @{
+                                ATTACHMENT_NAME : HEAD_ATTACHMENT,
+                                ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(712, 212)],
+                                ATTACHMENT_OPTIONS : @[@"ears1", @"jaw8"],
+                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawUpperHead:instance.universalColors]
+                                };
     
     //return data
-    attachmentsData = @[shoulders, neck];
+    attachmentsData = @[shoulders, neck, head];
     return attachmentsData;
 }
 
