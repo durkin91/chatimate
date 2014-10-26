@@ -114,11 +114,11 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGSize cellSize;
-    if ([self.factory.activeAttribute.name isEqualToString:SKIN_COLOR]) {
+    if ([self.factory.activeAttribute.type isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
         cellSize = CGSizeMake(77, 77);
     }
     else {
-        cellSize = CGSizeMake(106, 106);
+        cellSize = CGSizeMake(95, 126);
     }
     return cellSize;
 }
@@ -147,7 +147,6 @@
 {
 
     CCNode *CHCreateAvatarRootNode = [self findNodeWithName:CREATE_AVATAR_SCENE_ROOT_NODE_NAME inArrayOfChildren:self.currentScene.children];
-    //CCNode *avatarNode = [self findNodeWithName:AVATAR_NODE_NAME inArrayOfChildren:CHCreateAvatarRootNode.children];
     self.avatar = [self findNodeWithName:AVATAR_ROOT_NODE_NAME inArrayOfChildren:CHCreateAvatarRootNode.children];
 }
 
@@ -190,6 +189,11 @@
 - (IBAction)menuButtonPressed:(UIButton *)sender {
 }
 
-- (IBAction)nextArrowButtonPressed:(UIButton *)sender {
+- (IBAction)nextArrowButtonPressed:(UIButton *)sender
+{
+    self.currentAttributeIndex = self.currentAttributeIndex + 1;
+    [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
+    self.titleLabel.text = [self.factory.activeAttribute.name uppercaseString];
+    [self.collectionView reloadData];
 }
 @end

@@ -11,6 +11,7 @@
 @interface CHAvatarAttributeOption : NSObject
 
 @property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) NSMutableArray *paths;
 @property (strong, nonatomic) NSString *attribute;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) UIImage *thumbnailImage;
