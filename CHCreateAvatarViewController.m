@@ -82,7 +82,9 @@
     
     CHAvatarAttributeOption *option = [self.factory.activeAttribute.options objectAtIndex:indexPath.item];
     
-    [cell setBackgroundColor:option.color];
+    //format the cell
+    UIImageView *thumbnail = (UIImageView *)[cell viewWithTag:100];
+    thumbnail.image = option.thumbnailImage;
     
     return cell;
 }
@@ -113,7 +115,7 @@
 {
     CGSize cellSize;
     if ([self.factory.activeAttribute.name isEqualToString:SKIN_COLOR]) {
-        cellSize = CGSizeMake(81, 81);
+        cellSize = CGSizeMake(80, 80);
     }
     else {
         cellSize = CGSizeMake(106, 106);

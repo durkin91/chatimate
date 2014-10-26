@@ -13,8 +13,8 @@
 
 @implementation CHAvatarAttributeOption
 
-static float _thumbnailWidth = 80;
-static float _thumbnailHeight = 80;
+static float _colorThumbnailSize = 80;
+static float _pathThumbnailSize = 212;
 
 -(id)init
 {
@@ -30,7 +30,12 @@ static float _thumbnailHeight = 80;
     self.name = data[OPTION_NAME];
     
     //Draw the thumbnail image
-    UIGraphicsBeginImageContext(CGSizeMake(_thumbnailWidth, _thumbnailHeight));
+    if (self.color) {
+        UIGraphicsBeginImageContext(CGSizeMake(_colorThumbnailSize, _colorThumbnailSize));
+    }
+    else {
+        UIGraphicsBeginImageContext(CGSizeMake(_pathThumbnailSize, _pathThumbnailSize));
+    }
     [CHAvatarDrawingData drawPaths:data[OPTION_THUMBNAIL_PATHS]];
     self.thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

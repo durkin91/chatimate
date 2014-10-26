@@ -628,7 +628,7 @@ static UIImage* _imageOfFace = nil;
     [strokePath addLineToPoint: CGPointMake(64.04, 64.04)];
     [strokePath closePath];
     
-    [paths addObject:[self addColor:shadowColor andPath:shadowPath]];
+    [paths addObject:[self addColor:shadowColor andPath:strokePath]];
     
     return paths;
 
