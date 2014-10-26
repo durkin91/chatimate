@@ -12,6 +12,9 @@
 #import <UIKit/UIKit.h>
 #import "CHCreateAvatar.h"
 
+#define PATH @"Path"
+#define FILL_COLOR @"Fill Color"
+
 
 @interface CHAvatarDrawingData : NSObject
 
@@ -46,6 +49,10 @@
 + (UIColor*)skinTone26;
 + (UIColor*)skinTone27;
 + (UIColor*)outlineColor;
+
+// Draw Paths
++ (NSMutableArray *)drawShoulders:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawNeck:(NSMutableDictionary *)universalColors;
 
 // Generated Images
 + (UIImage*)imageOfShoulders:(NSMutableDictionary *)universalColors;

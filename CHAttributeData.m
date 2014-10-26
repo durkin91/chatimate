@@ -222,14 +222,14 @@
                                 ATTACHMENT_NAME : SHOULDERS_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(712, 212)],
                                 ATTACHMENT_OPTIONS : @[],
-                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData imageOfShoulders:instance.universalColors]
+                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawShoulders:instance.universalColors]
                                 };
     
     NSDictionary *neck = @{
                                 ATTACHMENT_NAME : NECK_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(208, 228)],
                                 ATTACHMENT_OPTIONS : @[],
-                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData imageOfNeck:instance.universalColors]
+                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawNeck:instance.universalColors]
                                 };
     
 //    NSDictionary *head = @{

@@ -107,10 +107,10 @@
     
     //redraw base drawing. This is a hack for now. Figure out how to use @selector
     if ([self.name isEqualToString:SHOULDERS_ATTACHMENT]) {
-        self.baseDrawing = [CHAvatarDrawingData imageOfShoulders:instance.universalColors];
+        self.baseDrawing = [CHAvatarDrawingData drawShoulders:instance.universalColors];
     }
     else if ([self.name isEqualToString:NECK_ATTACHMENT]) {
-        self.baseDrawing = [CHAvatarDrawingData imageOfNeck:instance.universalColors];
+        self.baseDrawing = [CHAvatarDrawingData drawNeck:instance.universalColors];
     }
     
     
@@ -125,14 +125,29 @@
 //when I start adding options, remember to add these in here
 -(void)drawAttachment
 {
-    //draw and assign the UIImage
-    UIGraphicsBeginImageContextWithOptions(self.frameSize, NO, 0.0f);
-    [self.baseDrawing drawInRect:CGRectMake(0, 0, self.frameSize.width, self.frameSize.height)];
+#warning There is something wrong here. Get someone more experienced to help me troubleshoot
+    UIGraphicsBeginImageContext(self.frameSize);
+    
+    [self drawPaths:self.baseDrawing];
+    
     self.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     //Convert into a texture
     self.texture = [[CCTexture alloc] initWithCGImage:self.image.CGImage contentScale:1.0];
+}
+
+#pragma mark - Helper Methods
+
+-(void)drawPaths:(NSMutableArray *)arrayOfPaths
+{
+    for (NSDictionary *pathInfo in arrayOfPaths) {
+        UIBezierPath *path = pathInfo[PATH];
+        UIColor *color = pathInfo[FILL_COLOR];
+        [color setFill];
+        [path fill];
+    }
+
 }
 
 

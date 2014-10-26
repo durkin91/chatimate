@@ -18,7 +18,7 @@
 @property (nonatomic) CGSize frameSize;
 @property (strong, nonatomic) NSMutableArray *currentOptions;
 @property (strong, nonatomic) UIImage *image;
-@property (strong, nonatomic) UIImage *baseDrawing;
+@property (strong, nonatomic) NSMutableArray *baseDrawing;
 @property (strong, nonatomic) CCTexture *texture;
 
 -(id)initWithData:(NSDictionary *)data;
