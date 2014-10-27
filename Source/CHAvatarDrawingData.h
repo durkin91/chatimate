@@ -52,6 +52,7 @@
 
 //To draw an array of paths
 + (void)drawPaths:(NSMutableArray *)arrayOfPaths;
++ (void)drawOptions:(NSMutableDictionary *)options;
 
 #pragma mark - Option Drawings
 

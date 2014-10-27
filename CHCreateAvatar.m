@@ -33,7 +33,7 @@
     self.attachments = [@[] mutableCopy];
     NSArray *attachmentData = [CHAttributeData attachmentsData:self];
     for (NSDictionary *dictionary in attachmentData) {
-        CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary universalColors:self.universalColors];
+        CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary instance:self];
         [self.attachments addObject:attachment];
     }
 }

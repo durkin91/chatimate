@@ -16,12 +16,14 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) CGSize frameSize;
-@property (strong, nonatomic) NSMutableArray *currentOptions;
+@property (strong, nonatomic) NSMutableDictionary *currentOptions;
 @property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) NSMutableArray *baseDrawing;
 @property (strong, nonatomic) CCTexture *texture;
 
--(id)initWithData:(NSDictionary *)data universalColors:(NSMutableDictionary *)universalColors;
+@property (strong, nonatomic) CHCreateAvatar *CHCreateAvatarInstance;
+
+-(id)initWithData:(NSDictionary *)data instance:(CHCreateAvatar *)instance;
 -(void)drawAttachment;
 -(void)updateAttachmentForOption:(CHAvatarAttributeOption *)option instance:(CHCreateAvatar *)instance;
 

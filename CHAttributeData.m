@@ -7,6 +7,7 @@
 //
 
 #import "CHAttributeData.h"
+#import "CHAvatarAttributeOption.h"
 
 
 @implementation CHAttributeData
@@ -237,7 +238,7 @@
 + (void)giveOptions:(NSMutableArray *)options aNilValueForKey:(NSString *)key
 {
     for (NSMutableDictionary *option in options) {
-        [option setValue:nil forKey:key];
+        [option setObject:[NSNull null] forKey:key];
     }
 }
 
@@ -338,27 +339,71 @@
     NSDictionary *shoulders = @{
                                 ATTACHMENT_NAME : SHOULDERS_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(712, 212)],
-                                ATTACHMENT_OPTIONS : @[],
+                                ATTACHMENT_OPTIONS : [self currentOptionsForAttachment:SHOULDERS_ATTACHMENT universalColors:instance.universalColors],
                                 ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawShoulders:instance.universalColors]
                                 };
     
     NSDictionary *neck = @{
                                 ATTACHMENT_NAME : NECK_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(208, 228)],
-                                ATTACHMENT_OPTIONS : @[],
+                                ATTACHMENT_OPTIONS : [self currentOptionsForAttachment:NECK_ATTACHMENT universalColors:instance.universalColors],
                                 ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawNeck:instance.universalColors]
                                 };
     
     NSDictionary *head = @{
                                 ATTACHMENT_NAME : HEAD_ATTACHMENT,
-                                ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(712, 212)],
-                                ATTACHMENT_OPTIONS : @[@"ears1", @"jaw8"],
+                                ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(300, 380)],
+                                ATTACHMENT_OPTIONS : [self currentOptionsForAttachment:HEAD_ATTACHMENT universalColors:instance.universalColors],
                                 ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawUpperHead:instance.universalColors]
                                 };
     
     //return data
     attachmentsData = @[shoulders, neck, head];
+    NSLog(@"Attachments: %@", attachmentsData);
     return attachmentsData;
+}
+
++ (NSMutableDictionary *)currentOptionsForAttachment:(NSString *)attachmentName universalColors:(NSMutableDictionary *)universalColors
+{
+    NSMutableDictionary *attachmentOptions;
+    
+    //SHOULDERS
+    if ([attachmentName isEqualToString:SHOULDERS_ATTACHMENT]) {
+        attachmentOptions = [@{
+                               EARS : [NSNull null],
+                               JAW_SHAPE : [NSNull null]
+                               } mutableCopy];
+    }
+    
+    //NECK
+    if ([attachmentName isEqualToString:NECK_ATTACHMENT]) {
+        attachmentOptions = [@{
+                               EARS : [NSNull null],
+                               JAW_SHAPE : [NSNull null]
+                               } mutableCopy];
+    }
+
+    //HEAD
+    if ([attachmentName isEqualToString:HEAD_ATTACHMENT]) {
+        attachmentOptions = [@{
+                               EARS : [[CHAvatarAttributeOption alloc] initWithData:  [self optionDataForAttribute:EARS option:@"ears0" withUniversalColors:universalColors]],
+                               JAW_SHAPE : [[CHAvatarAttributeOption alloc] initWithData:[self optionDataForAttribute:JAW_SHAPE option:@"jaw7" withUniversalColors:universalColors]]
+                               } mutableCopy];
+    }
+    
+    return attachmentOptions;
+}
+
+#pragma mark - Attachment Helper Methods
++ (NSDictionary *)optionDataForAttribute:(NSString *)attributeName option:(NSString *)optionName withUniversalColors:(NSMutableDictionary *)universalColors
+{
+    NSArray *allAttributeOptions = [self optionsForAttribute:attributeName universalColors:universalColors];
+    for (NSDictionary *option in allAttributeOptions) {
+        if ([option[OPTION_NAME] isEqualToString:optionName]) {
+            return option;
+        }
+    }
+    return nil;
 }
 
 

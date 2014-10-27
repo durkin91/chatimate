@@ -10,6 +10,7 @@
 
 #import "CHAvatarDrawingData.h"
 #import "CHAttributeData.h"
+#import "CHAvatarAttributeOption.h"
 
 
 
@@ -129,6 +130,21 @@ static UIImage* _imageOfFace = nil;
         [path fill];
     }
     
+}
+
++ (void)drawOptions:(NSMutableDictionary *)options
+{
+    NSArray *drawOrder = @[
+                           EARS,
+                           JAW_SHAPE
+                           ];
+    
+    for (id key in drawOrder) {
+        if (![options[key] isEqual:[NSNull null]]) {
+            CHAvatarAttributeOption *option = options[key];
+            [self drawPaths:option.paths];
+        }
+    }
 }
 
 
