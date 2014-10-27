@@ -17,7 +17,7 @@
 + (NSMutableDictionary *)universalColors
 {
     NSMutableDictionary *colors = [@{
-                                     UNIVERSAL_SKIN_BASE_COLOR : [CHAvatarDrawingData skinTone26]
+                                     UNIVERSAL_SKIN_BASE_COLOR : [CHAvatarDrawingData skinTone21]
                                      } mutableCopy];
     return colors;
 }
@@ -223,6 +223,7 @@
         [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
     }
     
+    
     return optionsData;
 }
 
@@ -244,7 +245,7 @@
 
 + (void)giveOptions:(NSMutableArray *)options aName:(NSString *)name
 {
-    int i = 0;
+    int i = 1;
     for (NSMutableDictionary *dictionary in options) {
         [dictionary setObject:[NSString stringWithFormat:name, i] forKey:OPTION_NAME];
         i++;
@@ -352,7 +353,7 @@
     
     NSDictionary *head = @{
                                 ATTACHMENT_NAME : HEAD_ATTACHMENT,
-                                ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(300, 380)],
+                                ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(300, 420)],
                                 ATTACHMENT_OPTIONS : [self currentOptionsForAttachment:HEAD_ATTACHMENT universalColors:instance.universalColors],
                                 ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawUpperHead:instance.universalColors]
                                 };
@@ -386,8 +387,8 @@
     //HEAD
     if ([attachmentName isEqualToString:HEAD_ATTACHMENT]) {
         attachmentOptions = [@{
-                               EARS : [[CHAvatarAttributeOption alloc] initWithData:  [self optionDataForAttribute:EARS option:@"ears0" withUniversalColors:universalColors]],
-                               JAW_SHAPE : [[CHAvatarAttributeOption alloc] initWithData:[self optionDataForAttribute:JAW_SHAPE option:@"jaw7" withUniversalColors:universalColors]]
+                               EARS : [[CHAvatarAttributeOption alloc] initWithData:  [self optionDataForAttribute:EARS option:@"ears1" withUniversalColors:universalColors]],
+                               JAW_SHAPE : [[CHAvatarAttributeOption alloc] initWithData:[self optionDataForAttribute:JAW_SHAPE option:@"jaw1" withUniversalColors:universalColors]]
                                } mutableCopy];
     }
     

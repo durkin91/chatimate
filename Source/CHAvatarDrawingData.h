@@ -80,6 +80,11 @@
 //Ears
 + (NSMutableArray *)drawEars1:(NSMutableDictionary *)universalColors;
 
+//Cheekbones
++ (NSMutableArray *)drawCheekbones1:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawCheekbones2:(NSMutableDictionary *)universalColors;
+
+
 
 #pragma mark - Thumbnails
 
