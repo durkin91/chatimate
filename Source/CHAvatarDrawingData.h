@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CHCreateAvatar.h"
+#import "CHAttachment.h"
 
 #define PATH @"Path"
 #define FILL_COLOR @"Fill Color"

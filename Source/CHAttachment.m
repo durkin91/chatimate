@@ -43,9 +43,13 @@
 {
     //change the options to the currently selected option if it is a path type
     if ([instance.activeAttribute.type isEqualToString:PATH_ATTRIBUTE_TYPE]) {
-        self.currentOptions[instance.activeAttribute.name] = option;
+        for (NSString *attachmentName in self.CHCreateAvatarInstance.activeAttribute.attachmentNames) {
+            if ([self.name isEqualToString:attachmentName]) {
+                self.currentOptions[instance.activeAttribute.name] = option;
+            }
+        }
     }
-      
+    
     //redraw base drawing. This is a hack for now. Figure out how to use @selector. Or iterate through the dictionaries and replace the colors of the paths with the new universal colors
     if ([self.name isEqualToString:SHOULDERS_ATTACHMENT]) {
         self.baseDrawing = [CHAvatarDrawingData drawShoulders:instance.universalColors];
@@ -57,20 +61,26 @@
         self.baseDrawing = [CHAvatarDrawingData drawUpperHead:instance.universalColors];
     }
     
-    //redraw the path for each option. Refactor this when I figure out @selector. Currently it just accesses the path in the data dictionary
-    for (id key in self.currentOptions) {
-        if (![self.currentOptions[key] isEqual:[NSNull null]]) {
-            CHAvatarAttributeOption *currentOption = self.currentOptions[key];
-            NSArray *optionsData = [CHAttributeData optionsForAttribute:key universalColors:instance.universalColors];
-            for (NSDictionary *option in optionsData) {
-                if ([option[OPTION_NAME] isEqualToString:currentOption.name]) {
-                    currentOption.paths = option[OPTION_PATHS];
-                    break;
+    //redraw the path for each option by checking only updating attachments that it is relevant to.
+    for (NSString *attachmentName in self.CHCreateAvatarInstance.activeAttribute.attachmentNames) {
+        if ([self.name isEqualToString:attachmentName]) {
+            for (id key in self.currentOptions) {
+                if (![self.currentOptions[key] isEqual:[NSNull null]]) {
+                    CHAvatarAttributeOption *currentOption = self.currentOptions[key];
+                    NSArray *optionsData = [CHAttributeData optionsForAttribute:key universalColors:instance.universalColors];
+                    for (NSDictionary *option in optionsData) {
+                        if ([option[OPTION_NAME] isEqualToString:currentOption.name]) {
+                            currentOption.paths = option[OPTION_PATHS];
+                            break;
+                        }
+                    }
                 }
+                
             }
+            
         }
-    
     }
+    
     //redraw attachment
     [self drawAttachment];
 }
@@ -80,9 +90,8 @@
     UIGraphicsBeginImageContext(self.frameSize);
     
     [CHAvatarDrawingData drawPaths:self.baseDrawing];
-    
     [CHAvatarDrawingData drawOptions:self.currentOptions];
-
+    
     self.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -90,12 +99,7 @@
     self.texture = [[CCTexture alloc] initWithCGImage:self.image.CGImage contentScale:1.0];
 }
 
--(void)updatePathsForOptions:(NSMutableDictionary *)options
-{
-    for (id key in options) {
-        CHAvatarAttributeOption *option = options[key];
-    }
-}
+
 
 
 @end

@@ -14,6 +14,7 @@
 
 
 
+
 @implementation CHAvatarDrawingData
 
 #pragma mark Cache

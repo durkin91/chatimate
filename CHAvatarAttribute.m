@@ -23,6 +23,7 @@
     self = [super init];
     self.name = data[ATTRIBUTE_NAME];
     self.type = data[ATTRIBUTE_TYPE];
+    self.attachmentNames = data[ATTRIBUTE_ATTACHMENTS];
     
     //create the options
     NSArray *optionsData = [CHAttributeData optionsForAttribute:self.name universalColors:universalColors];

@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSArray *options;
 @property (strong, nonatomic) NSString *type;
+@property (strong, nonatomic) NSArray *attachmentNames;
 
 -(id)initWithData:(NSDictionary *)data universalColors:(NSMutableDictionary *)universalColors;
 
