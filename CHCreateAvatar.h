@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "CHAvatarAttribute.h"
+#import "CHAvatarDrawingData.h"
+#import "CHAttributeData.h"
 
 @interface CHCreateAvatar : NSObject
 
 @property (strong, nonatomic) CHAvatarAttribute *activeAttribute;
 @property (strong, nonatomic) NSMutableArray *attachments;
 @property (strong, nonatomic) NSMutableDictionary *universalColors;
+@property (strong, nonatomic) CHAvatarDrawingData *drawingData;
+//@property (strong, nonatomic) CHAttributeData *attributeData;
 
 - (void)setupAttachmentsAndColors;
 - (void)updateAttachmentsForOption:(int)optionNumber;

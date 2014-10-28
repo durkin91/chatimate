@@ -12,7 +12,11 @@
 #import "CHAttributeData.h"
 #import "CHAvatarAttributeOption.h"
 
+@interface CHAvatarDrawingData ()
 
+@property (strong, nonatomic) NSMutableDictionary *universalColors;
+
+@end
 
 
 @implementation CHAvatarDrawingData
@@ -48,14 +52,12 @@ static UIColor* _skinTone26 = nil;
 static UIColor* _skinTone27 = nil;
 static UIColor* _outlineColor = nil;
 
-static UIImage* _imageOfShoulders = nil;
-static UIImage* _imageOfNeck = nil;
-static UIImage* _imageOfFace = nil;
-
 #pragma mark Initialization
 
-+ (void)initialize
+- (id)init
 {
+    self = [super init];
+    
     // Colors Initialization
     _skinTone1 = [UIColor colorWithRed: 1 green: 0.898 blue: 0.784 alpha: 1];
     _skinTone2 = [UIColor colorWithRed: 1 green: 0.855 blue: 0.745 alpha: 1];
@@ -85,43 +87,49 @@ static UIImage* _imageOfFace = nil;
     _skinTone26 = [UIColor colorWithRed: 0.265 green: 0.122 blue: 0.013 alpha: 1];
     _skinTone27 = [UIColor colorWithRed: 0.206 green: 0.094 blue: 0.008 alpha: 1];
     _outlineColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
+    
+    //Setup universal colors
+    self.universalColors = [CHAttributeData universalColors];
+    
+    return self;
 
+    
 }
 
 #pragma mark Colors
 
-+ (UIColor*)skinTone1 { return _skinTone1; }
-+ (UIColor*)skinTone2 { return _skinTone2; }
-+ (UIColor*)skinTone3 { return _skinTone3; }
-+ (UIColor*)skinTone4 { return _skinTone4; }
-+ (UIColor*)skinTone5 { return _skinTone5; }
-+ (UIColor*)skinTone6 { return _skinTone6; }
-+ (UIColor*)skinTone7 { return _skinTone7; }
-+ (UIColor*)skinTone8 { return _skinTone8; }
-+ (UIColor*)skinTone9 { return _skinTone9; }
-+ (UIColor*)skinTone10 { return _skinTone10; }
-+ (UIColor*)skinTone11 { return _skinTone11; }
-+ (UIColor*)skinTone12 { return _skinTone12; }
-+ (UIColor*)skinTone13 { return _skinTone13; }
-+ (UIColor*)skinTone14 { return _skinTone14; }
-+ (UIColor*)skinTone15 { return _skinTone15; }
-+ (UIColor*)skinTone16 { return _skinTone16; }
-+ (UIColor*)skinTone17 { return _skinTone17; }
-+ (UIColor*)skinTone18 { return _skinTone18; }
-+ (UIColor*)skinTone19 { return _skinTone19; }
-+ (UIColor*)skinTone20 { return _skinTone20; }
-+ (UIColor*)skinTone21 { return _skinTone21; }
-+ (UIColor*)skinTone22 { return _skinTone22; }
-+ (UIColor*)skinTone23 { return _skinTone23; }
-+ (UIColor*)skinTone24 { return _skinTone24; }
-+ (UIColor*)skinTone25 { return _skinTone25; }
-+ (UIColor*)skinTone26 { return _skinTone26; }
-+ (UIColor*)skinTone27 { return _skinTone27; }
-+ (UIColor*)outlineColor { return _outlineColor; }
+- (UIColor*)skinTone1 { return _skinTone1; }
+- (UIColor*)skinTone2 { return _skinTone2; }
+- (UIColor*)skinTone3 { return _skinTone3; }
+- (UIColor*)skinTone4 { return _skinTone4; }
+- (UIColor*)skinTone5 { return _skinTone5; }
+- (UIColor*)skinTone6 { return _skinTone6; }
+- (UIColor*)skinTone7 { return _skinTone7; }
+- (UIColor*)skinTone8 { return _skinTone8; }
+- (UIColor*)skinTone9 { return _skinTone9; }
+- (UIColor*)skinTone10 { return _skinTone10; }
+- (UIColor*)skinTone11 { return _skinTone11; }
+- (UIColor*)skinTone12 { return _skinTone12; }
+- (UIColor*)skinTone13 { return _skinTone13; }
+- (UIColor*)skinTone14 { return _skinTone14; }
+- (UIColor*)skinTone15 { return _skinTone15; }
+- (UIColor*)skinTone16 { return _skinTone16; }
+- (UIColor*)skinTone17 { return _skinTone17; }
+- (UIColor*)skinTone18 { return _skinTone18; }
+- (UIColor*)skinTone19 { return _skinTone19; }
+- (UIColor*)skinTone20 { return _skinTone20; }
+- (UIColor*)skinTone21 { return _skinTone21; }
+- (UIColor*)skinTone22 { return _skinTone22; }
+- (UIColor*)skinTone23 { return _skinTone23; }
+- (UIColor*)skinTone24 { return _skinTone24; }
+- (UIColor*)skinTone25 { return _skinTone25; }
+- (UIColor*)skinTone26 { return _skinTone26; }
+- (UIColor*)skinTone27 { return _skinTone27; }
+- (UIColor*)outlineColor { return _outlineColor; }
 
 #pragma mark - Other Methods
 
-+ (void)drawPaths:(NSMutableArray *)arrayOfPaths
+- (void)drawPaths:(NSMutableArray *)arrayOfPaths
 {
     
     for (NSDictionary *pathInfo in arrayOfPaths) {
@@ -133,7 +141,7 @@ static UIImage* _imageOfFace = nil;
     
 }
 
-+ (void)drawOptions:(NSMutableDictionary *)options
+- (void)drawOptions:(NSMutableDictionary *)options
 {
     NSArray *drawOrder = @[
                            EARS,
@@ -152,7 +160,7 @@ static UIImage* _imageOfFace = nil;
 #pragma mark - Helper Methods
 
 
-+(UIColor *)shadowColor:(UIColor *)baseColor
+-(UIColor *)shadowColor:(UIColor *)baseColor
 {
     CGFloat baseColorRGBA[4];
     [baseColor getRed: &baseColorRGBA[0] green: &baseColorRGBA[1] blue: &baseColorRGBA[2] alpha: &baseColorRGBA[3]];
@@ -162,7 +170,7 @@ static UIImage* _imageOfFace = nil;
     return shadowColor;
 }
 
-+ (NSDictionary *)addColor:(UIColor *)color andPath:(UIBezierPath *)path
+- (NSDictionary *)addColor:(UIColor *)color andPath:(UIBezierPath *)path
 {
     NSDictionary *pathInfo = @{
                                PATH : path,
@@ -174,11 +182,11 @@ static UIImage* _imageOfFace = nil;
 
 #pragma mark - Draw Shoulders
 
-+ (NSMutableArray *)drawShoulders:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawShoulders
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
 
@@ -428,11 +436,11 @@ static UIImage* _imageOfFace = nil;
 
 #pragma mark - Draw Necks
 
-+ (NSMutableArray *)drawNeck:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawNeck
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -598,11 +606,11 @@ static UIImage* _imageOfFace = nil;
 }
 
 #pragma mark - Draw Upper Head
-+ (NSMutableArray *)drawUpperHead:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawUpperHead
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -685,11 +693,11 @@ static UIImage* _imageOfFace = nil;
 
 #pragma mark - Draw Jaws
 
-+ (NSMutableArray *)drawJaw1:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw1:(NSMutableDictionary *)universalColors
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -860,11 +868,11 @@ static UIImage* _imageOfFace = nil;
 }
 
 
-+ (NSMutableArray *)drawJaw2:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw2
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -940,11 +948,11 @@ static UIImage* _imageOfFace = nil;
 
 }
 
-+ (NSMutableArray *)drawJaw3:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw3
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1016,11 +1024,11 @@ static UIImage* _imageOfFace = nil;
 
 }
 
-+ (NSMutableArray *)drawJaw4:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw4
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1100,11 +1108,11 @@ static UIImage* _imageOfFace = nil;
 
 }
 
-+ (NSMutableArray *)drawJaw5:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw5
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1185,11 +1193,11 @@ static UIImage* _imageOfFace = nil;
 
 }
 
-+ (NSMutableArray *)drawJaw6:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw6
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1257,11 +1265,11 @@ static UIImage* _imageOfFace = nil;
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw7:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw7
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1338,11 +1346,11 @@ static UIImage* _imageOfFace = nil;
 
 }
 
-+ (NSMutableArray *)drawJaw8:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw8
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1421,11 +1429,11 @@ static UIImage* _imageOfFace = nil;
 
 }
 
-+ (NSMutableArray *)drawJaw9:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw9
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1516,11 +1524,11 @@ static UIImage* _imageOfFace = nil;
 
 #pragma mark - Draw Ears
 
-+ (NSMutableArray *)drawEars1:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawEars1
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1861,11 +1869,11 @@ static UIImage* _imageOfFace = nil;
 
 #pragma mark - Draw Cheekbones
 
-+ (NSMutableArray *)drawCheekbones1:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawCheekbones1
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1915,11 +1923,11 @@ static UIImage* _imageOfFace = nil;
 }
 
 
-+ (NSMutableArray *)drawCheekbones2:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawCheekbones2
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -1990,11 +1998,11 @@ static UIImage* _imageOfFace = nil;
     return paths;
 }
 
-+ (NSMutableArray *)drawCheekbones3:(NSMutableDictionary *)universalColors forJawNamed:(NSString *)jawShapeName
+- (NSMutableArray *)drawCheekbones3forJawNamed:(NSString *)jawShapeName
 {
     //// Color Declarations
-    UIColor* skinBaseColor = universalColors[UNIVERSAL_SKIN_BASE_COLOR];
-    UIColor* skinShadowColor = [CHAvatarDrawingData shadowColor:skinBaseColor];
+    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -2610,11 +2618,11 @@ static UIImage* _imageOfFace = nil;
 ////////////////////***********************************************////////////////////
 
 #pragma mark - Color Thumbnail
-+ (NSMutableArray *)drawColorThumbnail:(UIColor *)color
+- (NSMutableArray *)drawColorThumbnail:(UIColor *)color
 {
     //// Color Declarations
     UIColor* baseColor = color;
-    UIColor* shadowColor = [CHAvatarDrawingData shadowColor:baseColor];
+    UIColor* shadowColor = [self shadowColor:baseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
     
@@ -2661,101 +2669,101 @@ static UIImage* _imageOfFace = nil;
 #pragma mark - Jaw Thumbnails
 
 
-+ (NSMutableArray *)drawJaw1Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw1Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw1:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw1]];
     
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw2Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw2Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw2:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw2]];
     
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw3Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw3Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw3:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw3]];
     
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw4Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw4Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw4:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw4]];
     
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw5Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw5Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw5:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw5]];
     
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw6Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw6Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw6:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw6]];
     
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw7Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw7Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw7:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw7]];
     
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw8Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw8Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw8:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw8]];
     
     return paths;
 }
 
-+ (NSMutableArray *)drawJaw9Thumbnail:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)drawJaw9Thumbnail
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
-    [paths addObjectsFromArray:[self drawUpperHead:universalColors]];
-    [paths addObjectsFromArray:[self drawEars1:universalColors]];
-    [paths addObjectsFromArray:[self drawJaw9:universalColors]];
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars1]];
+    [paths addObjectsFromArray:[self drawJaw9]];
     
     return paths;
 }

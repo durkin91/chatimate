@@ -26,8 +26,8 @@
 
 - (void)setupAttachmentsAndColors
 {
-    //setup universal colors
-    self.universalColors = [CHAttributeData universalColors];
+    //setup drawing data, which sets up universal colors
+    self.drawingData = [[CHAvatarDrawingData alloc] init];
     
     //setup attachments
     self.attachments = [@[] mutableCopy];
