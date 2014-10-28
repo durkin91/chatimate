@@ -83,6 +83,7 @@
 //Cheekbones
 + (NSMutableArray *)drawCheekbones1:(NSMutableDictionary *)universalColors;
 + (NSMutableArray *)drawCheekbones2:(NSMutableDictionary *)universalColors;
++ (NSMutableArray *)drawCheekbones3:(NSMutableDictionary *)universalColors forJawNamed:(NSString *)jawShapeName;
 
 
 

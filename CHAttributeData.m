@@ -29,6 +29,7 @@
 {
     NSMutableArray *optionsData;
     
+    //SKIN COLOR
     if ([name isEqualToString:SKIN_COLOR]) {
         NSMutableDictionary *option1 = [@{
                                           OPTION_COLOR : [CHAvatarDrawingData skinTone19],
@@ -150,6 +151,7 @@
         
     }
     
+    //JAW SHAPE
     else if ([name isEqualToString:JAW_SHAPE]) {
         NSMutableDictionary *jaw1 = [@{
                                        OPTION_PATHS : [CHAvatarDrawingData drawJaw1:universalColors],
@@ -208,6 +210,7 @@
         
     }
     
+    //EARS
     else if ([name isEqualToString:EARS]) {
         NSMutableDictionary *ears1 = [@{
                                         OPTION_PATHS : [CHAvatarDrawingData drawEars1:universalColors]
@@ -221,6 +224,21 @@
         //set thumbnail frame size
         CGSize thumbnailFrame = CGSizeMake(300, 380);
         [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
+    }
+    
+    //CHEEKBONES
+    else if ([name isEqualToString:CHEEKBONES]) {
+        NSMutableDictionary *cheekbones1 = [@{
+                                              OPTION_PATHS : [CHAvatarDrawingData drawCheekbones1:universalColors]
+                                              } mutableCopy];
+        
+        NSMutableDictionary *cheekbones2 = [@{
+                                              OPTION_PATHS : [CHAvatarDrawingData drawCheekbones2:universalColors]
+                                              } mutableCopy];
+        
+        NSMutableDictionary *cheekbones3 = [@{
+                                              
+                                                  } mutableCopy];
     }
     
     
@@ -360,7 +378,6 @@
     
     //return data
     attachmentsData = @[shoulders, neck, head];
-    NSLog(@"Attachments: %@", attachmentsData);
     return attachmentsData;
 }
 
