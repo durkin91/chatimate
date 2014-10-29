@@ -7,7 +7,7 @@
 //
 
 #import "CHAvatarAttributeOption.h"
-#import "CHAttributeData.h"
+#import "CHCreateAvatarData.h"
 
 
 @implementation CHAvatarAttributeOption

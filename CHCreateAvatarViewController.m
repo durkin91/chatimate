@@ -10,7 +10,7 @@
 #import "CHCreateAvatar.h"
 #import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
-#import "CHAttributeData.h"
+#import "CHCreateAvatarData.h"
 #import "CHCreateAvatarNode.h"
 #import "CHAttachment.h"
 #import "CHAvatar.h"

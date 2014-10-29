@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CHAvatarDrawingData.h"
-#import "CHAttributeData.h"
+#import "CHCreateAvatarData.h"
 
 @class CHCreateAvatar;
 
@@ -23,7 +23,7 @@
 @property (strong, nonatomic) CHAvatarDrawingData *drawingData;
 
 - (id)initWithData:(NSDictionary *)data drawingData:(CHAvatarDrawingData *)drawingData;
-- (void)updateAttachmentWithAttributeData:(CHAttributeData *)attributeData;
+- (void)updateAttachmentWithAttributeData:(CHCreateAvatarData *)attributeData;
 
 
 @end

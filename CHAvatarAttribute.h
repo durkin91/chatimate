@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CHAttributeData.h"
+#import "CHCreateAvatarData.h"
 
 @interface CHAvatarAttribute : NSObject
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSArray *options;
 @property (strong, nonatomic) NSString *type;
-@property (strong, nonatomic) NSArray *attachmentNames;
 
-- (id)initWithData:(NSDictionary *)data attributeData:(CHAttributeData *)attributeDataInstance;
+
+- (id)initWithData:(NSDictionary *)data attributeData:(CHCreateAvatarData *)attributeDataInstance;
 
 @end

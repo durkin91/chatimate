@@ -38,7 +38,7 @@
 
 #pragma mark - Update
 
-- (void)updateAttachmentWithAttributeData:(CHAttributeData *)attributeData
+- (void)updateAttachmentWithAttributeData:(CHCreateAvatarData *)attributeData
 {
     //redraw base drawing. Will refactor this to have the base drawing included as an immutable option
     NSArray *attachmentsData = [attributeData attachmentsData];    

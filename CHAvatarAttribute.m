@@ -17,12 +17,12 @@
     return self;
 }
 
-- (id)initWithData:(NSDictionary *)data attributeData:(CHAttributeData *)attributeDataInstance
+- (id)initWithData:(NSDictionary *)data attributeData:(CHCreateAvatarData *)attributeDataInstance
 {
     self = [super init];
     self.name = data[ATTRIBUTE_NAME];
     self.type = data[ATTRIBUTE_TYPE];
-    self.attachmentNames = data[ATTRIBUTE_ATTACHMENTS];
+
     
     //create the options
     NSArray *optionsData = [attributeDataInstance optionsForAttribute:self.name];

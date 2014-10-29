@@ -9,7 +9,7 @@
 //
 
 #import "CHAvatarDrawingData.h"
-#import "CHAttributeData.h"
+#import "CHCreateAvatarData.h"
 #import "CHAvatarAttributeOption.h"
 
 @interface CHAvatarDrawingData ()
@@ -2345,7 +2345,7 @@ static UIColor* _outlineColor = nil;
                     [bezier25Path closePath];
                     bezier25Path.miterLimit = 4;
                     
-                    [paths addObject:[self addColor:_outlineColor andPath:bezier24Path]];
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier25Path]];
 
                     
                     break;
@@ -2572,8 +2572,1427 @@ static UIColor* _outlineColor = nil;
                 default:
                     break;
             }
+
+            break;
+        }
+            
+        case 4: {
+            
+            switch (jawShape.number) {
+                    
+                case 1: {
+                    
+                    //// Bezier 44 Drawing
+                    UIBezierPath* bezier44Path = UIBezierPath.bezierPath;
+                    [bezier44Path moveToPoint: CGPointMake(50.5, 175.5)];
+                    [bezier44Path addLineToPoint: CGPointMake(53.53, 186.01)];
+                    [bezier44Path addLineToPoint: CGPointMake(60.03, 177.76)];
+                    [bezier44Path addLineToPoint: CGPointMake(50.5, 175.5)];
+                    [bezier44Path closePath];
+                    [paths addObject:[self addColor:skinBaseColor andPath:bezier44Path]];
+                    
+                    
+                    //// Bezier 40 Drawing
+                    UIBezierPath* bezier40Path = UIBezierPath.bezierPath;
+                    [bezier40Path moveToPoint: CGPointMake(54.77, 168.05)];
+                    [bezier40Path addCurveToPoint: CGPointMake(52.46, 180) controlPoint1: CGPointMake(54.41, 169.64) controlPoint2: CGPointMake(55.63, 174.44)];
+                    [bezier40Path addCurveToPoint: CGPointMake(76.7, 233.79) controlPoint1: CGPointMake(44.43, 194.12) controlPoint2: CGPointMake(50.77, 224.03)];
+                    [bezier40Path addCurveToPoint: CGPointMake(71.27, 235.92) controlPoint1: CGPointMake(73.75, 235.1) controlPoint2: CGPointMake(71.27, 235.92)];
+                    [bezier40Path addCurveToPoint: CGPointMake(75.49, 272.42) controlPoint1: CGPointMake(72.64, 240.22) controlPoint2: CGPointMake(74.9, 256.33)];
+                    [bezier40Path addCurveToPoint: CGPointMake(75.2, 291.19) controlPoint1: CGPointMake(75.72, 278.94) controlPoint2: CGPointMake(74.65, 285.09)];
+                    [bezier40Path addCurveToPoint: CGPointMake(58.71, 243.7) controlPoint1: CGPointMake(77.12, 312.33) controlPoint2: CGPointMake(67.32, 281.32)];
+                    [bezier40Path addCurveToPoint: CGPointMake(39.67, 209.63) controlPoint1: CGPointMake(58.71, 243.7) controlPoint2: CGPointMake(38.84, 210.73)];
+                    [bezier40Path addCurveToPoint: CGPointMake(40.47, 170.25) controlPoint1: CGPointMake(40.34, 208.74) controlPoint2: CGPointMake(40.45, 180.91)];
+                    [bezier40Path addCurveToPoint: CGPointMake(40.85, 167.99) controlPoint1: CGPointMake(40.7, 168.82) controlPoint2: CGPointMake(40.85, 167.99)];
+                    [bezier40Path addLineToPoint: CGPointMake(54.77, 168.05)];
+                    [bezier40Path closePath];
+                    bezier40Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier40Path]];
+                    
+                    
+                    //// Bezier 41 Drawing
+                    UIBezierPath* bezier41Path = UIBezierPath.bezierPath;
+                    [bezier41Path moveToPoint: CGPointMake(68.63, 234)];
+                    [bezier41Path addCurveToPoint: CGPointMake(72.36, 265.44) controlPoint1: CGPointMake(74.06, 258.2) controlPoint2: CGPointMake(72.83, 263.25)];
+                    [bezier41Path addCurveToPoint: CGPointMake(64.77, 233.78) controlPoint1: CGPointMake(72.55, 263.23) controlPoint2: CGPointMake(68.45, 236.64)];
+                    [bezier41Path addCurveToPoint: CGPointMake(51.53, 219.9) controlPoint1: CGPointMake(57.74, 232.16) controlPoint2: CGPointMake(53.66, 226.05)];
+                    [bezier41Path addLineToPoint: CGPointMake(51.23, 218.95)];
+                    [bezier41Path addLineToPoint: CGPointMake(51, 218.12)];
+                    [bezier41Path addCurveToPoint: CGPointMake(55.08, 223.08) controlPoint1: CGPointMake(52.25, 219.87) controlPoint2: CGPointMake(53.64, 221.48)];
+                    [bezier41Path addCurveToPoint: CGPointMake(65.89, 232) controlPoint1: CGPointMake(58.07, 226.3) controlPoint2: CGPointMake(61.69, 230.19)];
+                    [bezier41Path addLineToPoint: CGPointMake(66.48, 232.25)];
+                    [bezier41Path addCurveToPoint: CGPointMake(68.21, 232.81) controlPoint1: CGPointMake(67.07, 232.48) controlPoint2: CGPointMake(67.65, 232.67)];
+                    [bezier41Path addLineToPoint: CGPointMake(68.45, 232.88)];
+                    [bezier41Path addCurveToPoint: CGPointMake(70.61, 233.18) controlPoint1: CGPointMake(69.27, 233.05) controlPoint2: CGPointMake(69.93, 233.14)];
+                    [bezier41Path addCurveToPoint: CGPointMake(71.53, 233.21) controlPoint1: CGPointMake(71.11, 233.21) controlPoint2: CGPointMake(71.05, 233.2)];
+                    [bezier41Path addLineToPoint: CGPointMake(72.16, 233.19)];
+                    [bezier41Path addCurveToPoint: CGPointMake(69.14, 233.97) controlPoint1: CGPointMake(71.17, 233.56) controlPoint2: CGPointMake(70.2, 233.81)];
+                    [bezier41Path addLineToPoint: CGPointMake(68.63, 234)];
+                    [bezier41Path closePath];
+                    bezier41Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier41Path]];
+                    
+                    
+                    //// Bezier 42 Drawing
+                    UIBezierPath* bezier42Path = UIBezierPath.bezierPath;
+                    [bezier42Path moveToPoint: CGPointMake(230.26, 234.49)];
+                    [bezier42Path addCurveToPoint: CGPointMake(227.55, 270.23) controlPoint1: CGPointMake(225.08, 258.64) controlPoint2: CGPointMake(227.1, 268.04)];
+                    [bezier42Path addCurveToPoint: CGPointMake(236.83, 235.16) controlPoint1: CGPointMake(229, 264.76) controlPoint2: CGPointMake(233.32, 238.02)];
+                    [bezier42Path addCurveToPoint: CGPointMake(248.05, 220.91) controlPoint1: CGPointMake(243.55, 233.55) controlPoint2: CGPointMake(246.02, 227.04)];
+                    [bezier42Path addLineToPoint: CGPointMake(248.34, 219.96)];
+                    [bezier42Path addLineToPoint: CGPointMake(248.55, 219.13)];
+                    [bezier42Path addCurveToPoint: CGPointMake(244.67, 224.08) controlPoint1: CGPointMake(247.36, 220.88) controlPoint2: CGPointMake(246.04, 222.48)];
+                    [bezier42Path addCurveToPoint: CGPointMake(234.18, 232.08) controlPoint1: CGPointMake(241.81, 227.29) controlPoint2: CGPointMake(237.98, 232.12)];
+                    [bezier42Path addCurveToPoint: CGPointMake(223.48, 232.62) controlPoint1: CGPointMake(229.08, 232.03) controlPoint2: CGPointMake(223.48, 232.62)];
+                    [bezier42Path addCurveToPoint: CGPointMake(230.26, 234.49) controlPoint1: CGPointMake(224.6, 233.23) controlPoint2: CGPointMake(230.26, 234.49)];
+                    [bezier42Path closePath];
+                    bezier42Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier42Path]];
+                    
+                    
+                    //// Bezier 43 Drawing
+                    UIBezierPath* bezier43Path = UIBezierPath.bezierPath;
+                    [bezier43Path moveToPoint: CGPointMake(231.74, 232.5)];
+                    [bezier43Path addCurveToPoint: CGPointMake(228.18, 263.94) controlPoint1: CGPointMake(226.55, 256.69) controlPoint2: CGPointMake(227.73, 261.75)];
+                    [bezier43Path addCurveToPoint: CGPointMake(235.42, 232.28) controlPoint1: CGPointMake(228, 261.73) controlPoint2: CGPointMake(231.91, 235.14)];
+                    [bezier43Path addCurveToPoint: CGPointMake(248.05, 218.4) controlPoint1: CGPointMake(242.13, 230.66) controlPoint2: CGPointMake(246.02, 224.55)];
+                    [bezier43Path addLineToPoint: CGPointMake(248.34, 217.45)];
+                    [bezier43Path addLineToPoint: CGPointMake(248.55, 216.62)];
+                    [bezier43Path addCurveToPoint: CGPointMake(244.67, 221.58) controlPoint1: CGPointMake(247.37, 218.37) controlPoint2: CGPointMake(246.04, 219.98)];
+                    [bezier43Path addCurveToPoint: CGPointMake(234.35, 230.5) controlPoint1: CGPointMake(241.82, 224.79) controlPoint2: CGPointMake(238.36, 228.69)];
+                    [bezier43Path addLineToPoint: CGPointMake(233.79, 230.74)];
+                    [bezier43Path addCurveToPoint: CGPointMake(232.14, 231.31) controlPoint1: CGPointMake(233.22, 230.98) controlPoint2: CGPointMake(232.67, 231.17)];
+                    [bezier43Path addLineToPoint: CGPointMake(231.91, 231.37)];
+                    [bezier43Path addCurveToPoint: CGPointMake(229.85, 231.67) controlPoint1: CGPointMake(231.13, 231.55) controlPoint2: CGPointMake(230.49, 231.64)];
+                    [bezier43Path addCurveToPoint: CGPointMake(228.97, 231.7) controlPoint1: CGPointMake(229.37, 231.71) controlPoint2: CGPointMake(229.42, 231.69)];
+                    [bezier43Path addLineToPoint: CGPointMake(228.36, 231.69)];
+                    [bezier43Path addCurveToPoint: CGPointMake(231.25, 232.47) controlPoint1: CGPointMake(229.32, 232.05) controlPoint2: CGPointMake(230.24, 232.31)];
+                    [bezier43Path addLineToPoint: CGPointMake(231.74, 232.5)];
+                    [bezier43Path closePath];
+                    bezier43Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier43Path]];
+                    
+                    break;
+                    
+                }
+                    
+                case 2: {
+                    
+                    //// Bezier 45 Drawing
+                    UIBezierPath* bezier45Path = UIBezierPath.bezierPath;
+                    [bezier45Path moveToPoint: CGPointMake(51.12, 173.31)];
+                    [bezier45Path addLineToPoint: CGPointMake(54.14, 183.82)];
+                    [bezier45Path addLineToPoint: CGPointMake(60.64, 175.57)];
+                    [bezier45Path addLineToPoint: CGPointMake(51.12, 173.31)];
+                    [bezier45Path closePath];
+                    [paths addObject:[self addColor:skinBaseColor andPath:bezier45Path]];
+                    
+                    //// Bezier 46 Drawing
+                    UIBezierPath* bezier46Path = UIBezierPath.bezierPath;
+                    [bezier46Path moveToPoint: CGPointMake(55.39, 165.85)];
+                    [bezier46Path addCurveToPoint: CGPointMake(53.08, 177.81) controlPoint1: CGPointMake(55.03, 167.45) controlPoint2: CGPointMake(56.24, 172.25)];
+                    [bezier46Path addCurveToPoint: CGPointMake(77.32, 231.6) controlPoint1: CGPointMake(45.04, 191.93) controlPoint2: CGPointMake(51.39, 221.84)];
+                    [bezier46Path addCurveToPoint: CGPointMake(71.89, 233.73) controlPoint1: CGPointMake(74.36, 232.91) controlPoint2: CGPointMake(71.89, 233.73)];
+                    [bezier46Path addCurveToPoint: CGPointMake(76.1, 270.23) controlPoint1: CGPointMake(73.26, 238.03) controlPoint2: CGPointMake(75.52, 254.14)];
+                    [bezier46Path addCurveToPoint: CGPointMake(75.82, 289) controlPoint1: CGPointMake(76.34, 276.75) controlPoint2: CGPointMake(75.27, 282.9)];
+                    [bezier46Path addCurveToPoint: CGPointMake(59.33, 241.5) controlPoint1: CGPointMake(77.73, 310.14) controlPoint2: CGPointMake(67.94, 279.13)];
+                    [bezier46Path addCurveToPoint: CGPointMake(40.28, 207.44) controlPoint1: CGPointMake(59.33, 241.5) controlPoint2: CGPointMake(39.46, 208.54)];
+                    [bezier46Path addCurveToPoint: CGPointMake(41.09, 168.06) controlPoint1: CGPointMake(40.95, 206.55) controlPoint2: CGPointMake(41.07, 178.72)];
+                    [bezier46Path addCurveToPoint: CGPointMake(41.46, 165.8) controlPoint1: CGPointMake(41.32, 166.63) controlPoint2: CGPointMake(41.46, 165.8)];
+                    [bezier46Path addLineToPoint: CGPointMake(55.39, 165.85)];
+                    [bezier46Path closePath];
+                    bezier46Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier46Path]];
+                    
+                    
+                    //// Bezier 47 Drawing
+                    UIBezierPath* bezier47Path = UIBezierPath.bezierPath;
+                    [bezier47Path moveToPoint: CGPointMake(69.25, 231.81)];
+                    [bezier47Path addCurveToPoint: CGPointMake(72.98, 263.25) controlPoint1: CGPointMake(74.68, 256.01) controlPoint2: CGPointMake(73.45, 261.06)];
+                    [bezier47Path addCurveToPoint: CGPointMake(65.39, 231.59) controlPoint1: CGPointMake(73.16, 261.04) controlPoint2: CGPointMake(69.07, 234.45)];
+                    [bezier47Path addCurveToPoint: CGPointMake(52.15, 217.71) controlPoint1: CGPointMake(58.35, 229.97) controlPoint2: CGPointMake(54.28, 223.86)];
+                    [bezier47Path addLineToPoint: CGPointMake(51.85, 216.76)];
+                    [bezier47Path addLineToPoint: CGPointMake(51.62, 215.93)];
+                    [bezier47Path addCurveToPoint: CGPointMake(55.69, 220.89) controlPoint1: CGPointMake(52.87, 217.68) controlPoint2: CGPointMake(54.26, 219.29)];
+                    [bezier47Path addCurveToPoint: CGPointMake(66.51, 229.81) controlPoint1: CGPointMake(58.68, 224.1) controlPoint2: CGPointMake(62.31, 228)];
+                    [bezier47Path addLineToPoint: CGPointMake(67.1, 230.06)];
+                    [bezier47Path addCurveToPoint: CGPointMake(68.83, 230.62) controlPoint1: CGPointMake(67.69, 230.29) controlPoint2: CGPointMake(68.27, 230.48)];
+                    [bezier47Path addLineToPoint: CGPointMake(69.07, 230.68)];
+                    [bezier47Path addCurveToPoint: CGPointMake(71.23, 230.98) controlPoint1: CGPointMake(69.89, 230.86) controlPoint2: CGPointMake(70.55, 230.95)];
+                    [bezier47Path addCurveToPoint: CGPointMake(72.14, 231.01) controlPoint1: CGPointMake(71.73, 231.02) controlPoint2: CGPointMake(71.67, 231.01)];
+                    [bezier47Path addLineToPoint: CGPointMake(72.78, 231)];
+                    [bezier47Path addCurveToPoint: CGPointMake(69.76, 231.78) controlPoint1: CGPointMake(71.78, 231.37) controlPoint2: CGPointMake(70.82, 231.62)];
+                    [bezier47Path addLineToPoint: CGPointMake(69.25, 231.81)];
+                    [bezier47Path closePath];
+                    bezier47Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier47Path]];
+                    
+                    
+                    //// Bezier 48 Drawing
+                    UIBezierPath* bezier48Path = UIBezierPath.bezierPath;
+                    [bezier48Path moveToPoint: CGPointMake(230.88, 232.3)];
+                    [bezier48Path addCurveToPoint: CGPointMake(228.17, 268.04) controlPoint1: CGPointMake(225.69, 256.45) controlPoint2: CGPointMake(227.72, 265.85)];
+                    [bezier48Path addCurveToPoint: CGPointMake(237.45, 232.97) controlPoint1: CGPointMake(229.62, 262.57) controlPoint2: CGPointMake(233.93, 235.83)];
+                    [bezier48Path addCurveToPoint: CGPointMake(248.67, 218.72) controlPoint1: CGPointMake(244.16, 231.36) controlPoint2: CGPointMake(246.63, 224.85)];
+                    [bezier48Path addLineToPoint: CGPointMake(248.95, 217.77)];
+                    [bezier48Path addLineToPoint: CGPointMake(249.17, 216.94)];
+                    [bezier48Path addCurveToPoint: CGPointMake(245.28, 221.89) controlPoint1: CGPointMake(247.98, 218.69) controlPoint2: CGPointMake(246.66, 220.29)];
+                    [bezier48Path addCurveToPoint: CGPointMake(234.8, 229.89) controlPoint1: CGPointMake(242.43, 225.1) controlPoint2: CGPointMake(238.6, 229.93)];
+                    [bezier48Path addCurveToPoint: CGPointMake(224.1, 230.43) controlPoint1: CGPointMake(229.7, 229.84) controlPoint2: CGPointMake(224.1, 230.43)];
+                    [bezier48Path addCurveToPoint: CGPointMake(230.88, 232.3) controlPoint1: CGPointMake(225.21, 231.04) controlPoint2: CGPointMake(230.88, 232.3)];
+                    [bezier48Path closePath];
+                    bezier48Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier48Path]];
+                    
+                    
+                    //// Bezier 49 Drawing
+                    UIBezierPath* bezier49Path = UIBezierPath.bezierPath;
+                    [bezier49Path moveToPoint: CGPointMake(232.35, 230.31)];
+                    [bezier49Path addCurveToPoint: CGPointMake(228.79, 261.75) controlPoint1: CGPointMake(227.17, 254.5) controlPoint2: CGPointMake(228.34, 259.56)];
+                    [bezier49Path addCurveToPoint: CGPointMake(236.04, 230.08) controlPoint1: CGPointMake(228.62, 259.54) controlPoint2: CGPointMake(232.53, 232.95)];
+                    [bezier49Path addCurveToPoint: CGPointMake(248.67, 216.21) controlPoint1: CGPointMake(242.75, 228.47) controlPoint2: CGPointMake(246.64, 222.36)];
+                    [bezier49Path addLineToPoint: CGPointMake(248.95, 215.26)];
+                    [bezier49Path addLineToPoint: CGPointMake(249.17, 214.43)];
+                    [bezier49Path addCurveToPoint: CGPointMake(245.29, 219.39) controlPoint1: CGPointMake(247.98, 216.18) controlPoint2: CGPointMake(246.66, 217.79)];
+                    [bezier49Path addCurveToPoint: CGPointMake(234.97, 228.31) controlPoint1: CGPointMake(242.43, 222.6) controlPoint2: CGPointMake(238.97, 226.49)];
+                    [bezier49Path addLineToPoint: CGPointMake(234.4, 228.55)];
+                    [bezier49Path addCurveToPoint: CGPointMake(232.76, 229.12) controlPoint1: CGPointMake(233.84, 228.78) controlPoint2: CGPointMake(233.29, 228.97)];
+                    [bezier49Path addLineToPoint: CGPointMake(232.52, 229.18)];
+                    [bezier49Path addCurveToPoint: CGPointMake(230.46, 229.48) controlPoint1: CGPointMake(231.74, 229.36) controlPoint2: CGPointMake(231.11, 229.45)];
+                    [bezier49Path addCurveToPoint: CGPointMake(229.59, 229.51) controlPoint1: CGPointMake(229.98, 229.51) controlPoint2: CGPointMake(230.04, 229.5)];
+                    [bezier49Path addLineToPoint: CGPointMake(228.98, 229.49)];
+                    [bezier49Path addCurveToPoint: CGPointMake(231.86, 230.28) controlPoint1: CGPointMake(229.93, 229.86) controlPoint2: CGPointMake(230.85, 230.12)];
+                    [bezier49Path addLineToPoint: CGPointMake(232.35, 230.31)];
+                    [bezier49Path closePath];
+                    bezier49Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier49Path]];
+                    
+                    break;
+                }
+                    
+                case 3: {
+                    
+                    //// Bezier 50 Drawing
+                    UIBezierPath* bezier50Path = UIBezierPath.bezierPath;
+                    [bezier50Path moveToPoint: CGPointMake(49.06, 172.37)];
+                    [bezier50Path addLineToPoint: CGPointMake(52.09, 182.87)];
+                    [bezier50Path addLineToPoint: CGPointMake(58.59, 174.62)];
+                    [bezier50Path addLineToPoint: CGPointMake(49.06, 172.37)];
+                    [bezier50Path closePath];
+                    [paths addObject:[self addColor:skinBaseColor andPath:bezier50Path]];
+                    
+                    
+                    //// Bezier 51 Drawing
+                    UIBezierPath* bezier51Path = UIBezierPath.bezierPath;
+                    [bezier51Path moveToPoint: CGPointMake(53.33, 164.91)];
+                    [bezier51Path addCurveToPoint: CGPointMake(53.08, 177.81) controlPoint1: CGPointMake(52.98, 166.51) controlPoint2: CGPointMake(56.24, 172.25)];
+                    [bezier51Path addCurveToPoint: CGPointMake(75.26, 230.66) controlPoint1: CGPointMake(45.04, 191.93) controlPoint2: CGPointMake(49.33, 220.9)];
+                    [bezier51Path addCurveToPoint: CGPointMake(69.84, 232.79) controlPoint1: CGPointMake(72.31, 231.96) controlPoint2: CGPointMake(69.84, 232.79)];
+                    [bezier51Path addCurveToPoint: CGPointMake(74.05, 269.29) controlPoint1: CGPointMake(71.21, 237.09) controlPoint2: CGPointMake(73.46, 253.2)];
+                    [bezier51Path addCurveToPoint: CGPointMake(73.76, 288.06) controlPoint1: CGPointMake(74.29, 275.81) controlPoint2: CGPointMake(73.21, 281.96)];
+                    [bezier51Path addCurveToPoint: CGPointMake(57.27, 240.56) controlPoint1: CGPointMake(75.68, 309.2) controlPoint2: CGPointMake(65.88, 278.19)];
+                    [bezier51Path addCurveToPoint: CGPointMake(38.23, 206.5) controlPoint1: CGPointMake(57.27, 240.56) controlPoint2: CGPointMake(37.4, 207.6)];
+                    [bezier51Path addCurveToPoint: CGPointMake(39.04, 167.12) controlPoint1: CGPointMake(38.9, 205.61) controlPoint2: CGPointMake(39.02, 177.78)];
+                    [bezier51Path addCurveToPoint: CGPointMake(39.41, 164.85) controlPoint1: CGPointMake(39.26, 165.68) controlPoint2: CGPointMake(39.41, 164.85)];
+                    [bezier51Path addLineToPoint: CGPointMake(53.33, 164.91)];
+                    [bezier51Path closePath];
+                    bezier51Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier51Path]];
+                    
+                    
+                    //// Bezier 52 Drawing
+                    UIBezierPath* bezier52Path = UIBezierPath.bezierPath;
+                    [bezier52Path moveToPoint: CGPointMake(67.19, 230.87)];
+                    [bezier52Path addCurveToPoint: CGPointMake(70.92, 262.31) controlPoint1: CGPointMake(72.62, 255.06) controlPoint2: CGPointMake(71.4, 260.12)];
+                    [bezier52Path addCurveToPoint: CGPointMake(63.33, 230.65) controlPoint1: CGPointMake(71.11, 260.1) controlPoint2: CGPointMake(67.01, 233.51)];
+                    [bezier52Path addCurveToPoint: CGPointMake(50.09, 216.77) controlPoint1: CGPointMake(56.3, 229.03) controlPoint2: CGPointMake(52.22, 222.92)];
+                    [bezier52Path addLineToPoint: CGPointMake(49.8, 215.82)];
+                    [bezier52Path addLineToPoint: CGPointMake(49.57, 214.99)];
+                    [bezier52Path addCurveToPoint: CGPointMake(53.64, 219.95) controlPoint1: CGPointMake(50.81, 216.74) controlPoint2: CGPointMake(52.2, 218.35)];
+                    [bezier52Path addCurveToPoint: CGPointMake(64.45, 228.87) controlPoint1: CGPointMake(56.63, 223.16) controlPoint2: CGPointMake(60.26, 227.06)];
+                    [bezier52Path addLineToPoint: CGPointMake(65.04, 229.11)];
+                    [bezier52Path addCurveToPoint: CGPointMake(66.77, 229.68) controlPoint1: CGPointMake(65.63, 229.35) controlPoint2: CGPointMake(66.21, 229.54)];
+                    [bezier52Path addLineToPoint: CGPointMake(67.01, 229.74)];
+                    [bezier52Path addCurveToPoint: CGPointMake(69.17, 230.04) controlPoint1: CGPointMake(67.83, 229.92) controlPoint2: CGPointMake(68.49, 230.01)];
+                    [bezier52Path addCurveToPoint: CGPointMake(70.09, 230.07) controlPoint1: CGPointMake(69.68, 230.08) controlPoint2: CGPointMake(69.62, 230.07)];
+                    [bezier52Path addLineToPoint: CGPointMake(70.73, 230.06)];
+                    [bezier52Path addCurveToPoint: CGPointMake(67.71, 230.84) controlPoint1: CGPointMake(69.73, 230.42) controlPoint2: CGPointMake(68.76, 230.68)];
+                    [bezier52Path addLineToPoint: CGPointMake(67.19, 230.87)];
+                    [bezier52Path closePath];
+                    bezier52Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier52Path]];
+                    
+                    
+                    //// Bezier 53 Drawing
+                    UIBezierPath* bezier53Path = UIBezierPath.bezierPath;
+                    [bezier53Path moveToPoint: CGPointMake(234.83, 231.36)];
+                    [bezier53Path addCurveToPoint: CGPointMake(232.11, 267.1) controlPoint1: CGPointMake(229.64, 255.51) controlPoint2: CGPointMake(231.66, 264.91)];
+                    [bezier53Path addCurveToPoint: CGPointMake(241.39, 232.03) controlPoint1: CGPointMake(233.56, 261.63) controlPoint2: CGPointMake(237.88, 234.89)];
+                    [bezier53Path addCurveToPoint: CGPointMake(252.62, 217.77) controlPoint1: CGPointMake(248.11, 230.41) controlPoint2: CGPointMake(250.58, 223.91)];
+                    [bezier53Path addLineToPoint: CGPointMake(252.9, 216.82)];
+                    [bezier53Path addLineToPoint: CGPointMake(253.12, 216)];
+                    [bezier53Path addCurveToPoint: CGPointMake(249.23, 220.95) controlPoint1: CGPointMake(251.93, 217.74) controlPoint2: CGPointMake(250.6, 219.35)];
+                    [bezier53Path addCurveToPoint: CGPointMake(238.74, 228.95) controlPoint1: CGPointMake(246.37, 224.15) controlPoint2: CGPointMake(242.55, 228.99)];
+                    [bezier53Path addCurveToPoint: CGPointMake(228.04, 229.49) controlPoint1: CGPointMake(233.64, 228.9) controlPoint2: CGPointMake(228.04, 229.49)];
+                    [bezier53Path addCurveToPoint: CGPointMake(234.83, 231.36) controlPoint1: CGPointMake(229.16, 230.1) controlPoint2: CGPointMake(234.83, 231.36)];
+                    [bezier53Path closePath];
+                    bezier53Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier53Path]];
+                    
+                    
+                    //// Bezier 54 Drawing
+                    UIBezierPath* bezier54Path = UIBezierPath.bezierPath;
+                    [bezier54Path moveToPoint: CGPointMake(236.3, 229.37)];
+                    [bezier54Path addCurveToPoint: CGPointMake(232.74, 260.81) controlPoint1: CGPointMake(231.12, 253.56) controlPoint2: CGPointMake(232.29, 258.62)];
+                    [bezier54Path addCurveToPoint: CGPointMake(239.98, 229.14) controlPoint1: CGPointMake(232.56, 258.6) controlPoint2: CGPointMake(236.47, 232.01)];
+                    [bezier54Path addCurveToPoint: CGPointMake(252.62, 215.27) controlPoint1: CGPointMake(246.69, 227.52) controlPoint2: CGPointMake(250.58, 221.42)];
+                    [bezier54Path addLineToPoint: CGPointMake(252.9, 214.32)];
+                    [bezier54Path addLineToPoint: CGPointMake(253.12, 213.49)];
+                    [bezier54Path addCurveToPoint: CGPointMake(249.23, 218.45) controlPoint1: CGPointMake(251.93, 215.24) controlPoint2: CGPointMake(250.6, 216.85)];
+                    [bezier54Path addCurveToPoint: CGPointMake(238.91, 227.36) controlPoint1: CGPointMake(246.38, 221.66) controlPoint2: CGPointMake(242.92, 225.55)];
+                    [bezier54Path addLineToPoint: CGPointMake(238.35, 227.61)];
+                    [bezier54Path addCurveToPoint: CGPointMake(236.7, 228.18) controlPoint1: CGPointMake(237.79, 227.84) controlPoint2: CGPointMake(237.24, 228.03)];
+                    [bezier54Path addLineToPoint: CGPointMake(236.47, 228.24)];
+                    [bezier54Path addCurveToPoint: CGPointMake(234.41, 228.54) controlPoint1: CGPointMake(235.69, 228.42) controlPoint2: CGPointMake(235.06, 228.51)];
+                    [bezier54Path addCurveToPoint: CGPointMake(233.53, 228.57) controlPoint1: CGPointMake(233.93, 228.57) controlPoint2: CGPointMake(233.99, 228.56)];
+                    [bezier54Path addLineToPoint: CGPointMake(232.93, 228.55)];
+                    [bezier54Path addCurveToPoint: CGPointMake(235.81, 229.34) controlPoint1: CGPointMake(233.88, 228.92) controlPoint2: CGPointMake(234.8, 229.17)];
+                    [bezier54Path addLineToPoint: CGPointMake(236.3, 229.37)];
+                    [bezier54Path closePath];
+                    bezier54Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier54Path]];
+
+                    
+                    break;
+                    
+                }
+                    
+                case 4: {
+                    
+                    //// Bezier 55 Drawing
+                    UIBezierPath* bezier55Path = UIBezierPath.bezierPath;
+                    [bezier55Path moveToPoint: CGPointMake(51.79, 173.03)];
+                    [bezier55Path addLineToPoint: CGPointMake(54.82, 183.54)];
+                    [bezier55Path addLineToPoint: CGPointMake(61.32, 175.29)];
+                    [bezier55Path addLineToPoint: CGPointMake(51.79, 173.03)];
+                    [bezier55Path closePath];
+                    [paths addObject:[self addColor:skinBaseColor andPath:bezier55Path]];
+                    
+                    
+                    //// Bezier 56 Drawing
+                    UIBezierPath* bezier56Path = UIBezierPath.bezierPath;
+                    [bezier56Path moveToPoint: CGPointMake(56.06, 165.58)];
+                    [bezier56Path addCurveToPoint: CGPointMake(55.81, 178.48) controlPoint1: CGPointMake(55.71, 167.18) controlPoint2: CGPointMake(58.97, 172.92)];
+                    [bezier56Path addCurveToPoint: CGPointMake(77.99, 231.32) controlPoint1: CGPointMake(47.77, 192.59) controlPoint2: CGPointMake(52.06, 221.56)];
+                    [bezier56Path addCurveToPoint: CGPointMake(72.56, 233.45) controlPoint1: CGPointMake(75.04, 232.63) controlPoint2: CGPointMake(72.56, 233.45)];
+                    [bezier56Path addCurveToPoint: CGPointMake(76.78, 269.95) controlPoint1: CGPointMake(73.93, 237.75) controlPoint2: CGPointMake(76.19, 253.86)];
+                    [bezier56Path addCurveToPoint: CGPointMake(76.49, 288.73) controlPoint1: CGPointMake(77.01, 276.48) controlPoint2: CGPointMake(75.94, 282.63)];
+                    [bezier56Path addCurveToPoint: CGPointMake(60, 241.23) controlPoint1: CGPointMake(78.41, 309.87) controlPoint2: CGPointMake(68.61, 278.85)];
+                    [bezier56Path addCurveToPoint: CGPointMake(40.96, 207.16) controlPoint1: CGPointMake(60, 241.23) controlPoint2: CGPointMake(40.13, 208.26)];
+                    [bezier56Path addCurveToPoint: CGPointMake(41.77, 167.78) controlPoint1: CGPointMake(41.63, 206.27) controlPoint2: CGPointMake(41.74, 178.44)];
+                    [bezier56Path addCurveToPoint: CGPointMake(42.14, 165.52) controlPoint1: CGPointMake(41.99, 166.35) controlPoint2: CGPointMake(42.14, 165.52)];
+                    [bezier56Path addLineToPoint: CGPointMake(56.06, 165.58)];
+                    [bezier56Path closePath];
+                    bezier56Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier56Path]];
+                    
+                    
+                    //// Bezier 57 Drawing
+                    UIBezierPath* bezier57Path = UIBezierPath.bezierPath;
+                    [bezier57Path moveToPoint: CGPointMake(69.92, 231.54)];
+                    [bezier57Path addCurveToPoint: CGPointMake(73.65, 262.98) controlPoint1: CGPointMake(75.35, 255.73) controlPoint2: CGPointMake(74.12, 260.79)];
+                    [bezier57Path addCurveToPoint: CGPointMake(66.06, 231.31) controlPoint1: CGPointMake(73.84, 260.76) controlPoint2: CGPointMake(69.74, 234.18)];
+                    [bezier57Path addCurveToPoint: CGPointMake(52.82, 217.44) controlPoint1: CGPointMake(59.03, 229.69) controlPoint2: CGPointMake(54.95, 223.59)];
+                    [bezier57Path addLineToPoint: CGPointMake(52.52, 216.48)];
+                    [bezier57Path addLineToPoint: CGPointMake(52.3, 215.66)];
+                    [bezier57Path addCurveToPoint: CGPointMake(56.37, 220.62) controlPoint1: CGPointMake(53.54, 217.41) controlPoint2: CGPointMake(54.93, 219.02)];
+                    [bezier57Path addCurveToPoint: CGPointMake(67.18, 229.53) controlPoint1: CGPointMake(59.36, 223.83) controlPoint2: CGPointMake(62.98, 227.72)];
+                    [bezier57Path addLineToPoint: CGPointMake(67.77, 229.78)];
+                    [bezier57Path addCurveToPoint: CGPointMake(69.5, 230.34) controlPoint1: CGPointMake(68.36, 230.01) controlPoint2: CGPointMake(68.94, 230.2)];
+                    [bezier57Path addLineToPoint: CGPointMake(69.74, 230.41)];
+                    [bezier57Path addCurveToPoint: CGPointMake(71.9, 230.71) controlPoint1: CGPointMake(70.56, 230.58) controlPoint2: CGPointMake(71.22, 230.68)];
+                    [bezier57Path addCurveToPoint: CGPointMake(72.82, 230.74) controlPoint1: CGPointMake(72.4, 230.74) controlPoint2: CGPointMake(72.34, 230.73)];
+                    [bezier57Path addLineToPoint: CGPointMake(73.46, 230.72)];
+                    [bezier57Path addCurveToPoint: CGPointMake(70.44, 231.51) controlPoint1: CGPointMake(72.46, 231.09) controlPoint2: CGPointMake(71.49, 231.34)];
+                    [bezier57Path addLineToPoint: CGPointMake(69.92, 231.54)];
+                    [bezier57Path closePath];
+                    bezier57Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier57Path]];
+                    
+                    
+                    //// Bezier 58 Drawing
+                    UIBezierPath* bezier58Path = UIBezierPath.bezierPath;
+                    [bezier58Path moveToPoint: CGPointMake(237.55, 232.03)];
+                    [bezier58Path addCurveToPoint: CGPointMake(234.84, 267.76) controlPoint1: CGPointMake(232.37, 256.17) controlPoint2: CGPointMake(234.39, 265.58)];
+                    [bezier58Path addCurveToPoint: CGPointMake(244.12, 232.7) controlPoint1: CGPointMake(236.29, 262.3) controlPoint2: CGPointMake(240.61, 235.55)];
+                    [bezier58Path addCurveToPoint: CGPointMake(255.34, 218.44) controlPoint1: CGPointMake(250.84, 231.08) controlPoint2: CGPointMake(253.31, 224.58)];
+                    [bezier58Path addLineToPoint: CGPointMake(255.63, 217.49)];
+                    [bezier58Path addLineToPoint: CGPointMake(255.84, 216.66)];
+                    [bezier58Path addCurveToPoint: CGPointMake(251.96, 221.62) controlPoint1: CGPointMake(254.66, 218.41) controlPoint2: CGPointMake(253.33, 220.02)];
+                    [bezier58Path addCurveToPoint: CGPointMake(241.47, 229.62) controlPoint1: CGPointMake(249.1, 224.82) controlPoint2: CGPointMake(245.27, 229.65)];
+                    [bezier58Path addCurveToPoint: CGPointMake(230.77, 230.15) controlPoint1: CGPointMake(236.37, 229.57) controlPoint2: CGPointMake(230.77, 230.15)];
+                    [bezier58Path addCurveToPoint: CGPointMake(237.55, 232.03) controlPoint1: CGPointMake(231.89, 230.76) controlPoint2: CGPointMake(237.55, 232.03)];
+                    [bezier58Path closePath];
+                    bezier58Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier58Path]];
+                    
+                    
+                    //// Bezier 59 Drawing
+                    UIBezierPath* bezier59Path = UIBezierPath.bezierPath;
+                    [bezier59Path moveToPoint: CGPointMake(239.03, 230.04)];
+                    [bezier59Path addCurveToPoint: CGPointMake(235.47, 261.47) controlPoint1: CGPointMake(233.85, 254.23) controlPoint2: CGPointMake(235.02, 259.28)];
+                    [bezier59Path addCurveToPoint: CGPointMake(242.71, 229.81) controlPoint1: CGPointMake(235.29, 259.26) controlPoint2: CGPointMake(239.2, 232.67)];
+                    [bezier59Path addCurveToPoint: CGPointMake(255.34, 215.93) controlPoint1: CGPointMake(249.42, 228.19) controlPoint2: CGPointMake(253.31, 222.08)];
+                    [bezier59Path addLineToPoint: CGPointMake(255.63, 214.98)];
+                    [bezier59Path addLineToPoint: CGPointMake(255.84, 214.15)];
+                    [bezier59Path addCurveToPoint: CGPointMake(251.96, 219.11) controlPoint1: CGPointMake(254.66, 215.9) controlPoint2: CGPointMake(253.33, 217.51)];
+                    [bezier59Path addCurveToPoint: CGPointMake(241.64, 228.03) controlPoint1: CGPointMake(249.11, 222.33) controlPoint2: CGPointMake(245.65, 226.22)];
+                    [bezier59Path addLineToPoint: CGPointMake(241.08, 228.28)];
+                    [bezier59Path addCurveToPoint: CGPointMake(239.43, 228.84) controlPoint1: CGPointMake(240.52, 228.51) controlPoint2: CGPointMake(239.96, 228.7)];
+                    [bezier59Path addLineToPoint: CGPointMake(239.2, 228.91)];
+                    [bezier59Path addCurveToPoint: CGPointMake(237.14, 229.21) controlPoint1: CGPointMake(238.42, 229.08) controlPoint2: CGPointMake(237.79, 229.17)];
+                    [bezier59Path addCurveToPoint: CGPointMake(236.26, 229.24) controlPoint1: CGPointMake(236.66, 229.24) controlPoint2: CGPointMake(236.72, 229.23)];
+                    [bezier59Path addLineToPoint: CGPointMake(235.65, 229.22)];
+                    [bezier59Path addCurveToPoint: CGPointMake(238.54, 230) controlPoint1: CGPointMake(236.61, 229.59) controlPoint2: CGPointMake(237.53, 229.84)];
+                    [bezier59Path addLineToPoint: CGPointMake(239.03, 230.04)];
+                    [bezier59Path closePath];
+                    bezier59Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier59Path]];
+                    
+                    break;
+                }
+                
+                case 5: {
+                    
+                    //// Bezier 61 Drawing
+                    UIBezierPath* bezier61Path = UIBezierPath.bezierPath;
+                    [bezier61Path moveToPoint: CGPointMake(53.32, 165)];
+                    [bezier61Path addCurveToPoint: CGPointMake(53.06, 177.9) controlPoint1: CGPointMake(52.96, 166.6) controlPoint2: CGPointMake(56.23, 172.34)];
+                    [bezier61Path addCurveToPoint: CGPointMake(75.25, 230.75) controlPoint1: CGPointMake(45.03, 192.02) controlPoint2: CGPointMake(49.32, 220.99)];
+                    [bezier61Path addCurveToPoint: CGPointMake(69.82, 232.88) controlPoint1: CGPointMake(72.29, 232.05) controlPoint2: CGPointMake(69.82, 232.88)];
+                    [bezier61Path addCurveToPoint: CGPointMake(74.03, 269.38) controlPoint1: CGPointMake(71.19, 237.18) controlPoint2: CGPointMake(73.45, 253.29)];
+                    [bezier61Path addCurveToPoint: CGPointMake(73.75, 288.15) controlPoint1: CGPointMake(74.27, 275.9) controlPoint2: CGPointMake(73.2, 282.05)];
+                    [bezier61Path addCurveToPoint: CGPointMake(57.26, 240.65) controlPoint1: CGPointMake(75.66, 309.29) controlPoint2: CGPointMake(65.87, 278.28)];
+                    [bezier61Path addCurveToPoint: CGPointMake(38.21, 206.59) controlPoint1: CGPointMake(57.26, 240.65) controlPoint2: CGPointMake(37.39, 207.69)];
+                    [bezier61Path addCurveToPoint: CGPointMake(39.02, 167.21) controlPoint1: CGPointMake(38.88, 205.7) controlPoint2: CGPointMake(39, 177.87)];
+                    [bezier61Path addCurveToPoint: CGPointMake(39.39, 164.94) controlPoint1: CGPointMake(39.25, 165.77) controlPoint2: CGPointMake(39.39, 164.94)];
+                    [bezier61Path addLineToPoint: CGPointMake(53.32, 165)];
+                    [bezier61Path closePath];
+                    bezier61Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier61Path]];
+                    
+                    
+                    //// Bezier 62 Drawing
+                    UIBezierPath* bezier62Path = UIBezierPath.bezierPath;
+                    [bezier62Path moveToPoint: CGPointMake(67.18, 230.96)];
+                    [bezier62Path addCurveToPoint: CGPointMake(70.91, 262.4) controlPoint1: CGPointMake(72.61, 255.15) controlPoint2: CGPointMake(71.38, 260.21)];
+                    [bezier62Path addCurveToPoint: CGPointMake(63.32, 230.74) controlPoint1: CGPointMake(71.09, 260.19) controlPoint2: CGPointMake(67, 233.6)];
+                    [bezier62Path addCurveToPoint: CGPointMake(50.08, 216.86) controlPoint1: CGPointMake(56.28, 229.12) controlPoint2: CGPointMake(52.21, 223.01)];
+                    [bezier62Path addLineToPoint: CGPointMake(49.78, 215.91)];
+                    [bezier62Path addLineToPoint: CGPointMake(49.55, 215.08)];
+                    [bezier62Path addCurveToPoint: CGPointMake(53.62, 220.04) controlPoint1: CGPointMake(50.8, 216.83) controlPoint2: CGPointMake(52.19, 218.44)];
+                    [bezier62Path addCurveToPoint: CGPointMake(64.44, 228.96) controlPoint1: CGPointMake(56.61, 223.25) controlPoint2: CGPointMake(60.24, 227.15)];
+                    [bezier62Path addLineToPoint: CGPointMake(65.03, 229.2)];
+                    [bezier62Path addCurveToPoint: CGPointMake(66.75, 229.77) controlPoint1: CGPointMake(65.62, 229.44) controlPoint2: CGPointMake(66.2, 229.63)];
+                    [bezier62Path addLineToPoint: CGPointMake(67, 229.83)];
+                    [bezier62Path addCurveToPoint: CGPointMake(69.16, 230.13) controlPoint1: CGPointMake(67.82, 230.01) controlPoint2: CGPointMake(68.48, 230.1)];
+                    [bezier62Path addCurveToPoint: CGPointMake(70.07, 230.16) controlPoint1: CGPointMake(69.66, 230.17) controlPoint2: CGPointMake(69.6, 230.15)];
+                    [bezier62Path addLineToPoint: CGPointMake(70.71, 230.15)];
+                    [bezier62Path addCurveToPoint: CGPointMake(67.69, 230.93) controlPoint1: CGPointMake(69.71, 230.51) controlPoint2: CGPointMake(68.75, 230.77)];
+                    [bezier62Path addLineToPoint: CGPointMake(67.18, 230.96)];
+                    [bezier62Path closePath];
+                    bezier62Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier62Path]];
+                    
+                    
+                    //// Bezier 63 Drawing
+                    UIBezierPath* bezier63Path = UIBezierPath.bezierPath;
+                    [bezier63Path moveToPoint: CGPointMake(233.31, 231.95)];
+                    [bezier63Path addCurveToPoint: CGPointMake(230.6, 267.69) controlPoint1: CGPointMake(228.12, 256.1) controlPoint2: CGPointMake(230.15, 265.5)];
+                    [bezier63Path addCurveToPoint: CGPointMake(239.88, 232.62) controlPoint1: CGPointMake(232.05, 262.22) controlPoint2: CGPointMake(236.36, 235.48)];
+                    [bezier63Path addCurveToPoint: CGPointMake(251.1, 218.36) controlPoint1: CGPointMake(246.59, 231) controlPoint2: CGPointMake(249.06, 224.5)];
+                    [bezier63Path addLineToPoint: CGPointMake(251.38, 217.41)];
+                    [bezier63Path addLineToPoint: CGPointMake(251.6, 216.59)];
+                    [bezier63Path addCurveToPoint: CGPointMake(247.71, 221.54) controlPoint1: CGPointMake(250.41, 218.33) controlPoint2: CGPointMake(249.09, 219.94)];
+                    [bezier63Path addCurveToPoint: CGPointMake(237.23, 229.54) controlPoint1: CGPointMake(244.86, 224.74) controlPoint2: CGPointMake(241.03, 229.58)];
+                    [bezier63Path addCurveToPoint: CGPointMake(226.53, 230.08) controlPoint1: CGPointMake(232.13, 229.49) controlPoint2: CGPointMake(226.53, 230.08)];
+                    [bezier63Path addCurveToPoint: CGPointMake(233.31, 231.95) controlPoint1: CGPointMake(227.64, 230.69) controlPoint2: CGPointMake(233.31, 231.95)];
+                    [bezier63Path closePath];
+                    bezier63Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier63Path]];
+                    
+                    
+                    //// Bezier 64 Drawing
+                    UIBezierPath* bezier64Path = UIBezierPath.bezierPath;
+                    [bezier64Path moveToPoint: CGPointMake(234.78, 229.96)];
+                    [bezier64Path addCurveToPoint: CGPointMake(231.22, 261.4) controlPoint1: CGPointMake(229.6, 254.15) controlPoint2: CGPointMake(230.77, 259.21)];
+                    [bezier64Path addCurveToPoint: CGPointMake(238.47, 229.73) controlPoint1: CGPointMake(231.05, 259.19) controlPoint2: CGPointMake(234.96, 232.6)];
+                    [bezier64Path addCurveToPoint: CGPointMake(251.1, 215.86) controlPoint1: CGPointMake(245.18, 228.11) controlPoint2: CGPointMake(249.07, 222.01)];
+                    [bezier64Path addLineToPoint: CGPointMake(251.38, 214.91)];
+                    [bezier64Path addLineToPoint: CGPointMake(251.6, 214.08)];
+                    [bezier64Path addCurveToPoint: CGPointMake(247.72, 219.04) controlPoint1: CGPointMake(250.41, 215.83) controlPoint2: CGPointMake(249.09, 217.44)];
+                    [bezier64Path addCurveToPoint: CGPointMake(237.4, 227.95) controlPoint1: CGPointMake(244.86, 222.25) controlPoint2: CGPointMake(241.4, 226.14)];
+                    [bezier64Path addLineToPoint: CGPointMake(236.83, 228.2)];
+                    [bezier64Path addCurveToPoint: CGPointMake(235.19, 228.77) controlPoint1: CGPointMake(236.27, 228.43) controlPoint2: CGPointMake(235.72, 228.62)];
+                    [bezier64Path addLineToPoint: CGPointMake(234.95, 228.83)];
+                    [bezier64Path addCurveToPoint: CGPointMake(232.89, 229.13) controlPoint1: CGPointMake(234.17, 229.01) controlPoint2: CGPointMake(233.54, 229.1)];
+                    [bezier64Path addCurveToPoint: CGPointMake(232.02, 229.16) controlPoint1: CGPointMake(232.41, 229.16) controlPoint2: CGPointMake(232.47, 229.15)];
+                    [bezier64Path addLineToPoint: CGPointMake(231.41, 229.14)];
+                    [bezier64Path addCurveToPoint: CGPointMake(234.29, 229.93) controlPoint1: CGPointMake(232.36, 229.51) controlPoint2: CGPointMake(233.28, 229.76)];
+                    [bezier64Path addLineToPoint: CGPointMake(234.78, 229.96)];
+                    [bezier64Path closePath];
+                    bezier64Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier64Path]];
+                    
+                    break;
+                    
+                }
+                    
+                case 6: {
+                    
+                    //// Bezier 65 Drawing
+                    UIBezierPath* bezier65Path = UIBezierPath.bezierPath;
+                    [bezier65Path moveToPoint: CGPointMake(53.66, 164.14)];
+                    [bezier65Path addCurveToPoint: CGPointMake(53.41, 177.04) controlPoint1: CGPointMake(53.31, 165.74) controlPoint2: CGPointMake(56.58, 171.48)];
+                    [bezier65Path addCurveToPoint: CGPointMake(75.6, 229.89) controlPoint1: CGPointMake(45.38, 191.15) controlPoint2: CGPointMake(49.67, 220.12)];
+                    [bezier65Path addCurveToPoint: CGPointMake(70.17, 232.01) controlPoint1: CGPointMake(72.64, 231.19) controlPoint2: CGPointMake(70.17, 232.01)];
+                    [bezier65Path addCurveToPoint: CGPointMake(74.38, 268.51) controlPoint1: CGPointMake(71.54, 236.31) controlPoint2: CGPointMake(73.8, 252.43)];
+                    [bezier65Path addCurveToPoint: CGPointMake(74.1, 287.29) controlPoint1: CGPointMake(74.62, 275.04) controlPoint2: CGPointMake(73.55, 281.19)];
+                    [bezier65Path addCurveToPoint: CGPointMake(57.61, 239.79) controlPoint1: CGPointMake(76.01, 308.43) controlPoint2: CGPointMake(66.22, 277.41)];
+                    [bezier65Path addCurveToPoint: CGPointMake(38.56, 205.72) controlPoint1: CGPointMake(57.61, 239.79) controlPoint2: CGPointMake(37.74, 206.82)];
+                    [bezier65Path addCurveToPoint: CGPointMake(39.37, 166.34) controlPoint1: CGPointMake(39.23, 204.83) controlPoint2: CGPointMake(39.35, 177)];
+                    [bezier65Path addCurveToPoint: CGPointMake(39.74, 164.08) controlPoint1: CGPointMake(39.59, 164.91) controlPoint2: CGPointMake(39.74, 164.08)];
+                    [bezier65Path addLineToPoint: CGPointMake(53.66, 164.14)];
+                    [bezier65Path closePath];
+                    bezier65Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier65Path]];
+                    
+                    
+                    //// Bezier 66 Drawing
+                    UIBezierPath* bezier66Path = UIBezierPath.bezierPath;
+                    [bezier66Path moveToPoint: CGPointMake(67.53, 230.1)];
+                    [bezier66Path addCurveToPoint: CGPointMake(71.26, 261.54) controlPoint1: CGPointMake(72.96, 254.29) controlPoint2: CGPointMake(71.73, 259.35)];
+                    [bezier66Path addCurveToPoint: CGPointMake(63.67, 229.87) controlPoint1: CGPointMake(71.44, 259.33) controlPoint2: CGPointMake(67.35, 232.74)];
+                    [bezier66Path addCurveToPoint: CGPointMake(50.43, 216) controlPoint1: CGPointMake(56.63, 228.25) controlPoint2: CGPointMake(52.56, 222.15)];
+                    [bezier66Path addLineToPoint: CGPointMake(50.13, 215.05)];
+                    [bezier66Path addLineToPoint: CGPointMake(49.9, 214.22)];
+                    [bezier66Path addCurveToPoint: CGPointMake(53.97, 219.18) controlPoint1: CGPointMake(51.15, 215.97) controlPoint2: CGPointMake(52.53, 217.58)];
+                    [bezier66Path addCurveToPoint: CGPointMake(64.79, 228.09) controlPoint1: CGPointMake(56.96, 222.39) controlPoint2: CGPointMake(60.59, 226.28)];
+                    [bezier66Path addLineToPoint: CGPointMake(65.38, 228.34)];
+                    [bezier66Path addCurveToPoint: CGPointMake(67.1, 228.91) controlPoint1: CGPointMake(65.97, 228.57) controlPoint2: CGPointMake(66.54, 228.76)];
+                    [bezier66Path addLineToPoint: CGPointMake(67.35, 228.97)];
+                    [bezier66Path addCurveToPoint: CGPointMake(69.51, 229.27) controlPoint1: CGPointMake(68.16, 229.15) controlPoint2: CGPointMake(68.83, 229.24)];
+                    [bezier66Path addCurveToPoint: CGPointMake(70.42, 229.3) controlPoint1: CGPointMake(70.01, 229.3) controlPoint2: CGPointMake(69.95, 229.29)];
+                    [bezier66Path addLineToPoint: CGPointMake(71.06, 229.28)];
+                    [bezier66Path addCurveToPoint: CGPointMake(68.04, 230.07) controlPoint1: CGPointMake(70.06, 229.65) controlPoint2: CGPointMake(69.1, 229.9)];
+                    [bezier66Path addLineToPoint: CGPointMake(67.53, 230.1)];
+                    [bezier66Path closePath];
+                    bezier66Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier66Path]];
+                    
+                    
+                    //// Bezier 67 Drawing
+                    UIBezierPath* bezier67Path = UIBezierPath.bezierPath;
+                    [bezier67Path moveToPoint: CGPointMake(233.16, 230.59)];
+                    [bezier67Path addCurveToPoint: CGPointMake(230.45, 266.32) controlPoint1: CGPointMake(227.97, 254.73) controlPoint2: CGPointMake(230, 264.14)];
+                    [bezier67Path addCurveToPoint: CGPointMake(239.73, 231.26) controlPoint1: CGPointMake(231.9, 260.86) controlPoint2: CGPointMake(236.21, 234.11)];
+                    [bezier67Path addCurveToPoint: CGPointMake(250.95, 217) controlPoint1: CGPointMake(246.44, 229.64) controlPoint2: CGPointMake(248.91, 223.14)];
+                    [bezier67Path addLineToPoint: CGPointMake(251.23, 216.05)];
+                    [bezier67Path addLineToPoint: CGPointMake(251.45, 215.23)];
+                    [bezier67Path addCurveToPoint: CGPointMake(247.56, 220.18) controlPoint1: CGPointMake(250.26, 216.97) controlPoint2: CGPointMake(248.94, 218.58)];
+                    [bezier67Path addCurveToPoint: CGPointMake(237.07, 228.18) controlPoint1: CGPointMake(244.71, 223.38) controlPoint2: CGPointMake(240.88, 228.22)];
+                    [bezier67Path addCurveToPoint: CGPointMake(226.38, 228.71) controlPoint1: CGPointMake(231.98, 228.13) controlPoint2: CGPointMake(226.38, 228.71)];
+                    [bezier67Path addCurveToPoint: CGPointMake(233.16, 230.59) controlPoint1: CGPointMake(227.49, 229.32) controlPoint2: CGPointMake(233.16, 230.59)];
+                    [bezier67Path closePath];
+                    bezier67Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier67Path]];
+                    
+                    
+                    //// Bezier 68 Drawing
+                    UIBezierPath* bezier68Path = UIBezierPath.bezierPath;
+                    [bezier68Path moveToPoint: CGPointMake(234.63, 228.6)];
+                    [bezier68Path addCurveToPoint: CGPointMake(231.07, 260.04) controlPoint1: CGPointMake(229.45, 252.79) controlPoint2: CGPointMake(230.62, 257.84)];
+                    [bezier68Path addCurveToPoint: CGPointMake(238.32, 228.37) controlPoint1: CGPointMake(230.9, 257.82) controlPoint2: CGPointMake(234.8, 231.23)];
+                    [bezier68Path addCurveToPoint: CGPointMake(250.95, 214.49) controlPoint1: CGPointMake(245.03, 226.75) controlPoint2: CGPointMake(248.92, 220.64)];
+                    [bezier68Path addLineToPoint: CGPointMake(251.23, 213.54)];
+                    [bezier68Path addLineToPoint: CGPointMake(251.45, 212.71)];
+                    [bezier68Path addCurveToPoint: CGPointMake(247.57, 217.68) controlPoint1: CGPointMake(250.26, 214.46) controlPoint2: CGPointMake(248.94, 216.07)];
+                    [bezier68Path addCurveToPoint: CGPointMake(237.25, 226.59) controlPoint1: CGPointMake(244.71, 220.89) controlPoint2: CGPointMake(241.25, 224.78)];
+                    [bezier68Path addLineToPoint: CGPointMake(236.68, 226.84)];
+                    [bezier68Path addCurveToPoint: CGPointMake(235.04, 227.4) controlPoint1: CGPointMake(236.12, 227.07) controlPoint2: CGPointMake(235.57, 227.26)];
+                    [bezier68Path addLineToPoint: CGPointMake(234.8, 227.47)];
+                    [bezier68Path addCurveToPoint: CGPointMake(232.74, 227.77) controlPoint1: CGPointMake(234.02, 227.64) controlPoint2: CGPointMake(233.39, 227.73)];
+                    [bezier68Path addCurveToPoint: CGPointMake(231.87, 227.8) controlPoint1: CGPointMake(232.26, 227.8) controlPoint2: CGPointMake(232.32, 227.79)];
+                    [bezier68Path addLineToPoint: CGPointMake(231.26, 227.78)];
+                    [bezier68Path addCurveToPoint: CGPointMake(234.14, 228.56) controlPoint1: CGPointMake(232.21, 228.15) controlPoint2: CGPointMake(233.13, 228.4)];
+                    [bezier68Path addLineToPoint: CGPointMake(234.63, 228.6)];
+                    [bezier68Path closePath];
+                    bezier68Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier68Path]];
+                    
+                    break;
+                }
+                    
+                case 7: {
+                    
+                    //// Bezier 69 Drawing
+                    UIBezierPath* bezier69Path = UIBezierPath.bezierPath;
+                    [bezier69Path moveToPoint: CGPointMake(53.26, 163.81)];
+                    [bezier69Path addCurveToPoint: CGPointMake(53.01, 176.71) controlPoint1: CGPointMake(52.91, 165.41) controlPoint2: CGPointMake(56.17, 171.15)];
+                    [bezier69Path addCurveToPoint: CGPointMake(75.19, 229.55) controlPoint1: CGPointMake(44.97, 190.82) controlPoint2: CGPointMake(49.26, 219.79)];
+                    [bezier69Path addCurveToPoint: CGPointMake(69.76, 231.68) controlPoint1: CGPointMake(72.24, 230.86) controlPoint2: CGPointMake(69.76, 231.68)];
+                    [bezier69Path addCurveToPoint: CGPointMake(73.98, 268.18) controlPoint1: CGPointMake(71.13, 235.98) controlPoint2: CGPointMake(73.39, 252.09)];
+                    [bezier69Path addCurveToPoint: CGPointMake(73.69, 286.96) controlPoint1: CGPointMake(74.21, 274.71) controlPoint2: CGPointMake(73.14, 280.86)];
+                    [bezier69Path addCurveToPoint: CGPointMake(57.2, 239.46) controlPoint1: CGPointMake(75.61, 308.1) controlPoint2: CGPointMake(65.81, 277.08)];
+                    [bezier69Path addCurveToPoint: CGPointMake(38.16, 205.39) controlPoint1: CGPointMake(57.2, 239.46) controlPoint2: CGPointMake(37.33, 206.49)];
+                    [bezier69Path addCurveToPoint: CGPointMake(38.96, 166.01) controlPoint1: CGPointMake(38.83, 204.5) controlPoint2: CGPointMake(38.94, 176.67)];
+                    [bezier69Path addCurveToPoint: CGPointMake(39.34, 163.75) controlPoint1: CGPointMake(39.19, 164.58) controlPoint2: CGPointMake(39.34, 163.75)];
+                    [bezier69Path addLineToPoint: CGPointMake(53.26, 163.81)];
+                    [bezier69Path closePath];
+                    bezier69Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier69Path]];
+                    
+                    
+                    //// Bezier 70 Drawing
+                    UIBezierPath* bezier70Path = UIBezierPath.bezierPath;
+                    [bezier70Path moveToPoint: CGPointMake(67.12, 229.77)];
+                    [bezier70Path addCurveToPoint: CGPointMake(70.85, 261.21) controlPoint1: CGPointMake(72.55, 253.96) controlPoint2: CGPointMake(71.32, 259.01)];
+                    [bezier70Path addCurveToPoint: CGPointMake(63.26, 229.54) controlPoint1: CGPointMake(71.04, 258.99) controlPoint2: CGPointMake(66.94, 232.4)];
+                    [bezier70Path addCurveToPoint: CGPointMake(50.02, 215.67) controlPoint1: CGPointMake(56.23, 227.92) controlPoint2: CGPointMake(52.15, 221.81)];
+                    [bezier70Path addLineToPoint: CGPointMake(49.72, 214.71)];
+                    [bezier70Path addLineToPoint: CGPointMake(49.5, 213.89)];
+                    [bezier70Path addCurveToPoint: CGPointMake(53.57, 218.85) controlPoint1: CGPointMake(50.74, 215.63) controlPoint2: CGPointMake(52.13, 217.24)];
+                    [bezier70Path addCurveToPoint: CGPointMake(64.38, 227.76) controlPoint1: CGPointMake(56.56, 222.06) controlPoint2: CGPointMake(60.18, 225.95)];
+                    [bezier70Path addLineToPoint: CGPointMake(64.97, 228.01)];
+                    [bezier70Path addCurveToPoint: CGPointMake(66.7, 228.57) controlPoint1: CGPointMake(65.56, 228.24) controlPoint2: CGPointMake(66.14, 228.43)];
+                    [bezier70Path addLineToPoint: CGPointMake(66.94, 228.64)];
+                    [bezier70Path addCurveToPoint: CGPointMake(69.1, 228.94) controlPoint1: CGPointMake(67.76, 228.81) controlPoint2: CGPointMake(68.42, 228.9)];
+                    [bezier70Path addCurveToPoint: CGPointMake(70.02, 228.97) controlPoint1: CGPointMake(69.6, 228.97) controlPoint2: CGPointMake(69.54, 228.96)];
+                    [bezier70Path addLineToPoint: CGPointMake(70.65, 228.95)];
+                    [bezier70Path addCurveToPoint: CGPointMake(67.63, 229.73) controlPoint1: CGPointMake(69.66, 229.32) controlPoint2: CGPointMake(68.69, 229.57)];
+                    [bezier70Path addLineToPoint: CGPointMake(67.12, 229.77)];
+                    [bezier70Path closePath];
+                    bezier70Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier70Path]];
+                    
+                    
+                    //// Bezier 71 Drawing
+                    UIBezierPath* bezier71Path = UIBezierPath.bezierPath;
+                    [bezier71Path moveToPoint: CGPointMake(234.75, 230.25)];
+                    [bezier71Path addCurveToPoint: CGPointMake(232.04, 265.99) controlPoint1: CGPointMake(229.57, 254.4) controlPoint2: CGPointMake(231.59, 263.8)];
+                    [bezier71Path addCurveToPoint: CGPointMake(241.32, 230.93) controlPoint1: CGPointMake(233.49, 260.52) controlPoint2: CGPointMake(237.81, 233.78)];
+                    [bezier71Path addCurveToPoint: CGPointMake(252.54, 216.67) controlPoint1: CGPointMake(248.04, 229.31) controlPoint2: CGPointMake(250.51, 222.81)];
+                    [bezier71Path addLineToPoint: CGPointMake(252.83, 215.72)];
+                    [bezier71Path addLineToPoint: CGPointMake(253.04, 214.89)];
+                    [bezier71Path addCurveToPoint: CGPointMake(249.16, 219.84) controlPoint1: CGPointMake(251.86, 216.64) controlPoint2: CGPointMake(250.53, 218.24)];
+                    [bezier71Path addCurveToPoint: CGPointMake(238.67, 227.85) controlPoint1: CGPointMake(246.3, 223.05) controlPoint2: CGPointMake(242.47, 227.88)];
+                    [bezier71Path addCurveToPoint: CGPointMake(227.97, 228.38) controlPoint1: CGPointMake(233.57, 227.8) controlPoint2: CGPointMake(227.97, 228.38)];
+                    [bezier71Path addCurveToPoint: CGPointMake(234.75, 230.25) controlPoint1: CGPointMake(229.09, 228.99) controlPoint2: CGPointMake(234.75, 230.25)];
+                    [bezier71Path closePath];
+                    bezier71Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier71Path]];
+                    
+                    
+                    //// Bezier 72 Drawing
+                    UIBezierPath* bezier72Path = UIBezierPath.bezierPath;
+                    [bezier72Path moveToPoint: CGPointMake(236.23, 228.26)];
+                    [bezier72Path addCurveToPoint: CGPointMake(232.67, 259.7) controlPoint1: CGPointMake(231.04, 252.46) controlPoint2: CGPointMake(232.22, 257.51)];
+                    [bezier72Path addCurveToPoint: CGPointMake(239.91, 228.04) controlPoint1: CGPointMake(232.49, 257.49) controlPoint2: CGPointMake(236.4, 230.9)];
+                    [bezier72Path addCurveToPoint: CGPointMake(252.54, 214.16) controlPoint1: CGPointMake(246.62, 226.42) controlPoint2: CGPointMake(250.51, 220.31)];
+                    [bezier72Path addLineToPoint: CGPointMake(252.83, 213.21)];
+                    [bezier72Path addLineToPoint: CGPointMake(253.04, 212.38)];
+                    [bezier72Path addCurveToPoint: CGPointMake(249.16, 217.34) controlPoint1: CGPointMake(251.86, 214.13) controlPoint2: CGPointMake(250.53, 215.74)];
+                    [bezier72Path addCurveToPoint: CGPointMake(238.84, 226.26) controlPoint1: CGPointMake(246.31, 220.56) controlPoint2: CGPointMake(242.85, 224.45)];
+                    [bezier72Path addLineToPoint: CGPointMake(238.28, 226.51)];
+                    [bezier72Path addCurveToPoint: CGPointMake(236.63, 227.07) controlPoint1: CGPointMake(237.71, 226.74) controlPoint2: CGPointMake(237.16, 226.93)];
+                    [bezier72Path addLineToPoint: CGPointMake(236.4, 227.13)];
+                    [bezier72Path addCurveToPoint: CGPointMake(234.34, 227.43) controlPoint1: CGPointMake(235.62, 227.31) controlPoint2: CGPointMake(234.98, 227.4)];
+                    [bezier72Path addCurveToPoint: CGPointMake(233.46, 227.47) controlPoint1: CGPointMake(233.86, 227.47) controlPoint2: CGPointMake(233.91, 227.46)];
+                    [bezier72Path addLineToPoint: CGPointMake(232.85, 227.45)];
+                    [bezier72Path addCurveToPoint: CGPointMake(235.74, 228.23) controlPoint1: CGPointMake(233.81, 227.82) controlPoint2: CGPointMake(234.73, 228.07)];
+                    [bezier72Path addLineToPoint: CGPointMake(236.23, 228.26)];
+                    [bezier72Path closePath];
+                    bezier72Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier72Path]];
+
+                    break;
+                }
+                    
+                case 8: {
+                    
+                    //// Bezier 73 Drawing
+                    UIBezierPath* bezier73Path = UIBezierPath.bezierPath;
+                    [bezier73Path moveToPoint: CGPointMake(53.75, 161.63)];
+                    [bezier73Path addCurveToPoint: CGPointMake(53.6, 177.42) controlPoint1: CGPointMake(53.4, 163.23) controlPoint2: CGPointMake(56.77, 171.87)];
+                    [bezier73Path addCurveToPoint: CGPointMake(75.79, 230.27) controlPoint1: CGPointMake(45.57, 191.54) controlPoint2: CGPointMake(49.86, 220.51)];
+                    [bezier73Path addCurveToPoint: CGPointMake(70.36, 232.4) controlPoint1: CGPointMake(72.84, 231.58) controlPoint2: CGPointMake(70.36, 232.4)];
+                    [bezier73Path addCurveToPoint: CGPointMake(74.57, 268.9) controlPoint1: CGPointMake(71.73, 236.7) controlPoint2: CGPointMake(73.99, 252.81)];
+                    [bezier73Path addCurveToPoint: CGPointMake(74.29, 287.67) controlPoint1: CGPointMake(74.81, 275.43) controlPoint2: CGPointMake(73.74, 281.57)];
+                    [bezier73Path addCurveToPoint: CGPointMake(57.8, 240.18) controlPoint1: CGPointMake(76.2, 308.82) controlPoint2: CGPointMake(66.41, 277.8)];
+                    [bezier73Path addCurveToPoint: CGPointMake(38.75, 206.11) controlPoint1: CGPointMake(57.8, 240.18) controlPoint2: CGPointMake(37.93, 207.21)];
+                    [bezier73Path addCurveToPoint: CGPointMake(39.56, 166.73) controlPoint1: CGPointMake(39.42, 205.22) controlPoint2: CGPointMake(39.54, 177.39)];
+                    [bezier73Path addCurveToPoint: CGPointMake(39.93, 164.47) controlPoint1: CGPointMake(39.79, 165.3) controlPoint2: CGPointMake(39.93, 164.47)];
+                    [bezier73Path addCurveToPoint: CGPointMake(53.75, 161.63) controlPoint1: CGPointMake(39.93, 164.47) controlPoint2: CGPointMake(54.11, 160.04)];
+                    [bezier73Path closePath];
+                    bezier73Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier73Path]];
+                    
+                    
+                    //// Bezier 74 Drawing
+                    UIBezierPath* bezier74Path = UIBezierPath.bezierPath;
+                    [bezier74Path moveToPoint: CGPointMake(67.72, 230.49)];
+                    [bezier74Path addCurveToPoint: CGPointMake(71.45, 261.93) controlPoint1: CGPointMake(73.15, 254.68) controlPoint2: CGPointMake(71.92, 259.73)];
+                    [bezier74Path addCurveToPoint: CGPointMake(63.86, 230.26) controlPoint1: CGPointMake(71.63, 259.71) controlPoint2: CGPointMake(67.54, 233.12)];
+                    [bezier74Path addCurveToPoint: CGPointMake(50.62, 216.38) controlPoint1: CGPointMake(56.83, 228.64) controlPoint2: CGPointMake(52.75, 222.53)];
+                    [bezier74Path addLineToPoint: CGPointMake(50.32, 215.43)];
+                    [bezier74Path addLineToPoint: CGPointMake(50.09, 214.6)];
+                    [bezier74Path addCurveToPoint: CGPointMake(54.16, 219.56) controlPoint1: CGPointMake(51.34, 216.35) controlPoint2: CGPointMake(52.73, 217.96)];
+                    [bezier74Path addCurveToPoint: CGPointMake(64.98, 228.48) controlPoint1: CGPointMake(57.15, 222.78) controlPoint2: CGPointMake(60.78, 226.67)];
+                    [bezier74Path addLineToPoint: CGPointMake(65.57, 228.73)];
+                    [bezier74Path addCurveToPoint: CGPointMake(67.3, 229.29) controlPoint1: CGPointMake(66.16, 228.96) controlPoint2: CGPointMake(66.74, 229.15)];
+                    [bezier74Path addLineToPoint: CGPointMake(67.54, 229.36)];
+                    [bezier74Path addCurveToPoint: CGPointMake(69.7, 229.66) controlPoint1: CGPointMake(68.36, 229.53) controlPoint2: CGPointMake(69.02, 229.62)];
+                    [bezier74Path addCurveToPoint: CGPointMake(70.61, 229.69) controlPoint1: CGPointMake(70.2, 229.69) controlPoint2: CGPointMake(70.14, 229.68)];
+                    [bezier74Path addLineToPoint: CGPointMake(71.25, 229.67)];
+                    [bezier74Path addCurveToPoint: CGPointMake(68.23, 230.45) controlPoint1: CGPointMake(70.25, 230.04) controlPoint2: CGPointMake(69.29, 230.29)];
+                    [bezier74Path addLineToPoint: CGPointMake(67.72, 230.49)];
+                    [bezier74Path closePath];
+                    bezier74Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier74Path]];
+                    
+                    
+                    //// Bezier 75 Drawing
+                    UIBezierPath* bezier75Path = UIBezierPath.bezierPath;
+                    [bezier75Path moveToPoint: CGPointMake(233.35, 230.97)];
+                    [bezier75Path addCurveToPoint: CGPointMake(230.64, 266.71) controlPoint1: CGPointMake(228.16, 255.12) controlPoint2: CGPointMake(230.19, 264.52)];
+                    [bezier75Path addCurveToPoint: CGPointMake(239.92, 231.64) controlPoint1: CGPointMake(232.09, 261.24) controlPoint2: CGPointMake(236.4, 234.5)];
+                    [bezier75Path addCurveToPoint: CGPointMake(251.14, 217.39) controlPoint1: CGPointMake(246.63, 230.03) controlPoint2: CGPointMake(249.11, 223.52)];
+                    [bezier75Path addLineToPoint: CGPointMake(251.42, 216.44)];
+                    [bezier75Path addLineToPoint: CGPointMake(251.64, 215.61)];
+                    [bezier75Path addCurveToPoint: CGPointMake(247.75, 220.56) controlPoint1: CGPointMake(250.45, 217.36) controlPoint2: CGPointMake(249.13, 218.96)];
+                    [bezier75Path addCurveToPoint: CGPointMake(237.27, 228.56) controlPoint1: CGPointMake(244.9, 223.77) controlPoint2: CGPointMake(241.07, 228.6)];
+                    [bezier75Path addCurveToPoint: CGPointMake(226.57, 229.1) controlPoint1: CGPointMake(232.17, 228.52) controlPoint2: CGPointMake(226.57, 229.1)];
+                    [bezier75Path addCurveToPoint: CGPointMake(233.35, 230.97) controlPoint1: CGPointMake(227.68, 229.71) controlPoint2: CGPointMake(233.35, 230.97)];
+                    [bezier75Path closePath];
+                    bezier75Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier75Path]];
+                    
+                    
+                    //// Bezier 76 Drawing
+                    UIBezierPath* bezier76Path = UIBezierPath.bezierPath;
+                    [bezier76Path moveToPoint: CGPointMake(234.82, 228.98)];
+                    [bezier76Path addCurveToPoint: CGPointMake(231.26, 260.42) controlPoint1: CGPointMake(229.64, 253.17) controlPoint2: CGPointMake(230.81, 258.23)];
+                    [bezier76Path addCurveToPoint: CGPointMake(238.51, 228.76) controlPoint1: CGPointMake(231.09, 258.21) controlPoint2: CGPointMake(235, 231.62)];
+                    [bezier76Path addCurveToPoint: CGPointMake(251.14, 214.88) controlPoint1: CGPointMake(245.22, 227.14) controlPoint2: CGPointMake(249.11, 221.03)];
+                    [bezier76Path addLineToPoint: CGPointMake(251.42, 213.93)];
+                    [bezier76Path addLineToPoint: CGPointMake(251.64, 213.1)];
+                    [bezier76Path addCurveToPoint: CGPointMake(247.76, 218.06) controlPoint1: CGPointMake(250.45, 214.85) controlPoint2: CGPointMake(249.13, 216.46)];
+                    [bezier76Path addCurveToPoint: CGPointMake(237.44, 226.98) controlPoint1: CGPointMake(244.9, 221.27) controlPoint2: CGPointMake(241.44, 225.17)];
+                    [bezier76Path addLineToPoint: CGPointMake(236.87, 227.22)];
+                    [bezier76Path addCurveToPoint: CGPointMake(235.23, 227.79) controlPoint1: CGPointMake(236.31, 227.46) controlPoint2: CGPointMake(235.76, 227.65)];
+                    [bezier76Path addLineToPoint: CGPointMake(234.99, 227.85)];
+                    [bezier76Path addCurveToPoint: CGPointMake(232.94, 228.15) controlPoint1: CGPointMake(234.22, 228.03) controlPoint2: CGPointMake(233.58, 228.12)];
+                    [bezier76Path addCurveToPoint: CGPointMake(232.06, 228.18) controlPoint1: CGPointMake(232.45, 228.19) controlPoint2: CGPointMake(232.51, 228.18)];
+                    [bezier76Path addLineToPoint: CGPointMake(231.45, 228.17)];
+                    [bezier76Path addCurveToPoint: CGPointMake(234.33, 228.95) controlPoint1: CGPointMake(232.41, 228.53) controlPoint2: CGPointMake(233.33, 228.79)];
+                    [bezier76Path addLineToPoint: CGPointMake(234.82, 228.98)];
+                    [bezier76Path closePath];
+                    bezier76Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier76Path]];
+                    
+                    break;
+                }
+                    
+                case 9: {
+                    
+                    //// Bezier 77 Drawing
+                    UIBezierPath* bezier77Path = UIBezierPath.bezierPath;
+                    [bezier77Path moveToPoint: CGPointMake(49.67, 169.9)];
+                    [bezier77Path addCurveToPoint: CGPointMake(54.26, 185.85) controlPoint1: CGPointMake(49.32, 171.5) controlPoint2: CGPointMake(57.42, 180.29)];
+                    [bezier77Path addCurveToPoint: CGPointMake(71.61, 235.65) controlPoint1: CGPointMake(46.22, 199.97) controlPoint2: CGPointMake(45.68, 225.88)];
+                    [bezier77Path addCurveToPoint: CGPointMake(66.18, 237.78) controlPoint1: CGPointMake(68.65, 236.95) controlPoint2: CGPointMake(66.18, 237.78)];
+                    [bezier77Path addCurveToPoint: CGPointMake(70.39, 274.28) controlPoint1: CGPointMake(67.55, 242.08) controlPoint2: CGPointMake(69.81, 258.19)];
+                    [bezier77Path addCurveToPoint: CGPointMake(70.11, 293.05) controlPoint1: CGPointMake(70.63, 280.8) controlPoint2: CGPointMake(69.56, 286.95)];
+                    [bezier77Path addCurveToPoint: CGPointMake(53.61, 245.55) controlPoint1: CGPointMake(72.02, 314.19) controlPoint2: CGPointMake(62.23, 283.18)];
+                    [bezier77Path addCurveToPoint: CGPointMake(41.36, 211.62) controlPoint1: CGPointMake(53.61, 245.55) controlPoint2: CGPointMake(40.53, 212.72)];
+                    [bezier77Path addCurveToPoint: CGPointMake(48.74, 182.8) controlPoint1: CGPointMake(42.03, 210.73) controlPoint2: CGPointMake(48.72, 193.46)];
+                    [bezier77Path addCurveToPoint: CGPointMake(49.67, 169.9) controlPoint1: CGPointMake(48.96, 181.36) controlPoint2: CGPointMake(49.67, 169.9)];
+                    [bezier77Path closePath];
+                    bezier77Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier77Path]];
+                    
+                    
+                    //// Bezier 78 Drawing
+                    UIBezierPath* bezier78Path = UIBezierPath.bezierPath;
+                    [bezier78Path moveToPoint: CGPointMake(63.54, 235.86)];
+                    [bezier78Path addCurveToPoint: CGPointMake(67.27, 267.3) controlPoint1: CGPointMake(68.97, 260.05) controlPoint2: CGPointMake(67.74, 265.11)];
+                    [bezier78Path addCurveToPoint: CGPointMake(59.68, 235.63) controlPoint1: CGPointMake(67.45, 265.09) controlPoint2: CGPointMake(63.36, 238.5)];
+                    [bezier78Path addCurveToPoint: CGPointMake(46.44, 221.76) controlPoint1: CGPointMake(52.64, 234.02) controlPoint2: CGPointMake(48.57, 227.91)];
+                    [bezier78Path addLineToPoint: CGPointMake(46.14, 220.81)];
+                    [bezier78Path addLineToPoint: CGPointMake(45.91, 219.98)];
+                    [bezier78Path addCurveToPoint: CGPointMake(49.98, 224.94) controlPoint1: CGPointMake(47.16, 221.73) controlPoint2: CGPointMake(48.54, 223.34)];
+                    [bezier78Path addCurveToPoint: CGPointMake(60.8, 233.86) controlPoint1: CGPointMake(52.97, 228.15) controlPoint2: CGPointMake(56.6, 232.04)];
+                    [bezier78Path addLineToPoint: CGPointMake(61.39, 234.1)];
+                    [bezier78Path addCurveToPoint: CGPointMake(63.11, 234.67) controlPoint1: CGPointMake(61.98, 234.33) controlPoint2: CGPointMake(62.55, 234.52)];
+                    [bezier78Path addLineToPoint: CGPointMake(63.36, 234.73)];
+                    [bezier78Path addCurveToPoint: CGPointMake(65.52, 235.03) controlPoint1: CGPointMake(64.17, 234.91) controlPoint2: CGPointMake(64.84, 235)];
+                    [bezier78Path addCurveToPoint: CGPointMake(66.43, 235.06) controlPoint1: CGPointMake(66.02, 235.06) controlPoint2: CGPointMake(65.96, 235.05)];
+                    [bezier78Path addLineToPoint: CGPointMake(67.07, 235.04)];
+                    [bezier78Path addCurveToPoint: CGPointMake(64.05, 235.83) controlPoint1: CGPointMake(66.07, 235.41) controlPoint2: CGPointMake(65.11, 235.67)];
+                    [bezier78Path addLineToPoint: CGPointMake(63.54, 235.86)];
+                    [bezier78Path closePath];
+                    bezier78Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier78Path]];
+                    
+                    
+                    //// Bezier 79 Drawing
+                    UIBezierPath* bezier79Path = UIBezierPath.bezierPath;
+                    [bezier79Path moveToPoint: CGPointMake(234.17, 235.85)];
+                    [bezier79Path addCurveToPoint: CGPointMake(231.46, 271.59) controlPoint1: CGPointMake(228.98, 259.99) controlPoint2: CGPointMake(231.01, 269.4)];
+                    [bezier79Path addCurveToPoint: CGPointMake(240.74, 236.52) controlPoint1: CGPointMake(232.91, 266.12) controlPoint2: CGPointMake(237.22, 239.38)];
+                    [bezier79Path addCurveToPoint: CGPointMake(251.96, 222.26) controlPoint1: CGPointMake(247.45, 234.9) controlPoint2: CGPointMake(249.92, 228.4)];
+                    [bezier79Path addLineToPoint: CGPointMake(252.24, 221.31)];
+                    [bezier79Path addLineToPoint: CGPointMake(252.46, 220.49)];
+                    [bezier79Path addCurveToPoint: CGPointMake(248.57, 225.44) controlPoint1: CGPointMake(251.27, 222.23) controlPoint2: CGPointMake(249.95, 223.84)];
+                    [bezier79Path addCurveToPoint: CGPointMake(238.08, 233.44) controlPoint1: CGPointMake(245.72, 228.64) controlPoint2: CGPointMake(241.89, 233.48)];
+                    [bezier79Path addCurveToPoint: CGPointMake(227.38, 233.97) controlPoint1: CGPointMake(232.98, 233.39) controlPoint2: CGPointMake(227.38, 233.97)];
+                    [bezier79Path addCurveToPoint: CGPointMake(234.17, 235.85) controlPoint1: CGPointMake(228.5, 234.59) controlPoint2: CGPointMake(234.17, 235.85)];
+                    [bezier79Path closePath];
+                    bezier79Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier79Path]];
+                    
+                    
+                    //// Bezier 80 Drawing
+                    UIBezierPath* bezier80Path = UIBezierPath.bezierPath;
+                    [bezier80Path moveToPoint: CGPointMake(235.64, 233.86)];
+                    [bezier80Path addCurveToPoint: CGPointMake(232.08, 265.3) controlPoint1: CGPointMake(230.46, 258.05) controlPoint2: CGPointMake(231.63, 263.11)];
+                    [bezier80Path addCurveToPoint: CGPointMake(239.33, 233.63) controlPoint1: CGPointMake(231.91, 263.08) controlPoint2: CGPointMake(235.81, 236.49)];
+                    [bezier80Path addCurveToPoint: CGPointMake(251.96, 219.76) controlPoint1: CGPointMake(246.04, 232.01) controlPoint2: CGPointMake(249.93, 225.9)];
+                    [bezier80Path addLineToPoint: CGPointMake(252.24, 218.8)];
+                    [bezier80Path addLineToPoint: CGPointMake(252.46, 217.98)];
+                    [bezier80Path addCurveToPoint: CGPointMake(248.58, 222.94) controlPoint1: CGPointMake(251.27, 219.73) controlPoint2: CGPointMake(249.95, 221.33)];
+                    [bezier80Path addCurveToPoint: CGPointMake(238.26, 231.85) controlPoint1: CGPointMake(245.72, 226.15) controlPoint2: CGPointMake(242.26, 230.04)];
+                    [bezier80Path addLineToPoint: CGPointMake(237.69, 232.1)];
+                    [bezier80Path addCurveToPoint: CGPointMake(236.05, 232.66) controlPoint1: CGPointMake(237.13, 232.33) controlPoint2: CGPointMake(236.58, 232.52)];
+                    [bezier80Path addLineToPoint: CGPointMake(235.81, 232.73)];
+                    [bezier80Path addCurveToPoint: CGPointMake(233.75, 233.03) controlPoint1: CGPointMake(235.03, 232.9) controlPoint2: CGPointMake(234.4, 233)];
+                    [bezier80Path addCurveToPoint: CGPointMake(232.88, 233.06) controlPoint1: CGPointMake(233.27, 233.06) controlPoint2: CGPointMake(233.33, 233.05)];
+                    [bezier80Path addLineToPoint: CGPointMake(232.27, 233.04)];
+                    [bezier80Path addCurveToPoint: CGPointMake(235.15, 233.83) controlPoint1: CGPointMake(233.22, 233.41) controlPoint2: CGPointMake(234.14, 233.66)];
+                    [bezier80Path addLineToPoint: CGPointMake(235.64, 233.86)];
+                    [bezier80Path closePath];
+                    bezier80Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier80Path]];
+                    
+                    break;
+                    
+                }
+                    
+                default:
+                    break;
+                    
+            }
             
             break;
+        }
+            
+        case 5: {
+            
+            switch (jawShape.number) {
+                    
+                case 1: {
+                    
+                    //// Bezier 60 Drawing
+                    UIBezierPath* bezier60Path = UIBezierPath.bezierPath;
+                    [bezier60Path moveToPoint: CGPointMake(47.46, 200.77)];
+                    [bezier60Path addCurveToPoint: CGPointMake(72.71, 237.56) controlPoint1: CGPointMake(49.96, 224.41) controlPoint2: CGPointMake(72.71, 237.56)];
+                    [bezier60Path addCurveToPoint: CGPointMake(76.45, 274.6) controlPoint1: CGPointMake(79.72, 250.8) controlPoint2: CGPointMake(75.21, 262.25)];
+                    [bezier60Path addCurveToPoint: CGPointMake(108.87, 336.29) controlPoint1: CGPointMake(76.45, 274.6) controlPoint2: CGPointMake(83.67, 320.69)];
+                    [bezier60Path addCurveToPoint: CGPointMake(48.08, 245.44) controlPoint1: CGPointMake(75.87, 315.86) controlPoint2: CGPointMake(63.49, 270.84)];
+                    [bezier60Path addLineToPoint: CGPointMake(40.11, 208.31)];
+                    [bezier60Path addCurveToPoint: CGPointMake(47.46, 200.77) controlPoint1: CGPointMake(45.4, 203.26) controlPoint2: CGPointMake(47.23, 198.63)];
+                    [bezier60Path closePath];
+                    bezier60Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier60Path]];
+                    
+                    
+                    //// Bezier 81 Drawing
+                    UIBezierPath* bezier81Path = UIBezierPath.bezierPath;
+                    [bezier81Path moveToPoint: CGPointMake(76.05, 266.21)];
+                    [bezier81Path addCurveToPoint: CGPointMake(75.63, 256.68) controlPoint1: CGPointMake(75.88, 263.02) controlPoint2: CGPointMake(75.65, 259.88)];
+                    [bezier81Path addCurveToPoint: CGPointMake(75.21, 249.13) controlPoint1: CGPointMake(75.58, 254.15) controlPoint2: CGPointMake(75.47, 251.64)];
+                    [bezier81Path addCurveToPoint: CGPointMake(71.48, 238.55) controlPoint1: CGPointMake(74.75, 245.59) controlPoint2: CGPointMake(74.14, 241.26)];
+                    [bezier81Path addCurveToPoint: CGPointMake(63.87, 233.61) controlPoint1: CGPointMake(69.28, 236.59) controlPoint2: CGPointMake(66.23, 235.46)];
+                    [bezier81Path addCurveToPoint: CGPointMake(49.54, 213) controlPoint1: CGPointMake(57.35, 228.54) controlPoint2: CGPointMake(52.05, 220.73)];
+                    [bezier81Path addCurveToPoint: CGPointMake(47.39, 204.18) controlPoint1: CGPointMake(48.59, 210.1) controlPoint2: CGPointMake(47.87, 207.19)];
+                    [bezier81Path addCurveToPoint: CGPointMake(47, 200.19) controlPoint1: CGPointMake(47.27, 203.49) controlPoint2: CGPointMake(46.92, 199.87)];
+                    [bezier81Path addCurveToPoint: CGPointMake(49.26, 207.2) controlPoint1: CGPointMake(47.6, 202.58) controlPoint2: CGPointMake(48.39, 204.9)];
+                    [bezier81Path addCurveToPoint: CGPointMake(63.57, 229.29) controlPoint1: CGPointMake(52.57, 215.4) controlPoint2: CGPointMake(56.78, 223.34)];
+                    [bezier81Path addCurveToPoint: CGPointMake(73.33, 235.87) controlPoint1: CGPointMake(66.58, 231.93) controlPoint2: CGPointMake(70.22, 233.47)];
+                    [bezier81Path addCurveToPoint: CGPointMake(75.49, 238.49) controlPoint1: CGPointMake(74.2, 236.65) controlPoint2: CGPointMake(74.88, 237.5)];
+                    [bezier81Path addCurveToPoint: CGPointMake(77.7, 260.09) controlPoint1: CGPointMake(79.15, 244.75) controlPoint2: CGPointMake(78.35, 253.23)];
+                    [bezier81Path addCurveToPoint: CGPointMake(76.05, 266.21) controlPoint1: CGPointMake(77.26, 262.17) controlPoint2: CGPointMake(76.7, 264.19)];
+                    [bezier81Path closePath];
+                    bezier81Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier81Path]];
+                    
+                    
+                    //// Bezier 82 Drawing
+                    UIBezierPath* bezier82Path = UIBezierPath.bezierPath;
+                    [bezier82Path moveToPoint: CGPointMake(223.91, 266.21)];
+                    [bezier82Path addCurveToPoint: CGPointMake(222.05, 247.52) controlPoint1: CGPointMake(221.98, 260.17) controlPoint2: CGPointMake(221.36, 253.84)];
+                    [bezier82Path addCurveToPoint: CGPointMake(225.41, 237.11) controlPoint1: CGPointMake(222.45, 243.88) controlPoint2: CGPointMake(223.09, 240.09)];
+                    [bezier82Path addCurveToPoint: CGPointMake(233.32, 231.7) controlPoint1: CGPointMake(227.33, 234.64) controlPoint2: CGPointMake(230.79, 233.44)];
+                    [bezier82Path addCurveToPoint: CGPointMake(237.81, 227.97) controlPoint1: CGPointMake(234.9, 230.55) controlPoint2: CGPointMake(236.39, 229.31)];
+                    [bezier82Path addCurveToPoint: CGPointMake(253.04, 199.86) controlPoint1: CGPointMake(245.35, 220.54) controlPoint2: CGPointMake(250.72, 210.07)];
+                    [bezier82Path addCurveToPoint: CGPointMake(252.2, 206.32) controlPoint1: CGPointMake(252.93, 201.98) controlPoint2: CGPointMake(252.75, 204.26)];
+                    [bezier82Path addCurveToPoint: CGPointMake(237.74, 232.21) controlPoint1: CGPointMake(250.16, 216.11) controlPoint2: CGPointMake(245.32, 225.43)];
+                    [bezier82Path addCurveToPoint: CGPointMake(228.49, 238.54) controlPoint1: CGPointMake(234.92, 234.72) controlPoint2: CGPointMake(231.23, 236.09)];
+                    [bezier82Path addCurveToPoint: CGPointMake(226.97, 240.71) controlPoint1: CGPointMake(227.86, 239.18) controlPoint2: CGPointMake(227.37, 239.9)];
+                    [bezier82Path addCurveToPoint: CGPointMake(224.63, 250.37) controlPoint1: CGPointMake(225.41, 243.65) controlPoint2: CGPointMake(224.96, 247.12)];
+                    [bezier82Path addCurveToPoint: CGPointMake(223.91, 266.21) controlPoint1: CGPointMake(224.06, 255.61) controlPoint2: CGPointMake(224.2, 260.96)];
+                    [bezier82Path closePath];
+                    bezier82Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier82Path]];
+                    
+                    break;
+                }
+                    
+                case 2: {
+                    
+                    //// Bezier 83 Drawing
+                    UIBezierPath* bezier83Path = UIBezierPath.bezierPath;
+                    [bezier83Path moveToPoint: CGPointMake(48.46, 198.77)];
+                    [bezier83Path addCurveToPoint: CGPointMake(73.71, 235.56) controlPoint1: CGPointMake(50.96, 222.41) controlPoint2: CGPointMake(73.71, 235.56)];
+                    [bezier83Path addCurveToPoint: CGPointMake(77.45, 272.6) controlPoint1: CGPointMake(80.72, 248.8) controlPoint2: CGPointMake(76.21, 260.25)];
+                    [bezier83Path addCurveToPoint: CGPointMake(109.87, 334.29) controlPoint1: CGPointMake(77.45, 272.6) controlPoint2: CGPointMake(84.67, 318.69)];
+                    [bezier83Path addCurveToPoint: CGPointMake(49.08, 243.44) controlPoint1: CGPointMake(76.87, 313.86) controlPoint2: CGPointMake(64.49, 268.84)];
+                    [bezier83Path addLineToPoint: CGPointMake(41.11, 206.31)];
+                    [bezier83Path addCurveToPoint: CGPointMake(48.46, 198.77) controlPoint1: CGPointMake(46.4, 201.26) controlPoint2: CGPointMake(48.23, 196.63)];
+                    [bezier83Path closePath];
+                    bezier83Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier83Path]];
+                    
+                    
+                    //// Bezier 84 Drawing
+                    UIBezierPath* bezier84Path = UIBezierPath.bezierPath;
+                    [bezier84Path moveToPoint: CGPointMake(77.05, 264.21)];
+                    [bezier84Path addCurveToPoint: CGPointMake(76.63, 254.68) controlPoint1: CGPointMake(76.88, 261.02) controlPoint2: CGPointMake(76.65, 257.88)];
+                    [bezier84Path addCurveToPoint: CGPointMake(76.21, 247.13) controlPoint1: CGPointMake(76.58, 252.15) controlPoint2: CGPointMake(76.47, 249.64)];
+                    [bezier84Path addCurveToPoint: CGPointMake(72.48, 236.55) controlPoint1: CGPointMake(75.75, 243.59) controlPoint2: CGPointMake(75.14, 239.26)];
+                    [bezier84Path addCurveToPoint: CGPointMake(64.87, 231.61) controlPoint1: CGPointMake(70.28, 234.59) controlPoint2: CGPointMake(67.23, 233.46)];
+                    [bezier84Path addCurveToPoint: CGPointMake(50.54, 211) controlPoint1: CGPointMake(58.35, 226.54) controlPoint2: CGPointMake(53.05, 218.73)];
+                    [bezier84Path addCurveToPoint: CGPointMake(48.39, 202.18) controlPoint1: CGPointMake(49.59, 208.1) controlPoint2: CGPointMake(48.87, 205.19)];
+                    [bezier84Path addCurveToPoint: CGPointMake(48, 198.19) controlPoint1: CGPointMake(48.27, 201.49) controlPoint2: CGPointMake(47.92, 197.87)];
+                    [bezier84Path addCurveToPoint: CGPointMake(50.26, 205.2) controlPoint1: CGPointMake(48.6, 200.58) controlPoint2: CGPointMake(49.39, 202.9)];
+                    [bezier84Path addCurveToPoint: CGPointMake(64.57, 227.29) controlPoint1: CGPointMake(53.57, 213.4) controlPoint2: CGPointMake(57.78, 221.34)];
+                    [bezier84Path addCurveToPoint: CGPointMake(74.33, 233.87) controlPoint1: CGPointMake(67.58, 229.93) controlPoint2: CGPointMake(71.22, 231.47)];
+                    [bezier84Path addCurveToPoint: CGPointMake(76.49, 236.49) controlPoint1: CGPointMake(75.2, 234.65) controlPoint2: CGPointMake(75.88, 235.5)];
+                    [bezier84Path addCurveToPoint: CGPointMake(78.7, 258.09) controlPoint1: CGPointMake(80.15, 242.75) controlPoint2: CGPointMake(79.35, 251.23)];
+                    [bezier84Path addCurveToPoint: CGPointMake(77.05, 264.21) controlPoint1: CGPointMake(78.26, 260.17) controlPoint2: CGPointMake(77.7, 262.19)];
+                    [bezier84Path closePath];
+                    bezier84Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier84Path]];
+                    
+                    
+                    //// Bezier 85 Drawing
+                    UIBezierPath* bezier85Path = UIBezierPath.bezierPath;
+                    [bezier85Path moveToPoint: CGPointMake(224.91, 264.21)];
+                    [bezier85Path addCurveToPoint: CGPointMake(223.05, 245.52) controlPoint1: CGPointMake(222.98, 258.17) controlPoint2: CGPointMake(222.36, 251.84)];
+                    [bezier85Path addCurveToPoint: CGPointMake(226.41, 235.11) controlPoint1: CGPointMake(223.45, 241.88) controlPoint2: CGPointMake(224.09, 238.09)];
+                    [bezier85Path addCurveToPoint: CGPointMake(234.32, 229.7) controlPoint1: CGPointMake(228.33, 232.64) controlPoint2: CGPointMake(231.79, 231.44)];
+                    [bezier85Path addCurveToPoint: CGPointMake(238.81, 225.97) controlPoint1: CGPointMake(235.9, 228.55) controlPoint2: CGPointMake(237.39, 227.31)];
+                    [bezier85Path addCurveToPoint: CGPointMake(254.04, 197.86) controlPoint1: CGPointMake(246.35, 218.54) controlPoint2: CGPointMake(251.72, 208.07)];
+                    [bezier85Path addCurveToPoint: CGPointMake(253.2, 204.32) controlPoint1: CGPointMake(253.93, 199.98) controlPoint2: CGPointMake(253.75, 202.26)];
+                    [bezier85Path addCurveToPoint: CGPointMake(238.74, 230.21) controlPoint1: CGPointMake(251.16, 214.11) controlPoint2: CGPointMake(246.32, 223.43)];
+                    [bezier85Path addCurveToPoint: CGPointMake(229.49, 236.54) controlPoint1: CGPointMake(235.92, 232.72) controlPoint2: CGPointMake(232.23, 234.09)];
+                    [bezier85Path addCurveToPoint: CGPointMake(227.97, 238.71) controlPoint1: CGPointMake(228.86, 237.18) controlPoint2: CGPointMake(228.37, 237.9)];
+                    [bezier85Path addCurveToPoint: CGPointMake(225.63, 248.37) controlPoint1: CGPointMake(226.41, 241.65) controlPoint2: CGPointMake(225.96, 245.12)];
+                    [bezier85Path addCurveToPoint: CGPointMake(224.91, 264.21) controlPoint1: CGPointMake(225.06, 253.61) controlPoint2: CGPointMake(225.2, 258.96)];
+                    [bezier85Path closePath];
+                    bezier85Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier85Path]];
+
+                    
+                    break;
+                }
+                    
+                case 3: {
+                    
+                    //// Bezier 86 Drawing
+                    UIBezierPath* bezier86Path = UIBezierPath.bezierPath;
+                    [bezier86Path moveToPoint: CGPointMake(46.33, 203.48)];
+                    [bezier86Path addCurveToPoint: CGPointMake(71.58, 240.26) controlPoint1: CGPointMake(48.84, 227.11) controlPoint2: CGPointMake(71.58, 240.26)];
+                    [bezier86Path addCurveToPoint: CGPointMake(75.33, 277.31) controlPoint1: CGPointMake(78.59, 253.51) controlPoint2: CGPointMake(74.08, 264.96)];
+                    [bezier86Path addCurveToPoint: CGPointMake(107.74, 339) controlPoint1: CGPointMake(75.33, 277.31) controlPoint2: CGPointMake(82.54, 323.39)];
+                    [bezier86Path addCurveToPoint: CGPointMake(46.95, 248.14) controlPoint1: CGPointMake(74.74, 318.56) controlPoint2: CGPointMake(62.36, 273.54)];
+                    [bezier86Path addLineToPoint: CGPointMake(38.98, 211.01)];
+                    [bezier86Path addCurveToPoint: CGPointMake(46.33, 203.48) controlPoint1: CGPointMake(44.27, 205.97) controlPoint2: CGPointMake(46.1, 201.33)];
+                    [bezier86Path closePath];
+                    bezier86Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier86Path]];
+                    
+                    
+                    //// Bezier 87 Drawing
+                    UIBezierPath* bezier87Path = UIBezierPath.bezierPath;
+                    [bezier87Path moveToPoint: CGPointMake(74.92, 268.92)];
+                    [bezier87Path addCurveToPoint: CGPointMake(74.5, 259.39) controlPoint1: CGPointMake(74.75, 265.73) controlPoint2: CGPointMake(74.53, 262.58)];
+                    [bezier87Path addCurveToPoint: CGPointMake(74.08, 251.83) controlPoint1: CGPointMake(74.45, 256.86) controlPoint2: CGPointMake(74.34, 254.35)];
+                    [bezier87Path addCurveToPoint: CGPointMake(70.35, 241.26) controlPoint1: CGPointMake(73.62, 248.3) controlPoint2: CGPointMake(73.01, 243.97)];
+                    [bezier87Path addCurveToPoint: CGPointMake(62.74, 236.31) controlPoint1: CGPointMake(68.15, 239.3) controlPoint2: CGPointMake(65.1, 238.16)];
+                    [bezier87Path addCurveToPoint: CGPointMake(48.41, 215.7) controlPoint1: CGPointMake(56.22, 231.25) controlPoint2: CGPointMake(50.92, 223.44)];
+                    [bezier87Path addCurveToPoint: CGPointMake(46.26, 206.89) controlPoint1: CGPointMake(47.46, 212.81) controlPoint2: CGPointMake(46.74, 209.89)];
+                    [bezier87Path addCurveToPoint: CGPointMake(45.87, 202.89) controlPoint1: CGPointMake(46.15, 206.19) controlPoint2: CGPointMake(45.79, 202.57)];
+                    [bezier87Path addCurveToPoint: CGPointMake(48.14, 209.9) controlPoint1: CGPointMake(46.47, 205.28) controlPoint2: CGPointMake(47.26, 207.6)];
+                    [bezier87Path addCurveToPoint: CGPointMake(62.44, 231.99) controlPoint1: CGPointMake(51.44, 218.1) controlPoint2: CGPointMake(55.65, 226.05)];
+                    [bezier87Path addCurveToPoint: CGPointMake(72.2, 238.58) controlPoint1: CGPointMake(65.45, 234.63) controlPoint2: CGPointMake(69.09, 236.17)];
+                    [bezier87Path addCurveToPoint: CGPointMake(74.36, 241.19) controlPoint1: CGPointMake(73.07, 239.36) controlPoint2: CGPointMake(73.76, 240.2)];
+                    [bezier87Path addCurveToPoint: CGPointMake(76.57, 262.79) controlPoint1: CGPointMake(78.02, 247.45) controlPoint2: CGPointMake(77.22, 255.94)];
+                    [bezier87Path addCurveToPoint: CGPointMake(74.92, 268.92) controlPoint1: CGPointMake(76.13, 264.87) controlPoint2: CGPointMake(75.57, 266.89)];
+                    [bezier87Path closePath];
+                    bezier87Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier87Path]];
+                    
+                    
+                    //// Bezier 88 Drawing
+                    UIBezierPath* bezier88Path = UIBezierPath.bezierPath;
+                    [bezier88Path moveToPoint: CGPointMake(224.79, 268.92)];
+                    [bezier88Path addCurveToPoint: CGPointMake(222.92, 250.22) controlPoint1: CGPointMake(222.85, 262.87) controlPoint2: CGPointMake(222.23, 256.54)];
+                    [bezier88Path addCurveToPoint: CGPointMake(226.28, 239.82) controlPoint1: CGPointMake(223.32, 246.59) controlPoint2: CGPointMake(223.96, 242.79)];
+                    [bezier88Path addCurveToPoint: CGPointMake(234.19, 234.4) controlPoint1: CGPointMake(228.2, 237.34) controlPoint2: CGPointMake(231.66, 236.15)];
+                    [bezier88Path addCurveToPoint: CGPointMake(238.68, 230.68) controlPoint1: CGPointMake(235.77, 233.25) controlPoint2: CGPointMake(237.26, 232.01)];
+                    [bezier88Path addCurveToPoint: CGPointMake(253.91, 202.56) controlPoint1: CGPointMake(246.22, 223.24) controlPoint2: CGPointMake(251.59, 212.78)];
+                    [bezier88Path addCurveToPoint: CGPointMake(253.07, 209.02) controlPoint1: CGPointMake(253.8, 204.68) controlPoint2: CGPointMake(253.62, 206.96)];
+                    [bezier88Path addCurveToPoint: CGPointMake(238.61, 234.91) controlPoint1: CGPointMake(251.03, 218.81) controlPoint2: CGPointMake(246.2, 228.13)];
+                    [bezier88Path addCurveToPoint: CGPointMake(229.36, 241.24) controlPoint1: CGPointMake(235.79, 237.42) controlPoint2: CGPointMake(232.11, 238.79)];
+                    [bezier88Path addCurveToPoint: CGPointMake(227.84, 243.41) controlPoint1: CGPointMake(228.73, 241.89) controlPoint2: CGPointMake(228.24, 242.61)];
+                    [bezier88Path addCurveToPoint: CGPointMake(225.5, 253.07) controlPoint1: CGPointMake(226.28, 246.36) controlPoint2: CGPointMake(225.84, 249.82)];
+                    [bezier88Path addCurveToPoint: CGPointMake(224.79, 268.92) controlPoint1: CGPointMake(224.94, 258.31) controlPoint2: CGPointMake(225.07, 263.66)];
+                    [bezier88Path closePath];
+                    bezier88Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier88Path]];
+                    
+                    break;
+                }
+                    
+                case 4: {
+                    
+                    //// Bezier 89 Drawing
+                    UIBezierPath* bezier89Path = UIBezierPath.bezierPath;
+                    [bezier89Path moveToPoint: CGPointMake(50.98, 204.39)];
+                    [bezier89Path addCurveToPoint: CGPointMake(76.23, 241.18) controlPoint1: CGPointMake(53.49, 228.03) controlPoint2: CGPointMake(76.23, 241.18)];
+                    [bezier89Path addCurveToPoint: CGPointMake(79.98, 278.22) controlPoint1: CGPointMake(83.24, 254.42) controlPoint2: CGPointMake(78.73, 265.87)];
+                    [bezier89Path addCurveToPoint: CGPointMake(112.39, 339.91) controlPoint1: CGPointMake(79.98, 278.22) controlPoint2: CGPointMake(87.19, 324.31)];
+                    [bezier89Path addCurveToPoint: CGPointMake(51.6, 249.06) controlPoint1: CGPointMake(79.4, 319.48) controlPoint2: CGPointMake(67.01, 274.45)];
+                    [bezier89Path addLineToPoint: CGPointMake(43.64, 211.93)];
+                    [bezier89Path addCurveToPoint: CGPointMake(50.98, 204.39) controlPoint1: CGPointMake(48.92, 206.88) controlPoint2: CGPointMake(50.75, 202.24)];
+                    [bezier89Path closePath];
+                    bezier89Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier89Path]];
+                    
+                    
+                    //// Bezier 90 Drawing
+                    UIBezierPath* bezier90Path = UIBezierPath.bezierPath;
+                    [bezier90Path moveToPoint: CGPointMake(79.58, 269.83)];
+                    [bezier90Path addCurveToPoint: CGPointMake(79.16, 260.3) controlPoint1: CGPointMake(79.4, 266.64) controlPoint2: CGPointMake(79.18, 263.5)];
+                    [bezier90Path addCurveToPoint: CGPointMake(78.73, 252.75) controlPoint1: CGPointMake(79.1, 257.77) controlPoint2: CGPointMake(79, 255.26)];
+                    [bezier90Path addCurveToPoint: CGPointMake(75, 242.17) controlPoint1: CGPointMake(78.27, 249.21) controlPoint2: CGPointMake(77.66, 244.88)];
+                    [bezier90Path addCurveToPoint: CGPointMake(67.39, 237.23) controlPoint1: CGPointMake(72.8, 240.21) controlPoint2: CGPointMake(69.75, 239.08)];
+                    [bezier90Path addCurveToPoint: CGPointMake(53.06, 216.62) controlPoint1: CGPointMake(60.87, 232.16) controlPoint2: CGPointMake(55.57, 224.35)];
+                    [bezier90Path addCurveToPoint: CGPointMake(50.91, 207.8) controlPoint1: CGPointMake(52.12, 213.72) controlPoint2: CGPointMake(51.39, 210.81)];
+                    [bezier90Path addCurveToPoint: CGPointMake(50.52, 203.81) controlPoint1: CGPointMake(50.8, 207.11) controlPoint2: CGPointMake(50.45, 203.49)];
+                    [bezier90Path addCurveToPoint: CGPointMake(52.79, 210.82) controlPoint1: CGPointMake(51.12, 206.2) controlPoint2: CGPointMake(51.91, 208.52)];
+                    [bezier90Path addCurveToPoint: CGPointMake(67.09, 232.91) controlPoint1: CGPointMake(56.09, 219.02) controlPoint2: CGPointMake(60.3, 226.96)];
+                    [bezier90Path addCurveToPoint: CGPointMake(76.85, 239.49) controlPoint1: CGPointMake(70.1, 235.55) controlPoint2: CGPointMake(73.74, 237.09)];
+                    [bezier90Path addCurveToPoint: CGPointMake(79.02, 242.11) controlPoint1: CGPointMake(77.73, 240.27) controlPoint2: CGPointMake(78.41, 241.12)];
+                    [bezier90Path addCurveToPoint: CGPointMake(81.22, 263.71) controlPoint1: CGPointMake(82.67, 248.37) controlPoint2: CGPointMake(81.88, 256.85)];
+                    [bezier90Path addCurveToPoint: CGPointMake(79.58, 269.83) controlPoint1: CGPointMake(80.79, 265.79) controlPoint2: CGPointMake(80.22, 267.81)];
+                    [bezier90Path closePath];
+                    bezier90Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor  andPath:bezier90Path]];
+                    
+                    
+                    //// Bezier 91 Drawing
+                    UIBezierPath* bezier91Path = UIBezierPath.bezierPath;
+                    [bezier91Path moveToPoint: CGPointMake(221.44, 269.83)];
+                    [bezier91Path addCurveToPoint: CGPointMake(219.58, 251.13) controlPoint1: CGPointMake(219.51, 263.79) controlPoint2: CGPointMake(218.88, 257.46)];
+                    [bezier91Path addCurveToPoint: CGPointMake(222.93, 240.73) controlPoint1: CGPointMake(219.97, 247.5) controlPoint2: CGPointMake(220.61, 243.71)];
+                    [bezier91Path addCurveToPoint: CGPointMake(230.84, 235.32) controlPoint1: CGPointMake(224.85, 238.26) controlPoint2: CGPointMake(228.31, 237.06)];
+                    [bezier91Path addCurveToPoint: CGPointMake(235.33, 231.59) controlPoint1: CGPointMake(232.42, 234.17) controlPoint2: CGPointMake(233.91, 232.93)];
+                    [bezier91Path addCurveToPoint: CGPointMake(250.56, 203.48) controlPoint1: CGPointMake(242.87, 224.16) controlPoint2: CGPointMake(248.24, 213.69)];
+                    [bezier91Path addCurveToPoint: CGPointMake(249.73, 209.94) controlPoint1: CGPointMake(250.45, 205.6) controlPoint2: CGPointMake(250.27, 207.88)];
+                    [bezier91Path addCurveToPoint: CGPointMake(235.26, 235.82) controlPoint1: CGPointMake(247.68, 219.73) controlPoint2: CGPointMake(242.85, 229.05)];
+                    [bezier91Path addCurveToPoint: CGPointMake(226.01, 242.16) controlPoint1: CGPointMake(232.44, 238.34) controlPoint2: CGPointMake(228.76, 239.71)];
+                    [bezier91Path addCurveToPoint: CGPointMake(224.49, 244.33) controlPoint1: CGPointMake(225.38, 242.8) controlPoint2: CGPointMake(224.89, 243.52)];
+                    [bezier91Path addCurveToPoint: CGPointMake(222.15, 253.99) controlPoint1: CGPointMake(222.93, 247.27) controlPoint2: CGPointMake(222.49, 250.74)];
+                    [bezier91Path addCurveToPoint: CGPointMake(221.44, 269.83) controlPoint1: CGPointMake(221.59, 259.22) controlPoint2: CGPointMake(221.72, 264.58)];
+                    [bezier91Path closePath];
+                    bezier91Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier91Path]];
+
+                    
+                    break;
+                }
+                    
+                case 5: {
+                    
+                    //// Bezier 92 Drawing
+                    UIBezierPath* bezier92Path = UIBezierPath.bezierPath;
+                    [bezier92Path moveToPoint: CGPointMake(48.46, 195.27)];
+                    [bezier92Path addCurveToPoint: CGPointMake(73.71, 232.06) controlPoint1: CGPointMake(50.96, 218.91) controlPoint2: CGPointMake(73.71, 232.06)];
+                    [bezier92Path addCurveToPoint: CGPointMake(77.45, 269.1) controlPoint1: CGPointMake(80.72, 245.3) controlPoint2: CGPointMake(76.21, 256.75)];
+                    [bezier92Path addCurveToPoint: CGPointMake(109.87, 330.79) controlPoint1: CGPointMake(77.45, 269.1) controlPoint2: CGPointMake(84.67, 315.19)];
+                    [bezier92Path addCurveToPoint: CGPointMake(49.08, 239.94) controlPoint1: CGPointMake(76.87, 310.36) controlPoint2: CGPointMake(64.49, 265.34)];
+                    [bezier92Path addLineToPoint: CGPointMake(41.11, 202.81)];
+                    [bezier92Path addCurveToPoint: CGPointMake(48.46, 195.27) controlPoint1: CGPointMake(46.4, 197.76) controlPoint2: CGPointMake(48.23, 193.13)];
+                    [bezier92Path closePath];
+                    bezier92Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier92Path]];
+                    
+                    
+                    //// Bezier 93 Drawing
+                    UIBezierPath* bezier93Path = UIBezierPath.bezierPath;
+                    [bezier93Path moveToPoint: CGPointMake(77.05, 260.71)];
+                    [bezier93Path addCurveToPoint: CGPointMake(76.63, 251.18) controlPoint1: CGPointMake(76.88, 257.52) controlPoint2: CGPointMake(76.65, 254.38)];
+                    [bezier93Path addCurveToPoint: CGPointMake(76.21, 243.63) controlPoint1: CGPointMake(76.58, 248.65) controlPoint2: CGPointMake(76.47, 246.14)];
+                    [bezier93Path addCurveToPoint: CGPointMake(72.48, 233.05) controlPoint1: CGPointMake(75.75, 240.09) controlPoint2: CGPointMake(75.14, 235.76)];
+                    [bezier93Path addCurveToPoint: CGPointMake(64.87, 228.11) controlPoint1: CGPointMake(70.28, 231.09) controlPoint2: CGPointMake(67.23, 229.96)];
+                    [bezier93Path addCurveToPoint: CGPointMake(50.54, 207.5) controlPoint1: CGPointMake(58.35, 223.04) controlPoint2: CGPointMake(53.05, 215.23)];
+                    [bezier93Path addCurveToPoint: CGPointMake(48.39, 198.68) controlPoint1: CGPointMake(49.59, 204.6) controlPoint2: CGPointMake(48.87, 201.69)];
+                    [bezier93Path addCurveToPoint: CGPointMake(48, 194.69) controlPoint1: CGPointMake(48.27, 197.99) controlPoint2: CGPointMake(47.92, 194.37)];
+                    [bezier93Path addCurveToPoint: CGPointMake(50.26, 201.7) controlPoint1: CGPointMake(48.6, 197.08) controlPoint2: CGPointMake(49.39, 199.4)];
+                    [bezier93Path addCurveToPoint: CGPointMake(64.57, 223.79) controlPoint1: CGPointMake(53.57, 209.9) controlPoint2: CGPointMake(57.78, 217.84)];
+                    [bezier93Path addCurveToPoint: CGPointMake(74.33, 230.37) controlPoint1: CGPointMake(67.58, 226.43) controlPoint2: CGPointMake(71.22, 227.97)];
+                    [bezier93Path addCurveToPoint: CGPointMake(76.49, 232.99) controlPoint1: CGPointMake(75.2, 231.15) controlPoint2: CGPointMake(75.88, 232)];
+                    [bezier93Path addCurveToPoint: CGPointMake(78.7, 254.59) controlPoint1: CGPointMake(80.15, 239.25) controlPoint2: CGPointMake(79.35, 247.73)];
+                    [bezier93Path addCurveToPoint: CGPointMake(77.05, 260.71) controlPoint1: CGPointMake(78.26, 256.67) controlPoint2: CGPointMake(77.7, 258.69)];
+                    [bezier93Path closePath];
+                    bezier93Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier93Path]];
+                    
+                    
+                    //// Bezier 94 Drawing
+                    UIBezierPath* bezier94Path = UIBezierPath.bezierPath;
+                    [bezier94Path moveToPoint: CGPointMake(224.91, 260.71)];
+                    [bezier94Path addCurveToPoint: CGPointMake(223.05, 242.02) controlPoint1: CGPointMake(222.98, 254.67) controlPoint2: CGPointMake(222.36, 248.34)];
+                    [bezier94Path addCurveToPoint: CGPointMake(226.41, 231.61) controlPoint1: CGPointMake(223.45, 238.38) controlPoint2: CGPointMake(224.09, 234.59)];
+                    [bezier94Path addCurveToPoint: CGPointMake(234.32, 226.2) controlPoint1: CGPointMake(228.33, 229.14) controlPoint2: CGPointMake(231.79, 227.94)];
+                    [bezier94Path addCurveToPoint: CGPointMake(238.81, 222.47) controlPoint1: CGPointMake(235.9, 225.05) controlPoint2: CGPointMake(237.39, 223.81)];
+                    [bezier94Path addCurveToPoint: CGPointMake(254.04, 194.36) controlPoint1: CGPointMake(246.35, 215.04) controlPoint2: CGPointMake(251.72, 204.57)];
+                    [bezier94Path addCurveToPoint: CGPointMake(253.2, 200.82) controlPoint1: CGPointMake(253.93, 196.48) controlPoint2: CGPointMake(253.75, 198.76)];
+                    [bezier94Path addCurveToPoint: CGPointMake(238.74, 226.71) controlPoint1: CGPointMake(251.16, 210.61) controlPoint2: CGPointMake(246.32, 219.93)];
+                    [bezier94Path addCurveToPoint: CGPointMake(229.49, 233.04) controlPoint1: CGPointMake(235.92, 229.22) controlPoint2: CGPointMake(232.23, 230.59)];
+                    [bezier94Path addCurveToPoint: CGPointMake(227.97, 235.21) controlPoint1: CGPointMake(228.86, 233.68) controlPoint2: CGPointMake(228.37, 234.4)];
+                    [bezier94Path addCurveToPoint: CGPointMake(225.63, 244.87) controlPoint1: CGPointMake(226.41, 238.15) controlPoint2: CGPointMake(225.96, 241.62)];
+                    [bezier94Path addCurveToPoint: CGPointMake(224.91, 260.71) controlPoint1: CGPointMake(225.06, 250.11) controlPoint2: CGPointMake(225.2, 255.46)];
+                    [bezier94Path closePath];
+                    bezier94Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier94Path]];
+
+                    
+                    break;
+                }
+                    
+                case 6: {
+                    
+                    //// Bezier 95 Drawing
+                    UIBezierPath* bezier95Path = UIBezierPath.bezierPath;
+                    [bezier95Path moveToPoint: CGPointMake(46.96, 197.27)];
+                    [bezier95Path addCurveToPoint: CGPointMake(72.21, 234.06) controlPoint1: CGPointMake(49.46, 220.91) controlPoint2: CGPointMake(72.21, 234.06)];
+                    [bezier95Path addCurveToPoint: CGPointMake(75.95, 271.1) controlPoint1: CGPointMake(79.22, 247.3) controlPoint2: CGPointMake(74.71, 258.75)];
+                    [bezier95Path addCurveToPoint: CGPointMake(108.37, 332.79) controlPoint1: CGPointMake(75.95, 271.1) controlPoint2: CGPointMake(83.17, 317.19)];
+                    [bezier95Path addCurveToPoint: CGPointMake(47.58, 241.94) controlPoint1: CGPointMake(75.37, 312.36) controlPoint2: CGPointMake(62.99, 267.34)];
+                    [bezier95Path addLineToPoint: CGPointMake(39.61, 204.81)];
+                    [bezier95Path addCurveToPoint: CGPointMake(46.96, 197.27) controlPoint1: CGPointMake(44.9, 199.76) controlPoint2: CGPointMake(46.73, 195.13)];
+                    [bezier95Path closePath];
+                    bezier95Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier95Path]];
+                    
+                    
+                    //// Bezier 96 Drawing
+                    UIBezierPath* bezier96Path = UIBezierPath.bezierPath;
+                    [bezier96Path moveToPoint: CGPointMake(75.55, 262.71)];
+                    [bezier96Path addCurveToPoint: CGPointMake(75.13, 253.18) controlPoint1: CGPointMake(75.38, 259.52) controlPoint2: CGPointMake(75.15, 256.38)];
+                    [bezier96Path addCurveToPoint: CGPointMake(74.71, 245.63) controlPoint1: CGPointMake(75.08, 250.65) controlPoint2: CGPointMake(74.97, 248.14)];
+                    [bezier96Path addCurveToPoint: CGPointMake(70.98, 235.05) controlPoint1: CGPointMake(74.25, 242.09) controlPoint2: CGPointMake(73.64, 237.76)];
+                    [bezier96Path addCurveToPoint: CGPointMake(63.37, 230.11) controlPoint1: CGPointMake(68.78, 233.09) controlPoint2: CGPointMake(65.73, 231.96)];
+                    [bezier96Path addCurveToPoint: CGPointMake(49.04, 209.5) controlPoint1: CGPointMake(56.85, 225.04) controlPoint2: CGPointMake(51.55, 217.23)];
+                    [bezier96Path addCurveToPoint: CGPointMake(46.89, 200.68) controlPoint1: CGPointMake(48.09, 206.6) controlPoint2: CGPointMake(47.37, 203.69)];
+                    [bezier96Path addCurveToPoint: CGPointMake(46.5, 196.69) controlPoint1: CGPointMake(46.77, 199.99) controlPoint2: CGPointMake(46.42, 196.37)];
+                    [bezier96Path addCurveToPoint: CGPointMake(48.76, 203.7) controlPoint1: CGPointMake(47.1, 199.08) controlPoint2: CGPointMake(47.89, 201.4)];
+                    [bezier96Path addCurveToPoint: CGPointMake(63.07, 225.79) controlPoint1: CGPointMake(52.07, 211.9) controlPoint2: CGPointMake(56.28, 219.84)];
+                    [bezier96Path addCurveToPoint: CGPointMake(72.83, 232.37) controlPoint1: CGPointMake(66.08, 228.43) controlPoint2: CGPointMake(69.72, 229.97)];
+                    [bezier96Path addCurveToPoint: CGPointMake(74.99, 234.99) controlPoint1: CGPointMake(73.7, 233.15) controlPoint2: CGPointMake(74.38, 234)];
+                    [bezier96Path addCurveToPoint: CGPointMake(77.2, 256.59) controlPoint1: CGPointMake(78.65, 241.25) controlPoint2: CGPointMake(77.85, 249.73)];
+                    [bezier96Path addCurveToPoint: CGPointMake(75.55, 262.71) controlPoint1: CGPointMake(76.76, 258.67) controlPoint2: CGPointMake(76.2, 260.69)];
+                    [bezier96Path closePath];
+                    bezier96Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier96Path]];
+                    
+                    
+                    //// Bezier 97 Drawing
+                    UIBezierPath* bezier97Path = UIBezierPath.bezierPath;
+                    [bezier97Path moveToPoint: CGPointMake(223.41, 262.71)];
+                    [bezier97Path addCurveToPoint: CGPointMake(221.55, 244.02) controlPoint1: CGPointMake(221.48, 256.67) controlPoint2: CGPointMake(220.86, 250.34)];
+                    [bezier97Path addCurveToPoint: CGPointMake(224.91, 233.61) controlPoint1: CGPointMake(221.95, 240.38) controlPoint2: CGPointMake(222.59, 236.59)];
+                    [bezier97Path addCurveToPoint: CGPointMake(232.82, 228.2) controlPoint1: CGPointMake(226.83, 231.14) controlPoint2: CGPointMake(230.29, 229.94)];
+                    [bezier97Path addCurveToPoint: CGPointMake(237.31, 224.47) controlPoint1: CGPointMake(234.4, 227.05) controlPoint2: CGPointMake(235.89, 225.81)];
+                    [bezier97Path addCurveToPoint: CGPointMake(252.54, 196.36) controlPoint1: CGPointMake(244.85, 217.04) controlPoint2: CGPointMake(250.22, 206.57)];
+                    [bezier97Path addCurveToPoint: CGPointMake(251.7, 202.82) controlPoint1: CGPointMake(252.43, 198.48) controlPoint2: CGPointMake(252.25, 200.76)];
+                    [bezier97Path addCurveToPoint: CGPointMake(237.24, 228.71) controlPoint1: CGPointMake(249.66, 212.61) controlPoint2: CGPointMake(244.82, 221.93)];
+                    [bezier97Path addCurveToPoint: CGPointMake(227.99, 235.04) controlPoint1: CGPointMake(234.42, 231.22) controlPoint2: CGPointMake(230.73, 232.59)];
+                    [bezier97Path addCurveToPoint: CGPointMake(226.47, 237.21) controlPoint1: CGPointMake(227.36, 235.68) controlPoint2: CGPointMake(226.87, 236.4)];
+                    [bezier97Path addCurveToPoint: CGPointMake(224.13, 246.87) controlPoint1: CGPointMake(224.91, 240.15) controlPoint2: CGPointMake(224.46, 243.62)];
+                    [bezier97Path addCurveToPoint: CGPointMake(223.41, 262.71) controlPoint1: CGPointMake(223.56, 252.11) controlPoint2: CGPointMake(223.7, 257.46)];
+                    [bezier97Path closePath];
+                    bezier97Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier97Path]];
+                    
+                    break;
+                }
+                    
+                case 7: {
+                    
+                    //// Bezier 98 Drawing
+                    UIBezierPath* bezier98Path = UIBezierPath.bezierPath;
+                    [bezier98Path moveToPoint: CGPointMake(46.96, 200.77)];
+                    [bezier98Path addCurveToPoint: CGPointMake(72.21, 237.56) controlPoint1: CGPointMake(49.46, 224.41) controlPoint2: CGPointMake(72.21, 237.56)];
+                    [bezier98Path addCurveToPoint: CGPointMake(75.95, 274.6) controlPoint1: CGPointMake(79.22, 250.8) controlPoint2: CGPointMake(74.71, 262.25)];
+                    [bezier98Path addCurveToPoint: CGPointMake(108.37, 336.29) controlPoint1: CGPointMake(75.95, 274.6) controlPoint2: CGPointMake(83.17, 320.69)];
+                    [bezier98Path addCurveToPoint: CGPointMake(47.58, 245.44) controlPoint1: CGPointMake(75.37, 315.86) controlPoint2: CGPointMake(62.99, 270.84)];
+                    [bezier98Path addLineToPoint: CGPointMake(39.61, 208.31)];
+                    [bezier98Path addCurveToPoint: CGPointMake(46.96, 200.77) controlPoint1: CGPointMake(44.9, 203.26) controlPoint2: CGPointMake(46.73, 198.63)];
+                    [bezier98Path closePath];
+                    bezier98Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier98Path]];
+                    
+                    
+                    //// Bezier 99 Drawing
+                    UIBezierPath* bezier99Path = UIBezierPath.bezierPath;
+                    [bezier99Path moveToPoint: CGPointMake(75.55, 266.21)];
+                    [bezier99Path addCurveToPoint: CGPointMake(75.13, 256.68) controlPoint1: CGPointMake(75.38, 263.02) controlPoint2: CGPointMake(75.15, 259.88)];
+                    [bezier99Path addCurveToPoint: CGPointMake(74.71, 249.13) controlPoint1: CGPointMake(75.08, 254.15) controlPoint2: CGPointMake(74.97, 251.64)];
+                    [bezier99Path addCurveToPoint: CGPointMake(70.98, 238.55) controlPoint1: CGPointMake(74.25, 245.59) controlPoint2: CGPointMake(73.64, 241.26)];
+                    [bezier99Path addCurveToPoint: CGPointMake(63.37, 233.61) controlPoint1: CGPointMake(68.78, 236.59) controlPoint2: CGPointMake(65.73, 235.46)];
+                    [bezier99Path addCurveToPoint: CGPointMake(49.04, 213) controlPoint1: CGPointMake(56.85, 228.54) controlPoint2: CGPointMake(51.55, 220.73)];
+                    [bezier99Path addCurveToPoint: CGPointMake(46.89, 204.18) controlPoint1: CGPointMake(48.09, 210.1) controlPoint2: CGPointMake(47.37, 207.19)];
+                    [bezier99Path addCurveToPoint: CGPointMake(46.5, 200.19) controlPoint1: CGPointMake(46.77, 203.49) controlPoint2: CGPointMake(46.42, 199.87)];
+                    [bezier99Path addCurveToPoint: CGPointMake(48.76, 207.2) controlPoint1: CGPointMake(47.1, 202.58) controlPoint2: CGPointMake(47.89, 204.9)];
+                    [bezier99Path addCurveToPoint: CGPointMake(63.07, 229.29) controlPoint1: CGPointMake(52.07, 215.4) controlPoint2: CGPointMake(56.28, 223.34)];
+                    [bezier99Path addCurveToPoint: CGPointMake(72.83, 235.87) controlPoint1: CGPointMake(66.08, 231.93) controlPoint2: CGPointMake(69.72, 233.47)];
+                    [bezier99Path addCurveToPoint: CGPointMake(74.99, 238.49) controlPoint1: CGPointMake(73.7, 236.65) controlPoint2: CGPointMake(74.38, 237.5)];
+                    [bezier99Path addCurveToPoint: CGPointMake(77.2, 260.09) controlPoint1: CGPointMake(78.65, 244.75) controlPoint2: CGPointMake(77.85, 253.23)];
+                    [bezier99Path addCurveToPoint: CGPointMake(75.55, 266.21) controlPoint1: CGPointMake(76.76, 262.17) controlPoint2: CGPointMake(76.2, 264.19)];
+                    [bezier99Path closePath];
+                    bezier99Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier99Path]];
+                    
+                    
+                    //// Bezier 100 Drawing
+                    UIBezierPath* bezier100Path = UIBezierPath.bezierPath;
+                    [bezier100Path moveToPoint: CGPointMake(223.41, 266.21)];
+                    [bezier100Path addCurveToPoint: CGPointMake(221.55, 247.52) controlPoint1: CGPointMake(221.48, 260.17) controlPoint2: CGPointMake(220.86, 253.84)];
+                    [bezier100Path addCurveToPoint: CGPointMake(224.91, 237.11) controlPoint1: CGPointMake(221.95, 243.88) controlPoint2: CGPointMake(222.59, 240.09)];
+                    [bezier100Path addCurveToPoint: CGPointMake(232.82, 231.7) controlPoint1: CGPointMake(226.83, 234.64) controlPoint2: CGPointMake(230.29, 233.44)];
+                    [bezier100Path addCurveToPoint: CGPointMake(237.31, 227.97) controlPoint1: CGPointMake(234.4, 230.55) controlPoint2: CGPointMake(235.89, 229.31)];
+                    [bezier100Path addCurveToPoint: CGPointMake(252.54, 199.86) controlPoint1: CGPointMake(244.85, 220.54) controlPoint2: CGPointMake(250.22, 210.07)];
+                    [bezier100Path addCurveToPoint: CGPointMake(251.7, 206.32) controlPoint1: CGPointMake(252.43, 201.98) controlPoint2: CGPointMake(252.25, 204.26)];
+                    [bezier100Path addCurveToPoint: CGPointMake(237.24, 232.21) controlPoint1: CGPointMake(249.66, 216.11) controlPoint2: CGPointMake(244.82, 225.43)];
+                    [bezier100Path addCurveToPoint: CGPointMake(227.99, 238.54) controlPoint1: CGPointMake(234.42, 234.72) controlPoint2: CGPointMake(230.73, 236.09)];
+                    [bezier100Path addCurveToPoint: CGPointMake(226.47, 240.71) controlPoint1: CGPointMake(227.36, 239.18) controlPoint2: CGPointMake(226.87, 239.9)];
+                    [bezier100Path addCurveToPoint: CGPointMake(224.13, 250.37) controlPoint1: CGPointMake(224.91, 243.65) controlPoint2: CGPointMake(224.46, 247.12)];
+                    [bezier100Path addCurveToPoint: CGPointMake(223.41, 266.21) controlPoint1: CGPointMake(223.56, 255.61) controlPoint2: CGPointMake(223.7, 260.96)];
+                    [bezier100Path closePath];
+                    bezier100Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier100Path]];
+                    
+                    break;
+                }
+                    
+                case 8: {
+                    
+                    //// Bezier 101 Drawing
+                    UIBezierPath* bezier101Path = UIBezierPath.bezierPath;
+                    [bezier101Path moveToPoint: CGPointMake(46.46, 200.27)];
+                    [bezier101Path addCurveToPoint: CGPointMake(71.71, 237.06) controlPoint1: CGPointMake(48.96, 223.91) controlPoint2: CGPointMake(71.71, 237.06)];
+                    [bezier101Path addCurveToPoint: CGPointMake(75.45, 274.1) controlPoint1: CGPointMake(78.72, 250.3) controlPoint2: CGPointMake(74.21, 261.75)];
+                    [bezier101Path addCurveToPoint: CGPointMake(107.87, 335.79) controlPoint1: CGPointMake(75.45, 274.1) controlPoint2: CGPointMake(82.67, 320.19)];
+                    [bezier101Path addCurveToPoint: CGPointMake(47.08, 244.94) controlPoint1: CGPointMake(74.87, 315.36) controlPoint2: CGPointMake(62.49, 270.34)];
+                    [bezier101Path addLineToPoint: CGPointMake(39.11, 207.81)];
+                    [bezier101Path addCurveToPoint: CGPointMake(46.46, 200.27) controlPoint1: CGPointMake(44.4, 202.76) controlPoint2: CGPointMake(46.23, 198.13)];
+                    [bezier101Path closePath];
+                    bezier101Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier101Path]];
+                    
+                    
+                    //// Bezier 102 Drawing
+                    UIBezierPath* bezier102Path = UIBezierPath.bezierPath;
+                    [bezier102Path moveToPoint: CGPointMake(75.05, 265.71)];
+                    [bezier102Path addCurveToPoint: CGPointMake(74.63, 256.18) controlPoint1: CGPointMake(74.88, 262.52) controlPoint2: CGPointMake(74.65, 259.38)];
+                    [bezier102Path addCurveToPoint: CGPointMake(74.21, 248.63) controlPoint1: CGPointMake(74.58, 253.65) controlPoint2: CGPointMake(74.47, 251.14)];
+                    [bezier102Path addCurveToPoint: CGPointMake(70.48, 238.05) controlPoint1: CGPointMake(73.75, 245.09) controlPoint2: CGPointMake(73.14, 240.76)];
+                    [bezier102Path addCurveToPoint: CGPointMake(62.87, 233.11) controlPoint1: CGPointMake(68.28, 236.09) controlPoint2: CGPointMake(65.23, 234.96)];
+                    [bezier102Path addCurveToPoint: CGPointMake(48.54, 212.5) controlPoint1: CGPointMake(56.35, 228.04) controlPoint2: CGPointMake(51.05, 220.23)];
+                    [bezier102Path addCurveToPoint: CGPointMake(46.39, 203.68) controlPoint1: CGPointMake(47.59, 209.6) controlPoint2: CGPointMake(46.87, 206.69)];
+                    [bezier102Path addCurveToPoint: CGPointMake(46, 199.69) controlPoint1: CGPointMake(46.27, 202.99) controlPoint2: CGPointMake(45.92, 199.37)];
+                    [bezier102Path addCurveToPoint: CGPointMake(48.26, 206.7) controlPoint1: CGPointMake(46.6, 202.08) controlPoint2: CGPointMake(47.39, 204.4)];
+                    [bezier102Path addCurveToPoint: CGPointMake(62.57, 228.79) controlPoint1: CGPointMake(51.57, 214.9) controlPoint2: CGPointMake(55.78, 222.84)];
+                    [bezier102Path addCurveToPoint: CGPointMake(72.33, 235.37) controlPoint1: CGPointMake(65.58, 231.43) controlPoint2: CGPointMake(69.22, 232.97)];
+                    [bezier102Path addCurveToPoint: CGPointMake(74.49, 237.99) controlPoint1: CGPointMake(73.2, 236.15) controlPoint2: CGPointMake(73.88, 237)];
+                    [bezier102Path addCurveToPoint: CGPointMake(76.7, 259.59) controlPoint1: CGPointMake(78.15, 244.25) controlPoint2: CGPointMake(77.35, 252.73)];
+                    [bezier102Path addCurveToPoint: CGPointMake(75.05, 265.71) controlPoint1: CGPointMake(76.26, 261.67) controlPoint2: CGPointMake(75.7, 263.69)];
+                    [bezier102Path closePath];
+                    bezier102Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier102Path]];
+                    
+                    
+                    //// Bezier 103 Drawing
+                    UIBezierPath* bezier103Path = UIBezierPath.bezierPath;
+                    [bezier103Path moveToPoint: CGPointMake(224.91, 265.71)];
+                    [bezier103Path addCurveToPoint: CGPointMake(223.05, 247.02) controlPoint1: CGPointMake(222.98, 259.67) controlPoint2: CGPointMake(222.36, 253.34)];
+                    [bezier103Path addCurveToPoint: CGPointMake(226.41, 236.61) controlPoint1: CGPointMake(223.45, 243.38) controlPoint2: CGPointMake(224.09, 239.59)];
+                    [bezier103Path addCurveToPoint: CGPointMake(234.32, 231.2) controlPoint1: CGPointMake(228.33, 234.14) controlPoint2: CGPointMake(231.79, 232.94)];
+                    [bezier103Path addCurveToPoint: CGPointMake(238.81, 227.47) controlPoint1: CGPointMake(235.9, 230.05) controlPoint2: CGPointMake(237.39, 228.81)];
+                    [bezier103Path addCurveToPoint: CGPointMake(254.04, 199.36) controlPoint1: CGPointMake(246.35, 220.04) controlPoint2: CGPointMake(251.72, 209.57)];
+                    [bezier103Path addCurveToPoint: CGPointMake(253.2, 205.82) controlPoint1: CGPointMake(253.93, 201.48) controlPoint2: CGPointMake(253.75, 203.76)];
+                    [bezier103Path addCurveToPoint: CGPointMake(238.74, 231.71) controlPoint1: CGPointMake(251.16, 215.61) controlPoint2: CGPointMake(246.32, 224.93)];
+                    [bezier103Path addCurveToPoint: CGPointMake(229.49, 238.04) controlPoint1: CGPointMake(235.92, 234.22) controlPoint2: CGPointMake(232.23, 235.59)];
+                    [bezier103Path addCurveToPoint: CGPointMake(227.97, 240.21) controlPoint1: CGPointMake(228.86, 238.68) controlPoint2: CGPointMake(228.37, 239.4)];
+                    [bezier103Path addCurveToPoint: CGPointMake(225.63, 249.87) controlPoint1: CGPointMake(226.41, 243.15) controlPoint2: CGPointMake(225.96, 246.62)];
+                    [bezier103Path addCurveToPoint: CGPointMake(224.91, 265.71) controlPoint1: CGPointMake(225.06, 255.11) controlPoint2: CGPointMake(225.2, 260.46)];
+                    [bezier103Path closePath];
+                    bezier103Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier103Path]];
+
+                    break;
+                }
+                    
+                case 9: {
+                    
+                    //// Bezier 104 Drawing
+                    UIBezierPath* bezier104Path = UIBezierPath.bezierPath;
+                    [bezier104Path moveToPoint: CGPointMake(50.46, 205.77)];
+                    [bezier104Path addCurveToPoint: CGPointMake(75.71, 242.56) controlPoint1: CGPointMake(52.96, 229.41) controlPoint2: CGPointMake(75.71, 242.56)];
+                    [bezier104Path addCurveToPoint: CGPointMake(79.45, 279.6) controlPoint1: CGPointMake(82.72, 255.8) controlPoint2: CGPointMake(78.21, 267.25)];
+                    [bezier104Path addCurveToPoint: CGPointMake(111.87, 341.29) controlPoint1: CGPointMake(79.45, 279.6) controlPoint2: CGPointMake(86.67, 325.69)];
+                    [bezier104Path addCurveToPoint: CGPointMake(51.08, 250.44) controlPoint1: CGPointMake(78.87, 320.86) controlPoint2: CGPointMake(66.49, 275.84)];
+                    [bezier104Path addLineToPoint: CGPointMake(43.11, 213.31)];
+                    [bezier104Path addCurveToPoint: CGPointMake(50.46, 205.77) controlPoint1: CGPointMake(48.4, 208.26) controlPoint2: CGPointMake(50.23, 203.63)];
+                    [bezier104Path closePath];
+                    bezier104Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:skinShadowColor andPath:bezier104Path]];
+                    
+                    
+                    //// Bezier 105 Drawing
+                    UIBezierPath* bezier105Path = UIBezierPath.bezierPath;
+                    [bezier105Path moveToPoint: CGPointMake(79.05, 271.21)];
+                    [bezier105Path addCurveToPoint: CGPointMake(78.63, 261.68) controlPoint1: CGPointMake(78.88, 268.02) controlPoint2: CGPointMake(78.65, 264.88)];
+                    [bezier105Path addCurveToPoint: CGPointMake(78.21, 254.13) controlPoint1: CGPointMake(78.58, 259.15) controlPoint2: CGPointMake(78.47, 256.64)];
+                    [bezier105Path addCurveToPoint: CGPointMake(74.48, 243.55) controlPoint1: CGPointMake(77.75, 250.59) controlPoint2: CGPointMake(77.14, 246.26)];
+                    [bezier105Path addCurveToPoint: CGPointMake(66.87, 238.61) controlPoint1: CGPointMake(72.28, 241.59) controlPoint2: CGPointMake(69.23, 240.46)];
+                    [bezier105Path addCurveToPoint: CGPointMake(52.54, 218) controlPoint1: CGPointMake(60.35, 233.54) controlPoint2: CGPointMake(55.05, 225.73)];
+                    [bezier105Path addCurveToPoint: CGPointMake(50.39, 209.18) controlPoint1: CGPointMake(51.59, 215.1) controlPoint2: CGPointMake(50.87, 212.19)];
+                    [bezier105Path addCurveToPoint: CGPointMake(50, 205.19) controlPoint1: CGPointMake(50.27, 208.49) controlPoint2: CGPointMake(49.92, 204.87)];
+                    [bezier105Path addCurveToPoint: CGPointMake(52.26, 212.2) controlPoint1: CGPointMake(50.6, 207.58) controlPoint2: CGPointMake(51.39, 209.9)];
+                    [bezier105Path addCurveToPoint: CGPointMake(66.57, 234.29) controlPoint1: CGPointMake(55.57, 220.4) controlPoint2: CGPointMake(59.78, 228.34)];
+                    [bezier105Path addCurveToPoint: CGPointMake(76.33, 240.87) controlPoint1: CGPointMake(69.58, 236.93) controlPoint2: CGPointMake(73.22, 238.47)];
+                    [bezier105Path addCurveToPoint: CGPointMake(78.49, 243.49) controlPoint1: CGPointMake(77.2, 241.65) controlPoint2: CGPointMake(77.88, 242.5)];
+                    [bezier105Path addCurveToPoint: CGPointMake(80.7, 265.09) controlPoint1: CGPointMake(82.15, 249.75) controlPoint2: CGPointMake(81.35, 258.23)];
+                    [bezier105Path addCurveToPoint: CGPointMake(79.05, 271.21) controlPoint1: CGPointMake(80.26, 267.17) controlPoint2: CGPointMake(79.7, 269.19)];
+                    [bezier105Path closePath];
+                    bezier105Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier105Path]];
+                    
+                    
+                    //// Bezier 106 Drawing
+                    UIBezierPath* bezier106Path = UIBezierPath.bezierPath;
+                    [bezier106Path moveToPoint: CGPointMake(222.91, 271.21)];
+                    [bezier106Path addCurveToPoint: CGPointMake(221.05, 252.52) controlPoint1: CGPointMake(220.98, 265.17) controlPoint2: CGPointMake(220.36, 258.84)];
+                    [bezier106Path addCurveToPoint: CGPointMake(224.41, 242.11) controlPoint1: CGPointMake(221.45, 248.88) controlPoint2: CGPointMake(222.09, 245.09)];
+                    [bezier106Path addCurveToPoint: CGPointMake(232.32, 236.7) controlPoint1: CGPointMake(226.33, 239.64) controlPoint2: CGPointMake(229.79, 238.44)];
+                    [bezier106Path addCurveToPoint: CGPointMake(236.81, 232.97) controlPoint1: CGPointMake(233.9, 235.55) controlPoint2: CGPointMake(235.39, 234.31)];
+                    [bezier106Path addCurveToPoint: CGPointMake(252.04, 204.86) controlPoint1: CGPointMake(244.35, 225.54) controlPoint2: CGPointMake(249.72, 215.07)];
+                    [bezier106Path addCurveToPoint: CGPointMake(251.2, 211.32) controlPoint1: CGPointMake(251.93, 206.98) controlPoint2: CGPointMake(251.75, 209.26)];
+                    [bezier106Path addCurveToPoint: CGPointMake(236.74, 237.21) controlPoint1: CGPointMake(249.16, 221.11) controlPoint2: CGPointMake(244.32, 230.43)];
+                    [bezier106Path addCurveToPoint: CGPointMake(227.49, 243.54) controlPoint1: CGPointMake(233.92, 239.72) controlPoint2: CGPointMake(230.23, 241.09)];
+                    [bezier106Path addCurveToPoint: CGPointMake(225.97, 245.71) controlPoint1: CGPointMake(226.86, 244.18) controlPoint2: CGPointMake(226.37, 244.9)];
+                    [bezier106Path addCurveToPoint: CGPointMake(223.63, 255.37) controlPoint1: CGPointMake(224.41, 248.65) controlPoint2: CGPointMake(223.96, 252.12)];
+                    [bezier106Path addCurveToPoint: CGPointMake(222.91, 271.21) controlPoint1: CGPointMake(223.06, 260.61) controlPoint2: CGPointMake(223.2, 265.96)];
+                    [bezier106Path closePath];
+                    bezier106Path.miterLimit = 4;
+                    
+                    [paths addObject:[self addColor:_outlineColor andPath:bezier106Path]];
+                    
+                    break;
+                }
+                    
+                default:
+                    break;
+                    
+            }
+            
         }
             
         default:
@@ -2638,16 +4057,47 @@ static UIColor* _outlineColor = nil;
 }
 
 
-- (NSMutableArray *)drawJawThumbnail:(int)jawNumber withEars:(int)earsNumber
+- (NSMutableArray *)drawJawThumbnail:(int)jawNumber
 {
     NSMutableArray *paths = [@[] mutableCopy];
     
+    CHAvatarAttributeOption *ears = self.currentOptions[EARS];
+    
     [paths addObjectsFromArray:[self drawUpperHead]];
-    [paths addObjectsFromArray:[self drawEars:earsNumber]];
+    [paths addObjectsFromArray:[self drawEars:ears.number]];
      [paths addObjectsFromArray:[self drawJaw:jawNumber]];
     
     return paths;
 }
+
+- (NSMutableArray *)drawEarsThumbnail:(int)earsNumber
+{
+    NSMutableArray *paths = [@[] mutableCopy];
+    
+    CHAvatarAttributeOption *jaw = self.currentOptions[JAW_SHAPE];
+    
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars:earsNumber]];
+    [paths addObjectsFromArray:[self drawJaw:jaw.number]];
+    
+    return paths;
+}
+
+- (NSMutableArray *)drawCheekbonesThumbnail:(int)cheekbonesNumber
+{
+    NSMutableArray *paths = [@[] mutableCopy];
+    
+    CHAvatarAttributeOption *jaw = self.currentOptions[JAW_SHAPE];
+    CHAvatarAttributeOption *ears = self.currentOptions[EARS];
+    
+    [paths addObjectsFromArray:[self drawUpperHead]];
+    [paths addObjectsFromArray:[self drawEars:ears.number]];
+    [paths addObjectsFromArray:[self drawJaw:jaw.number]];
+    [paths addObjectsFromArray:[self drawCheekbones:cheekbonesNumber]];
+    
+    return paths;
+}
+
 
 
 

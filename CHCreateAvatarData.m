@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CHAttributeData.h"
+#import "CHCreateAvatarData.h"
 #import "CHAvatarAttributeOption.h"
 
 
-@implementation CHAttributeData
+@implementation CHCreateAvatarData
 
 
 #pragma mark - Universal Colors Data
@@ -58,13 +58,13 @@
             jaw[OPTION_COLOR] = [NSNull null];
             jaw[OPTION_PATHS] = [self.drawingData drawJaw:i];
             jaw[OPTION_ATTRIBUTE] = JAW_SHAPE;
-            jaw[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawJawThumbnail:i withEars:1];
+            jaw[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawJawThumbnail:i];
             jaw[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
             [optionsData addObject:jaw];
         }
     }
     
-#warning have just added null object for the thumbnail path. must fix
+
     //EARS
     else if ([name isEqualToString:EARS]) {
 
@@ -75,25 +75,24 @@
             ears[OPTION_COLOR] = [NSNull null];
             ears[OPTION_PATHS] = [self.drawingData drawEars:i];
             ears[OPTION_ATTRIBUTE] = EARS;
-            ears[OPTION_THUMBNAIL_PATHS] = [@[] mutableCopy];
+            ears[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawEarsThumbnail:i];
             ears[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
             [optionsData addObject:ears];
         }
 
     }
     
-#warning only added 3 cheekbones in here
     //CHEEKBONES
     else if ([name isEqualToString:CHEEKBONES]) {
         
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 5; i++) {
             NSMutableDictionary *cheekbones = [@{} mutableCopy];
             cheekbones[OPTION_NUMBER] = [NSNumber numberWithInt:i];
             cheekbones[OPTION_NAME] = [NSString stringWithFormat:CHEEKBONES_OPTION_NAME, i];
             cheekbones[OPTION_COLOR] = [NSNull null];
             cheekbones[OPTION_PATHS] = [self.drawingData drawCheekbones:i];
             cheekbones[OPTION_ATTRIBUTE] = CHEEKBONES;
-            cheekbones[OPTION_THUMBNAIL_PATHS] = [NSNull null];
+            cheekbones[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawCheekbonesThumbnail:i];
             cheekbones[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
             [optionsData addObject:cheekbones];
         }
@@ -109,34 +108,27 @@
     
     NSDictionary *skinColor = @{
                                 ATTRIBUTE_NAME : SKIN_COLOR,
-                                ATTRIBUTE_TYPE : COLOR_ATTRIBUTE_TYPE,
-                                ATTRIBUTE_ATTACHMENTS : @[SHOULDERS_ATTACHMENT,
-                                                          NECK_ATTACHMENT,
-                                                          HEAD_ATTACHMENT]
+                                ATTRIBUTE_TYPE : COLOR_ATTRIBUTE_TYPE
                                 };
     
     NSDictionary *jawShape = @{
                                 ATTRIBUTE_NAME : JAW_SHAPE,
                                 ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
-                                ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
                                 };
     
     NSDictionary *nose = @{
                                 ATTRIBUTE_NAME : NOSE,
                                 ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
-                                ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
                                };
     
     NSDictionary *cheekbones = @{
                                 ATTRIBUTE_NAME : CHEEKBONES,
                                 ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
-                                ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
                            };
     
     NSDictionary *ears = @{
                                 ATTRIBUTE_NAME : EARS,
                                 ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
-                                ATTRIBUTE_ATTACHMENTS : @[HEAD_ATTACHMENT]
                            };
     
     //return data
@@ -170,7 +162,7 @@
                                 ATTACHMENT_NAME : HEAD_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(300, 420)],
                                 ATTACHMENT_BASE_DRAWING : [self.drawingData drawUpperHead],
-                                ATTACHMENT_DRAW_ORDER : @[EARS, JAW_SHAPE]
+                                ATTACHMENT_DRAW_ORDER : @[EARS, JAW_SHAPE, CHEEKBONES]
                                 };
     //return data
     attachmentsData = @[shoulders, neck, head];
@@ -181,7 +173,7 @@
 {
     NSMutableDictionary *startingOptions = [ @{
                                                  EARS : [self optionDataForAttribute:EARS option:@"ears1"],
-                                                 JAW_SHAPE : [self optionDataForAttribute:JAW_SHAPE option:@"jaw1"]
+                                                 JAW_SHAPE : [self optionDataForAttribute:JAW_SHAPE option:@"jaw1"],
                                                  } mutableCopy];
     
     return startingOptions;

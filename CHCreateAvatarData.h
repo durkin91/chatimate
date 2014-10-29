@@ -33,7 +33,7 @@
 //Keys
 #define ATTRIBUTE_NAME @"Attribute Name"
 #define ATTRIBUTE_TYPE @"Attribute Type"
-#define ATTRIBUTE_ATTACHMENTS @"Attribute Attachments"
+
 
 //Names
 #define SKIN_COLOR @"Skin Color"
@@ -63,7 +63,7 @@
 
 
 
-@interface CHAttributeData : NSObject
+@interface CHCreateAvatarData : NSObject
 
 @property (strong, nonatomic) CHAvatarDrawingData *drawingData;
 

@@ -23,7 +23,7 @@
 - (void)setupAttachmentsAndColors
 {
     //setup attribute Data and drawing data
-    self.attributeData = [[CHAttributeData alloc] init];
+    self.attributeData = [[CHCreateAvatarData alloc] init];
     
     CHAvatarDrawingData *drawingData = [[CHAvatarDrawingData alloc] initWithUniversalColors:[self.attributeData universalColors]];
     self.attributeData.drawingData = drawingData;

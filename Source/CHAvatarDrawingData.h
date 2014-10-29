@@ -43,6 +43,8 @@
 
 //THUMBNAILS
 - (NSMutableArray *)drawColorThumbnail:(UIColor *)color;
-- (NSMutableArray *)drawJawThumbnail:(int)jawNumber withEars:(int)earsNumber;
+- (NSMutableArray *)drawJawThumbnail:(int)jawNumber;
+- (NSMutableArray *)drawEarsThumbnail:(int)earsNumber;
+- (NSMutableArray *)drawCheekbonesThumbnail:(int)cheekbonesNumber;
 
 @end
