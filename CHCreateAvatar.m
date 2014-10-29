@@ -7,14 +7,10 @@
 //
 
 #import "CHCreateAvatar.h"
-#import "CHAttributeData.h"
-#import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
 #import "CHAttachment.h"
 
 @interface CHCreateAvatar ()
-
-@property (strong, nonatomic) NSArray *attributeTypeData;
 
 
 @end
@@ -26,14 +22,27 @@
 
 - (void)setupAttachmentsAndColors
 {
-    //setup drawing data, which sets up universal colors
-    self.drawingData = [[CHAvatarDrawingData alloc] init];
+    //setup attribute Data, which inits drawing data with universal colors
+    self.attributeData = [[CHAttributeData alloc] init];
+    
+    //setup starting options options
+    NSMutableDictionary *startingOptionsData = [self.attributeData startingOptionsData];
+    for (id key in startingOptionsData) {
+        CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:startingOptionsData[key] drawingData:self.attributeData.drawingData];
+        [self.attributeData.drawingData.currentOptions setObject:option forKey:option.attribute];
+        
+        //Need to redraw paths and thumbnail paths/thumbnail image if paths are null because the drawing had a dependency on a current option.
+        if ([option.paths isEqual:[NSNull null]]) {
+            [self updatePathsAndThumbnailsForOption:option];
+        }
+    }
+    
     
     //setup attachments
     self.attachments = [@[] mutableCopy];
-    NSArray *attachmentData = [CHAttributeData attachmentsData:self];
+    NSArray *attachmentData = [self.attributeData attachmentsData];
     for (NSDictionary *dictionary in attachmentData) {
-        CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary instance:self];
+        CHAttachment *attachment = [[CHAttachment alloc] initWithData:dictionary drawingData:self.attributeData.drawingData];
         [self.attachments addObject:attachment];
     }
 }
@@ -43,14 +52,10 @@
 
 - (void)setActiveAttributeForIndex:(int)index
 {
-    if (!self.attributeTypeData) {
-        self.attributeTypeData = [CHAttributeData attributes];
-    }
+    NSArray *attributeData = [self.attributeData attributes];
+    NSDictionary *data = attributeData[index];
     
-    NSDictionary *data = self.attributeTypeData[index];
-    
-    self.activeAttribute = [[CHAvatarAttribute alloc] initWithData:data universalColors:self.universalColors];
-
+    self.activeAttribute = [[CHAvatarAttribute alloc] initWithData:data attributeData:self.attributeData];
 }
 
 
@@ -58,17 +63,36 @@
 {
     CHAvatarAttributeOption *option = self.activeAttribute.options[optionNumber];
     
-    //this is not very modular. Can edit when I add another universal color
+    //Update universal colors or current options
     if ([self.activeAttribute.type isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
-        [self.universalColors setObject:option.color forKey:UNIVERSAL_SKIN_BASE_COLOR];
+        [self.attributeData.drawingData.universalColors setObject:option.color forKey:UNIVERSAL_SKIN_BASE_COLOR];
+    }
+    else {
+        [self.attributeData.drawingData.currentOptions setObject:option forKey:self.activeAttribute.name];
+    }
+    
+    //redraw the paths for all current options. There would be a more efficient way of doing this by adding in dependencies and only updating paths dependant on the active attribute, but will do that later
+    for (CHAvatarAttributeOption *option in self.attributeData.drawingData.currentOptions) {
+        [self updatePathsAndThumbnailsForOption:option];
     }
     
     //update attachment
     for (CHAttachment *attachment in self.attachments) {
-        [attachment updateAttachmentForOption:option instance:self];
+        [attachment updateAttachmentWithAttributeData:self.attributeData];
     }
     
 }
+
+#pragma mark - Helper methods
+
+- (void)updatePathsAndThumbnailsForOption:(CHAvatarAttributeOption *)option
+{
+    NSDictionary *newOptionData = [self.attributeData optionDataForAttribute:option.attribute option:option.name];
+    option.paths = newOptionData[OPTION_PATHS];
+    option.thumbnailPaths = newOptionData[OPTION_THUMBNAIL_PATHS];
+    [option drawThumbnailImage];
+}
+
 
 
 

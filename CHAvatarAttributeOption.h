@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class CHAvatarDrawingData;
+
 @interface CHAvatarAttributeOption : NSObject
 
 @property (strong, nonatomic) UIColor *color;
@@ -15,8 +17,13 @@
 @property (strong, nonatomic) NSString *attribute;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) UIImage *thumbnailImage;
+@property (nonatomic) int number;
+@property (nonatomic) CGSize thumbnailFrameSize;
+@property (strong, nonatomic) NSMutableArray *thumbnailPaths;
+@property (strong, nonatomic) CHAvatarDrawingData *drawingData;
 
-- (id)initWithData:(NSDictionary *)data;
+- (id)initWithData:(NSDictionary *)data drawingData:(id)drawingData;
+- (void)drawThumbnailImage;
 
 
 @end

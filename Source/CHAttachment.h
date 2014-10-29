@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CHAvatarAttributeOption.h"
-#import "CHAvatarAttribute.h"
+#import "CHAvatarDrawingData.h"
+#import "CHAttributeData.h"
 
 @class CHCreateAvatar;
 
@@ -16,16 +16,14 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) CGSize frameSize;
-@property (strong, nonatomic) NSMutableDictionary *currentOptions;
 @property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) NSMutableArray *baseDrawing;
+@property (strong, nonatomic) NSArray *drawOrder;
 @property (strong, nonatomic) CCTexture *texture;
+@property (strong, nonatomic) CHAvatarDrawingData *drawingData;
 
-@property (strong, nonatomic) CHCreateAvatar *CHCreateAvatarInstance;
-
--(id)initWithData:(NSDictionary *)data instance:(CHCreateAvatar *)instance;
--(void)drawAttachment;
--(void)updateAttachmentForOption:(CHAvatarAttributeOption *)option instance:(CHCreateAvatar *)instance;
+- (id)initWithData:(NSDictionary *)data drawingData:(CHAvatarDrawingData *)drawingData;
+- (void)updateAttachmentWithAttributeData:(CHAttributeData *)attributeData;
 
 
 @end

@@ -10,97 +10,39 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "CHCreateAvatar.h"
-#import "CHAttachment.h"
 
 #define PATH @"Path"
 #define FILL_COLOR @"Fill Color"
 
 
+
 @interface CHAvatarDrawingData : NSObject
 
+@property (strong, nonatomic) NSMutableDictionary *universalColors;
+@property (strong, nonatomic) NSMutableDictionary *currentOptions;
 
+//init
+- (id)initWithUniversalColors:(NSMutableDictionary *)universalColors;
 
 // Colors
-- (UIColor*)skinTone1;
-- (UIColor*)skinTone2;
-- (UIColor*)skinTone3;
-- (UIColor*)skinTone4;
-- (UIColor*)skinTone5;
-- (UIColor*)skinTone6;
-- (UIColor*)skinTone7;
-- (UIColor*)skinTone8;
-- (UIColor*)skinTone9;
-- (UIColor*)skinTone10;
-- (UIColor*)skinTone11;
-- (UIColor*)skinTone12;
-- (UIColor*)skinTone13;
-- (UIColor*)skinTone14;
-- (UIColor*)skinTone15;
-- (UIColor*)skinTone16;
-- (UIColor*)skinTone17;
-- (UIColor*)skinTone18;
-- (UIColor*)skinTone19;
-- (UIColor*)skinTone20;
-- (UIColor*)skinTone21;
-- (UIColor*)skinTone22;
-- (UIColor*)skinTone23;
-- (UIColor*)skinTone24;
-- (UIColor*)skinTone25;
-- (UIColor*)skinTone26;
-- (UIColor*)skinTone27;
-- (UIColor*)outlineColor;
++ (UIColor *)skinColor:(int)skinColorNumber;
 
 //To draw an array of paths
 - (void)drawPaths:(NSMutableArray *)arrayOfPaths;
-- (void)drawOptions:(NSMutableDictionary *)options;
+- (void)drawCurrentOptionsInDrawOrder:(NSArray *)drawOrder;
 
-#pragma mark - Option Drawings
-
-//Shoulders
+//BASE DRAWINGS
 - (NSMutableArray *)drawShoulders;
-
-//Neck
 - (NSMutableArray *)drawNeck;
-
-//Upper Head
 - (NSMutableArray *)drawUpperHead;
 
-//Jaws
-- (NSMutableArray *)drawJaw1;
-- (NSMutableArray *)drawJaw2;
-- (NSMutableArray *)drawJaw3;
-- (NSMutableArray *)drawJaw4;
-- (NSMutableArray *)drawJaw5;
-- (NSMutableArray *)drawJaw6;
-- (NSMutableArray *)drawJaw7;
-- (NSMutableArray *)drawJaw8;
-- (NSMutableArray *)drawJaw9;
+//OPTIONS
+- (NSMutableArray *)drawJaw:(int)jawNumber;
+- (NSMutableArray *)drawEars:(int)earNumber;
+- (id)drawCheekbones:(int)cheekbonesNumber;
 
-//Ears
-- (NSMutableArray *)drawEars1;
-
-//Cheekbones
-- (NSMutableArray *)drawCheekbones1;
-- (NSMutableArray *)drawCheekbones2;
-- (NSMutableArray *)drawCheekbones3forJawNamed:(NSString *)jawShapeName;
-
-
-
-#pragma mark - Thumbnails
-
-//Color thumbnails
+//THUMBNAILS
 - (NSMutableArray *)drawColorThumbnail:(UIColor *)color;
-
-//Jaw thumbnails
-- (NSMutableArray *)drawJaw1Thumbnail;
-- (NSMutableArray *)drawJaw2Thumbnail;
-- (NSMutableArray *)drawJaw3Thumbnail;
-- (NSMutableArray *)drawJaw4Thumbnail;
-- (NSMutableArray *)drawJaw5Thumbnail;
-- (NSMutableArray *)drawJaw6Thumbnail;
-- (NSMutableArray *)drawJaw7Thumbnail;
-- (NSMutableArray *)drawJaw8Thumbnail;
-- (NSMutableArray *)drawJaw9Thumbnail;
+- (NSMutableArray *)drawJawThumbnail:(int)jawNumber withEars:(int)earsNumber;
 
 @end

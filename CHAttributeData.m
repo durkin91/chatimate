@@ -12,12 +12,23 @@
 
 @implementation CHAttributeData
 
+
+#pragma mark - Initialization
+
+-(id)init
+{
+    self = [super init];
+    self.drawingData = [[CHAvatarDrawingData alloc] initWithUniversalColors:[self universalColors]];
+    return self;
+}
+
+
 #pragma mark - Universal Colors Data
 
-+ (NSMutableDictionary *)universalColors
+- (NSMutableDictionary *)universalColors
 {
     NSMutableDictionary *colors = [@{
-                                     UNIVERSAL_SKIN_BASE_COLOR : [CHAvatarDrawingData skinTone21]
+                                     UNIVERSAL_SKIN_BASE_COLOR : [CHAvatarDrawingData skinColor:4]
                                      } mutableCopy];
     return colors;
 }
@@ -25,289 +36,85 @@
 #pragma mark - Attribute Option Data
 
 //will return the correct array of options data based on the attribute type specified
-+ (NSArray *)optionsForAttribute:(NSString *)name universalColors:(NSMutableDictionary *)universalColors
+- (NSMutableArray *)optionsForAttribute:(NSString *)name
 {
-    NSMutableArray *optionsData;
+    NSMutableArray *optionsData = [@[] mutableCopy];
     
     //SKIN COLOR
     if ([name isEqualToString:SKIN_COLOR]) {
-        NSMutableDictionary *option1 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone19],
-                                          } mutableCopy];
         
-        NSMutableDictionary *option2 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone20]
-                                          } mutableCopy];
-        
-        NSMutableDictionary *option3 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone21]
-                                          } mutableCopy];
-        
-        NSMutableDictionary *option4 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone22]
-                                          } mutableCopy];
-        
-        NSMutableDictionary *option5 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone23]
-                                          } mutableCopy];
-        
-        NSMutableDictionary *option6 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone24]
-                                          } mutableCopy];
-        
-        NSMutableDictionary *option7 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone25]
-                                          } mutableCopy];
-        
-        NSMutableDictionary *option8 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone26]
-                                          } mutableCopy];
-        
-        NSMutableDictionary *option9 = [@{
-                                          OPTION_COLOR : [CHAvatarDrawingData skinTone27]
-                                          } mutableCopy];
-        
-        NSMutableDictionary *option10 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone18]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option11 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone17]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option12 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone16]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option13 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone15]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option14 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone14]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option15 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone13]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option16 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone12]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option17 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone11]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option18 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone10]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option19 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone9]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option20 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone8]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option21 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone7]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option22 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone6]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option23 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone5]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option24 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone4]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option25 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone3]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option26 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone2]
-                                           } mutableCopy];
-        
-        NSMutableDictionary *option27 = [@{
-                                           OPTION_COLOR : [CHAvatarDrawingData skinTone1]
-                                           } mutableCopy];
-        
-        optionsData = [@[option1, option2, option3, option4, option5, option6, option7, option8, option9, option10, option11, option12, option13, option14, option15, option16, option17, option18, option19, option20, option21, option22, option23, option24, option25, option26, option27] mutableCopy];
-        
-        [self giveOptions:optionsData aName:SKIN_COLOR_OPTION_NAME];
-        [self giveOptions:optionsData aString:SKIN_COLOR forCommonKey:OPTION_ATTRIBUTE];
-        [self giveOptions:optionsData aNilValueForKey:OPTION_PATHS];
-        [self giveOptionsAThumbnail:optionsData];
-        
-        CGSize thumbnailFrame = CGSizeMake(90, 90);
-        [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
+        for (int i = 1; i <= 28; i++) {
+            NSMutableDictionary *skinColor = [@{} mutableCopy];
+            skinColor[OPTION_NUMBER] = [NSNumber numberWithInt:i];
+            skinColor[OPTION_NAME] = [NSString stringWithFormat:SKIN_COLOR_OPTION_NAME, i];
+            skinColor[OPTION_COLOR] = [CHAvatarDrawingData skinColor:i];
+            skinColor[OPTION_PATHS] = [NSNull null];
+            skinColor[OPTION_ATTRIBUTE] = SKIN_COLOR;
+            skinColor[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawColorThumbnail:[CHAvatarDrawingData skinColor:i]];
+            skinColor[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(90, 90)];
+            [optionsData addObject:skinColor];
+        }
+
         
     }
     
     //JAW SHAPE
     else if ([name isEqualToString:JAW_SHAPE]) {
-        NSMutableDictionary *jaw1 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw1:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw1Thumbnail:universalColors]
-                                       } mutableCopy];
         
-        NSMutableDictionary *jaw2 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw2:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw2Thumbnail:universalColors]
-                                       } mutableCopy];
-        
-        NSMutableDictionary *jaw3 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw3:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw3Thumbnail:universalColors]
-                                       } mutableCopy];
-        
-        NSMutableDictionary *jaw4 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw4:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw4Thumbnail:universalColors]
-                                       } mutableCopy];
-        
-        NSMutableDictionary *jaw5 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw5:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw5Thumbnail:universalColors]
-                                       } mutableCopy];
-        
-        NSMutableDictionary *jaw6 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw6:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw6Thumbnail:universalColors]
-                                       } mutableCopy];
-        
-        NSMutableDictionary *jaw7 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw7:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw7Thumbnail:universalColors]
-                                       } mutableCopy];
-        
-        NSMutableDictionary *jaw8 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw8:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw8Thumbnail:universalColors]
-                                       } mutableCopy];
-        
-        NSMutableDictionary *jaw9 = [@{
-                                       OPTION_PATHS : [CHAvatarDrawingData drawJaw9:universalColors],
-                                       OPTION_THUMBNAIL_PATHS : [CHAvatarDrawingData drawJaw9Thumbnail:universalColors]
-                                       } mutableCopy];
-        
-        optionsData = [@[jaw1, jaw2, jaw3, jaw4, jaw5, jaw6, jaw7, jaw8, jaw9] mutableCopy];
-        
-        [self giveOptions:optionsData aName:JAW_OPTION_NAME];
-        [self giveOptions:optionsData aString:JAW_SHAPE forCommonKey:OPTION_ATTRIBUTE];
-        [self giveOptions:optionsData aNilValueForKey:OPTION_COLOR];
-        
-        //set thumbnail frame size
-        CGSize thumbnailFrame = CGSizeMake(300, 380);
-        [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
-        
+        for (int i = 1; i <= 9; i++) {
+            NSMutableDictionary *jaw = [@{} mutableCopy];
+            jaw[OPTION_NUMBER] = [NSNumber numberWithInt:i];
+            jaw[OPTION_NAME] = [NSString stringWithFormat:JAW_OPTION_NAME, i];
+            jaw[OPTION_COLOR] = [NSNull null];
+            jaw[OPTION_PATHS] = [self.drawingData drawJaw:i];
+            jaw[OPTION_ATTRIBUTE] = JAW_SHAPE;
+            jaw[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawJawThumbnail:i withEars:1];
+            jaw[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            [optionsData addObject:jaw];
+        }
     }
     
+#warning have just added null object for the thumbnail path. must fix
     //EARS
     else if ([name isEqualToString:EARS]) {
-        NSMutableDictionary *ears1 = [@{
-                                        OPTION_PATHS : [CHAvatarDrawingData drawEars1:universalColors]
-                                        } mutableCopy];
-        
-        optionsData = [@[ears1] mutableCopy];
-        [self giveOptions:optionsData aName:EARS_OPTION_NAME];
-        [self giveOptions:optionsData aString:EARS forCommonKey:OPTION_ATTRIBUTE];
-        [self giveOptions:optionsData aNilValueForKey:OPTION_COLOR];
-        
-        //set thumbnail frame size
-        CGSize thumbnailFrame = CGSizeMake(300, 380);
-        [self giveOptions:optionsData aThumbnailFrameSize:thumbnailFrame];
+
+        for (int i = 1; i <= 1; i++) {
+            NSMutableDictionary *ears = [@{} mutableCopy];
+            ears[OPTION_NUMBER] = [NSNumber numberWithInt:i];
+            ears[OPTION_NAME] = [NSString stringWithFormat:EARS_OPTION_NAME, i];
+            ears[OPTION_COLOR] = [NSNull null];
+            ears[OPTION_PATHS] = [self.drawingData drawEars:i];
+            ears[OPTION_ATTRIBUTE] = EARS;
+            ears[OPTION_THUMBNAIL_PATHS] = [@[] mutableCopy];
+            ears[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            [optionsData addObject:ears];
+        }
+
     }
     
+#warning only added 3 cheekbones in here
     //CHEEKBONES
     else if ([name isEqualToString:CHEEKBONES]) {
-        NSMutableDictionary *cheekbones1 = [@{
-                                              OPTION_PATHS : [CHAvatarDrawingData drawCheekbones1:universalColors]
-                                              } mutableCopy];
         
-        NSMutableDictionary *cheekbones2 = [@{
-                                              OPTION_PATHS : [CHAvatarDrawingData drawCheekbones2:universalColors]
-                                              } mutableCopy];
-        
-        NSMutableDictionary *cheekbones3 = [@{
-                                              
-                                                  } mutableCopy];
+        for (int i = 1; i <= 3; i++) {
+            NSMutableDictionary *cheekbones = [@{} mutableCopy];
+            cheekbones[OPTION_NUMBER] = [NSNumber numberWithInt:i];
+            cheekbones[OPTION_NAME] = [NSString stringWithFormat:CHEEKBONES_OPTION_NAME, i];
+            cheekbones[OPTION_COLOR] = [NSNull null];
+            cheekbones[OPTION_PATHS] = [self.drawingData drawCheekbones:i];
+            cheekbones[OPTION_ATTRIBUTE] = CHEEKBONES;
+            cheekbones[OPTION_THUMBNAIL_PATHS] = [NSNull null];
+            cheekbones[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            [optionsData addObject:cheekbones];
+        }
     }
-    
     
     return optionsData;
 }
 
-#pragma mark - Option helper methods
+#pragma mark - Attribute Data
 
-+ (void)giveOptions:(NSMutableArray *)options aThumbnailFrameSize:(CGSize)size
-{
-    for (NSMutableDictionary *option in options) {
-        [option setObject:[NSValue valueWithCGSize:size] forKey:OPTION_THUMBNAIL_FRAME_SIZE];
-    }
-}
-
-+ (void)giveOptions:(NSMutableArray *)options aNilValueForKey:(NSString *)key
-{
-    for (NSMutableDictionary *option in options) {
-        [option setObject:[NSNull null] forKey:key];
-    }
-}
-
-+ (void)giveOptions:(NSMutableArray *)options aName:(NSString *)name
-{
-    int i = 1;
-    for (NSMutableDictionary *dictionary in options) {
-        [dictionary setObject:[NSString stringWithFormat:name, i] forKey:OPTION_NAME];
-        i++;
-    }
-
-}
-
-+ (void)giveOptions:(NSMutableArray *)options aString:(NSString *)string forCommonKey:(NSString *)key
-{
-    int i = 0;
-    for (NSMutableDictionary *dictionary in options) {
-        [dictionary setObject:string forKey:key];
-        i++;
-    }
-    
-}
-
-+ (void)giveOptionsAThumbnail:(NSMutableArray *)options
-{
-    NSArray *attributes = [self attributes];
-    for (NSMutableDictionary *option in options) {
-        for (NSDictionary *attribute in attributes) {
-            
-            //find the right attribute for this option
-            if ([attribute[ATTRIBUTE_NAME] isEqualToString:option[OPTION_ATTRIBUTE]]) {
-                
-                //check the type of attribute
-                if ([attribute[ATTRIBUTE_TYPE] isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
-                    NSMutableArray *thumbnail = [CHAvatarDrawingData drawColorThumbnail:option[OPTION_COLOR]];
-                    [option setObject:thumbnail forKey:OPTION_THUMBNAIL_PATHS];
-                    break;
-                }
-                else if ([attribute[ATTRIBUTE_TYPE] isEqualToString:PATH_ATTRIBUTE_TYPE]) {
-                    //FILL THIS IN ONCE I START DEALING WITH PATH TYPES
-                    break;
-                }
-            }
-        }
-    }
-}
-
-#pragma mark - Attribute Type Data
-
-+ (NSArray *)attributes
+- (NSArray *)attributes
 {
     
     NSDictionary *skinColor = @{
@@ -351,72 +158,50 @@
 
 #pragma mark - Attachment Data
 
-+ (NSArray *)attachmentsData:(CHCreateAvatar *)instance
+- (NSArray *)attachmentsData
 {
     NSArray *attachmentsData;
     
     NSDictionary *shoulders = @{
                                 ATTACHMENT_NAME : SHOULDERS_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(712, 212)],
-                                ATTACHMENT_OPTIONS : [self currentOptionsForAttachment:SHOULDERS_ATTACHMENT universalColors:instance.universalColors],
-                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawShoulders:instance.universalColors]
+                                ATTACHMENT_BASE_DRAWING : [self.drawingData drawShoulders],
+                                ATTACHMENT_DRAW_ORDER : @[]
                                 };
     
     NSDictionary *neck = @{
                                 ATTACHMENT_NAME : NECK_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(208, 228)],
-                                ATTACHMENT_OPTIONS : [self currentOptionsForAttachment:NECK_ATTACHMENT universalColors:instance.universalColors],
-                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawNeck:instance.universalColors]
+                                ATTACHMENT_BASE_DRAWING : [self.drawingData drawNeck],
+                                ATTACHMENT_DRAW_ORDER : @[]
                                 };
     
     NSDictionary *head = @{
                                 ATTACHMENT_NAME : HEAD_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(300, 420)],
-                                ATTACHMENT_OPTIONS : [self currentOptionsForAttachment:HEAD_ATTACHMENT universalColors:instance.universalColors],
-                                ATTACHMENT_BASE_DRAWING : [CHAvatarDrawingData drawUpperHead:instance.universalColors]
+                                ATTACHMENT_BASE_DRAWING : [self.drawingData drawUpperHead],
+                                ATTACHMENT_DRAW_ORDER : @[EARS, JAW_SHAPE]
                                 };
-    
     //return data
     attachmentsData = @[shoulders, neck, head];
     return attachmentsData;
 }
 
-+ (NSMutableDictionary *)currentOptionsForAttachment:(NSString *)attachmentName universalColors:(NSMutableDictionary *)universalColors
+- (NSMutableDictionary *)startingOptionsData
 {
-    NSMutableDictionary *attachmentOptions;
+    NSMutableDictionary *startingOptions = [ @{
+                                                 EARS : [self optionDataForAttribute:EARS option:@"ears1"],
+                                                 JAW_SHAPE : [self optionDataForAttribute:JAW_SHAPE option:@"jaw1"]
+                                                 } mutableCopy];
     
-    //SHOULDERS
-    if ([attachmentName isEqualToString:SHOULDERS_ATTACHMENT]) {
-        attachmentOptions = [@{
-                               EARS : [NSNull null],
-                               JAW_SHAPE : [NSNull null]
-                               } mutableCopy];
-    }
-    
-    //NECK
-    if ([attachmentName isEqualToString:NECK_ATTACHMENT]) {
-        attachmentOptions = [@{
-                               EARS : [NSNull null],
-                               JAW_SHAPE : [NSNull null]
-                               } mutableCopy];
-    }
-
-    //HEAD
-    if ([attachmentName isEqualToString:HEAD_ATTACHMENT]) {
-        attachmentOptions = [@{
-                               EARS : [[CHAvatarAttributeOption alloc] initWithData:  [self optionDataForAttribute:EARS option:@"ears1" withUniversalColors:universalColors]],
-                               JAW_SHAPE : [[CHAvatarAttributeOption alloc] initWithData:[self optionDataForAttribute:JAW_SHAPE option:@"jaw1" withUniversalColors:universalColors]]
-                               } mutableCopy];
-    }
-    
-    return attachmentOptions;
+    return startingOptions;
 }
 
 #pragma mark - Attachment Helper Methods
-+ (NSDictionary *)optionDataForAttribute:(NSString *)attributeName option:(NSString *)optionName withUniversalColors:(NSMutableDictionary *)universalColors
+- (NSDictionary *)optionDataForAttribute:(NSString *)attributeName option:(NSString *)optionName
 {
-    NSArray *allAttributeOptions = [self optionsForAttribute:attributeName universalColors:universalColors];
-    for (NSDictionary *option in allAttributeOptions) {
+    NSArray *allAttributeOptions = [self optionsForAttribute:attributeName];
+    for (NSMutableDictionary *option in allAttributeOptions) {
         if ([option[OPTION_NAME] isEqualToString:optionName]) {
             return option;
         }

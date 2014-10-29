@@ -7,18 +7,17 @@
 //
 
 #import "CHAvatarAttribute.h"
-#import "CHAttributeData.h"
 #import "CHAvatarAttributeOption.h"
 
 @implementation CHAvatarAttribute
 
 -(id)init
 {
-    self = [self initWithData:nil universalColors:nil];
+    self = [self initWithData:nil attributeData:nil];
     return self;
 }
 
--(id)initWithData:(NSDictionary *)data universalColors:(NSMutableDictionary *)universalColors
+- (id)initWithData:(NSDictionary *)data attributeData:(CHAttributeData *)attributeDataInstance
 {
     self = [super init];
     self.name = data[ATTRIBUTE_NAME];
@@ -26,10 +25,10 @@
     self.attachmentNames = data[ATTRIBUTE_ATTACHMENTS];
     
     //create the options
-    NSArray *optionsData = [CHAttributeData optionsForAttribute:self.name universalColors:universalColors];
+    NSArray *optionsData = [attributeDataInstance optionsForAttribute:self.name];
     NSMutableArray *allOptions = [@[] mutableCopy];
     for (NSMutableDictionary *data in optionsData) {
-        CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:data];
+        CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:data drawingData:attributeDataInstance.drawingData];
         [allOptions addObject:option];
     }
     
@@ -37,5 +36,6 @@
     
     return self;
 }
+
 
 @end

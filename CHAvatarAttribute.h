@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CHAttributeData.h"
 
 @interface CHAvatarAttribute : NSObject
 
@@ -15,6 +16,6 @@
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSArray *attachmentNames;
 
--(id)initWithData:(NSDictionary *)data universalColors:(NSMutableDictionary *)universalColors;
+- (id)initWithData:(NSDictionary *)data attributeData:(CHAttributeData *)attributeDataInstance;
 
 @end
