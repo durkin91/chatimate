@@ -52,7 +52,6 @@
     self.currentAttributeIndex = 0;
     self.factory = [[CHCreateAvatar alloc] init];
     [self.factory setupAttachmentsAndColors];
-    [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
     [self setupCollectionView];
 
     

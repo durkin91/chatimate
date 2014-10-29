@@ -41,11 +41,12 @@
 - (void)updateAttachmentWithAttributeData:(CHAttributeData *)attributeData
 {
     //redraw base drawing. Will refactor this to have the base drawing included as an immutable option
-    NSArray *attachmentsData = [attributeData attachmentsData];
+    NSArray *attachmentsData = [attributeData attachmentsData];    
     for (NSDictionary *attachment in attachmentsData) {
-        if ([attachment[ATTACHMENT_NAME] isEqualToString:self.name])
+        if ([attachment[ATTACHMENT_NAME] isEqualToString:self.name]) {
             self.baseDrawing = attachment[ATTACHMENT_BASE_DRAWING];
-        break;
+            break;
+        }
     }
     
     //redraw attachment

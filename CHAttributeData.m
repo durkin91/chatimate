@@ -13,16 +13,6 @@
 @implementation CHAttributeData
 
 
-#pragma mark - Initialization
-
--(id)init
-{
-    self = [super init];
-    self.drawingData = [[CHAvatarDrawingData alloc] initWithUniversalColors:[self universalColors]];
-    return self;
-}
-
-
 #pragma mark - Universal Colors Data
 
 - (NSMutableDictionary *)universalColors
@@ -198,7 +188,7 @@
 }
 
 #pragma mark - Attachment Helper Methods
-- (NSDictionary *)optionDataForAttribute:(NSString *)attributeName option:(NSString *)optionName
+- (NSMutableDictionary *)optionDataForAttribute:(NSString *)attributeName option:(NSString *)optionName
 {
     NSArray *allAttributeOptions = [self optionsForAttribute:attributeName];
     for (NSMutableDictionary *option in allAttributeOptions) {

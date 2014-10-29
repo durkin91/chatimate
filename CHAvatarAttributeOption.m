@@ -1,4 +1,4 @@
-long//
+//
 //  CHAvatarAttributeOption.m
 //  Chatimate
 //

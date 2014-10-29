@@ -67,11 +67,11 @@
 
 @property (strong, nonatomic) CHAvatarDrawingData *drawingData;
 
--(id)init;
+- (NSMutableDictionary *)universalColors;
 - (NSArray *)optionsForAttribute:(NSString *)name;
 - (NSArray *)attributes;
 - (NSArray *)attachmentsData;
 - (NSMutableDictionary *)startingOptionsData;
-- (NSDictionary *)optionDataForAttribute:(NSString *)attributeName option:(NSString *)optionName;
+- (NSMutableDictionary *)optionDataForAttribute:(NSString *)attributeName option:(NSString *)optionName;
 
 @end
