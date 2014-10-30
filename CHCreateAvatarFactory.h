@@ -1,5 +1,5 @@
 //
-//  CHCreateAvatar.h
+//  CHCreateAvatarFactory.h
 //  Chatimate
 //
 //  Created by Nikki Durkin on 10/23/14.
@@ -10,7 +10,7 @@
 #import "CHAvatarAttribute.h"
 #import "CHCreateAvatarData.h"
 
-@interface CHCreateAvatar : NSObject
+@interface CHCreateAvatarFactory : NSObject
 
 @property (strong, nonatomic) CHAvatarAttribute *activeAttribute;
 @property (strong, nonatomic) NSMutableArray *attachments;

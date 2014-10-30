@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		155A243319F9060B000392AC /* AvatarColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A243219F9060B000392AC /* AvatarColors.m */; };
 		155A244119F9F539000392AC /* CHAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A244019F9F539000392AC /* CHAttachment.m */; };
 		155A244419FA5166000392AC /* CHAvatarDrawingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A244319FA5166000392AC /* CHAvatarDrawingData.m */; };
 		156C310619F87F9900793C01 /* CHAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310519F87F9900793C01 /* CHAvatar.m */; };
@@ -15,7 +14,7 @@
 		156C310E19F88DF200793C01 /* CHAvatarAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C310D19F88DF200793C01 /* CHAvatarAttribute.m */; };
 		156C311419F88E3A00793C01 /* CHAvatarAttributeOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C311319F88E3A00793C01 /* CHAvatarAttributeOption.m */; };
 		156C311B19F88F7600793C01 /* CHCreateAvatarData.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C311A19F88F7600793C01 /* CHCreateAvatarData.m */; };
-		156C312419F8AC4E00793C01 /* CHCreateAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C312319F8AC4E00793C01 /* CHCreateAvatar.m */; };
+		156C312419F8AC4E00793C01 /* CHCreateAvatarFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 156C312319F8AC4E00793C01 /* CHCreateAvatarFactory.m */; };
 		15DF950019F7A03D00F06E8D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */; };
 		15DF950119F7A03D00F06E8D /* CocosViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF94FF19F7A03D00F06E8D /* CocosViewController.mm */; };
 		15DF950319F7A06100F06E8D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15DF950219F7A06100F06E8D /* Storyboard.storyboard */; };
@@ -68,8 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		155A243119F9060B000392AC /* AvatarColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvatarColors.h; path = Source/AvatarColors.h; sourceTree = "<group>"; };
-		155A243219F9060B000392AC /* AvatarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvatarColors.m; path = Source/AvatarColors.m; sourceTree = "<group>"; };
 		155A243F19F9F539000392AC /* CHAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHAttachment.h; path = Source/CHAttachment.h; sourceTree = "<group>"; };
 		155A244019F9F539000392AC /* CHAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHAttachment.m; path = Source/CHAttachment.m; sourceTree = "<group>"; };
 		155A244219FA5166000392AC /* CHAvatarDrawingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHAvatarDrawingData.h; path = Source/CHAvatarDrawingData.h; sourceTree = "<group>"; };
@@ -84,8 +81,8 @@
 		156C311319F88E3A00793C01 /* CHAvatarAttributeOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAvatarAttributeOption.m; sourceTree = "<group>"; };
 		156C311919F88F7600793C01 /* CHCreateAvatarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateAvatarData.h; sourceTree = "<group>"; };
 		156C311A19F88F7600793C01 /* CHCreateAvatarData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCreateAvatarData.m; sourceTree = "<group>"; };
-		156C312219F8AC4E00793C01 /* CHCreateAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateAvatar.h; sourceTree = "<group>"; };
-		156C312319F8AC4E00793C01 /* CHCreateAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCreateAvatar.m; sourceTree = "<group>"; };
+		156C312219F8AC4E00793C01 /* CHCreateAvatarFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCreateAvatarFactory.h; sourceTree = "<group>"; };
+		156C312319F8AC4E00793C01 /* CHCreateAvatarFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCreateAvatarFactory.m; sourceTree = "<group>"; };
 		15DF94FC19F7A03D00F06E8D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
 		15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Source/AppDelegate.mm; sourceTree = "<group>"; };
 		15DF94FE19F7A03D00F06E8D /* CocosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosViewController.h; path = Source/CocosViewController.h; sourceTree = "<group>"; };
@@ -148,38 +145,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		155A243419F90615000392AC /* Colors */ = {
+		150AA09B1A02F073006D18A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				155A243119F9060B000392AC /* AvatarColors.h */,
-				155A243219F9060B000392AC /* AvatarColors.m */,
+				15DF94FC19F7A03D00F06E8D /* AppDelegate.h */,
+				15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */,
+				15DF950419F7A0AF00F06E8D /* CHCreateAvatarViewController.h */,
+				15DF950519F7A0AF00F06E8D /* CHCreateAvatarViewController.m */,
 			);
-			name = Colors;
+			name = Controller;
 			sourceTree = "<group>";
 		};
-		155A243519F92CE5000392AC /* Avatar Creation Attributes */ = {
+		150AA09D1A02F0AC006D18A6 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				155A243919F92D17000392AC /* Drawing */,
-				155A243A19F92D28000392AC /* Attribute objects */,
+				156C312219F8AC4E00793C01 /* CHCreateAvatarFactory.h */,
+				156C312319F8AC4E00793C01 /* CHCreateAvatarFactory.m */,
 			);
-			name = "Avatar Creation Attributes";
+			name = Factory;
 			sourceTree = "<group>";
 		};
-		155A243919F92D17000392AC /* Drawing */ = {
-			isa = PBXGroup;
-			children = (
-				155A244219FA5166000392AC /* CHAvatarDrawingData.h */,
-				155A244319FA5166000392AC /* CHAvatarDrawingData.m */,
-			);
-			name = Drawing;
-			sourceTree = "<group>";
-		};
-		155A243A19F92D28000392AC /* Attribute objects */ = {
+		155A243919F92D17000392AC /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				156C311919F88F7600793C01 /* CHCreateAvatarData.h */,
 				156C311A19F88F7600793C01 /* CHCreateAvatarData.m */,
+				155A244219FA5166000392AC /* CHAvatarDrawingData.h */,
+				155A244319FA5166000392AC /* CHAvatarDrawingData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		155A243A19F92D28000392AC /* Objects */ = {
+			isa = PBXGroup;
+			children = (
 				156C310C19F88DF200793C01 /* CHAvatarAttribute.h */,
 				156C310D19F88DF200793C01 /* CHAvatarAttribute.m */,
 				156C311219F88E3A00793C01 /* CHAvatarAttributeOption.h */,
@@ -187,10 +186,10 @@
 				155A243F19F9F539000392AC /* CHAttachment.h */,
 				155A244019F9F539000392AC /* CHAttachment.m */,
 			);
-			name = "Attribute objects";
+			name = Objects;
 			sourceTree = "<group>";
 		};
-		155A243E19F9B3D7000392AC /* Cocos  */ = {
+		155A243E19F9B3D7000392AC /* Cocos2d Nodes */ = {
 			isa = PBXGroup;
 			children = (
 				156C310819F8857900793C01 /* CHCreateAvatarNode.h */,
@@ -198,7 +197,7 @@
 				156C310419F87F9900793C01 /* CHAvatar.h */,
 				156C310519F87F9900793C01 /* CHAvatar.m */,
 			);
-			name = "Cocos ";
+			name = "Cocos2d Nodes";
 			sourceTree = "<group>";
 		};
 		156C310719F87FB600793C01 /* Dependencies */ = {
@@ -213,8 +212,7 @@
 		156C310B19F887F600793C01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				155A243419F90615000392AC /* Colors */,
-				155A243E19F9B3D7000392AC /* Cocos  */,
+				155A243E19F9B3D7000392AC /* Cocos2d Nodes */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -222,9 +220,9 @@
 		156C311519F88E5500793C01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				155A243519F92CE5000392AC /* Avatar Creation Attributes */,
-				156C312219F8AC4E00793C01 /* CHCreateAvatar.h */,
-				156C312319F8AC4E00793C01 /* CHCreateAvatar.m */,
+				150AA09D1A02F0AC006D18A6 /* Factory */,
+				155A243A19F92D28000392AC /* Objects */,
+				155A243919F92D17000392AC /* Data */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -240,10 +238,7 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				15DF94FC19F7A03D00F06E8D /* AppDelegate.h */,
-				15DF94FD19F7A03D00F06E8D /* AppDelegate.mm */,
-				15DF950419F7A0AF00F06E8D /* CHCreateAvatarViewController.h */,
-				15DF950519F7A0AF00F06E8D /* CHCreateAvatarViewController.m */,
+				150AA09B1A02F073006D18A6 /* Controller */,
 				156C311519F88E5500793C01 /* Model */,
 				156C310B19F887F600793C01 /* Views */,
 			);
@@ -465,7 +460,7 @@
 				156C310A19F8857900793C01 /* CHCreateAvatarNode.m in Sources */,
 				15DF950119F7A03D00F06E8D /* CocosViewController.mm in Sources */,
 				15DF950019F7A03D00F06E8D /* AppDelegate.mm in Sources */,
-				156C312419F8AC4E00793C01 /* CHCreateAvatar.m in Sources */,
+				156C312419F8AC4E00793C01 /* CHCreateAvatarFactory.m in Sources */,
 				156C311B19F88F7600793C01 /* CHCreateAvatarData.m in Sources */,
 				155A244419FA5166000392AC /* CHAvatarDrawingData.m in Sources */,
 				155A244119F9F539000392AC /* CHAttachment.m in Sources */,
@@ -473,7 +468,6 @@
 				15DF950619F7A0AF00F06E8D /* CHCreateAvatarViewController.m in Sources */,
 				156C310E19F88DF200793C01 /* CHAvatarAttribute.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				155A243319F9060B000392AC /* AvatarColors.m in Sources */,
 				156C310619F87F9900793C01 /* CHAvatar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

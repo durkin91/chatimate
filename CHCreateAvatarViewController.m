@@ -7,7 +7,7 @@
 //
 
 #import "CHCreateAvatarViewController.h"
-#import "CHCreateAvatar.h"
+#import "CHCreateAvatarFactory.h"
 #import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
 #import "CHCreateAvatarData.h"
@@ -17,7 +17,7 @@
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-@property (strong, nonatomic) CHCreateAvatar *factory;
+@property (strong, nonatomic) CHCreateAvatarFactory *factory;
 @property (nonatomic) int currentAttributeIndex;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -50,7 +50,7 @@
     
     //retrieve the currently active attribute and setup the collection view with starting index of 0.
     self.currentAttributeIndex = 0;
-    self.factory = [[CHCreateAvatar alloc] init];
+    self.factory = [[CHCreateAvatarFactory alloc] init];
     [self.factory setupAttachmentsAndColors];
     [self setupCollectionView];
 
