@@ -22,15 +22,14 @@
 - (id)initWithData:(NSDictionary *)data drawingData:(CHAvatarDrawingData *)drawingData
 {
     self = [super init];
-    if (!self) return nil;
-    
-    self.name = data[ATTACHMENT_NAME];
-    self.frameSize = [data[ATTACHMENT_FRAME_SIZE] CGSizeValue];
-    self.baseDrawing = data[ATTACHMENT_BASE_DRAWING];
-    self.drawOrder = data[ATTACHMENT_DRAW_ORDER];
-    self.drawingData = drawingData;
-    
-    [self drawAttachment];
+    if (self) {
+        self.name = data[ATTACHMENT_NAME];
+        self.frameSize = [data[ATTACHMENT_FRAME_SIZE] CGSizeValue];
+        self.baseDrawing = data[ATTACHMENT_BASE_DRAWING];
+        self.drawOrder = data[ATTACHMENT_DRAW_ORDER];
+        self.drawingData = drawingData;
+        [self drawAttachment];
+    }
     
     return self;
     

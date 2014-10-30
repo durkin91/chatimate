@@ -10,7 +10,7 @@
 #import "CHAvatarDrawingData.h"
 #import "CHCreateAvatarData.h"
 
-@class CHCreateAvatarFactory;
+@class CHCreateAvatarManager;
 
 @interface CHAttachment : NSObject
 

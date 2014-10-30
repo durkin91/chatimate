@@ -18,7 +18,7 @@
 - (NSMutableDictionary *)universalColors
 {
     NSMutableDictionary *colors = [@{
-                                     UNIVERSAL_SKIN_BASE_COLOR : [CHAvatarDrawingData skinColor:4]
+                                     SKIN_COLOR : [CHAvatarDrawingData skinColor:4]
                                      } mutableCopy];
     return colors;
 }
@@ -116,11 +116,6 @@
                                 ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
                                 };
     
-    NSDictionary *nose = @{
-                                ATTRIBUTE_NAME : NOSE,
-                                ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
-                               };
-    
     NSDictionary *cheekbones = @{
                                 ATTRIBUTE_NAME : CHEEKBONES,
                                 ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
@@ -132,7 +127,7 @@
                            };
     
     //return data
-    NSArray *attributesData = @[skinColor, jawShape, nose, cheekbones, ears];
+    NSArray *attributesData = @[skinColor, jawShape, cheekbones, ears];
     
     
     return attributesData;

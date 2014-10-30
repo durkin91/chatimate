@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CHCreateAvatarFactory.h"
+#import "CHCreateAvatarManager.h"
 #import "CHAvatarAttributeOption.h"
 #import "CHAttachment.h"
 
-@interface CHCreateAvatarFactory ()
+@interface CHCreateAvatarManager ()
 
 
 @end
 
-@implementation CHCreateAvatarFactory
+@implementation CHCreateAvatarManager
 
 
 #pragma mark - Setup
@@ -28,7 +28,7 @@
     CHAvatarDrawingData *drawingData = [[CHAvatarDrawingData alloc] initWithUniversalColors:[self.attributeData universalColors]];
     self.attributeData.drawingData = drawingData;
     
-    //setup starting options options
+    //setup starting options
     NSMutableDictionary *startingOptionsData = [self.attributeData startingOptionsData];
     for (id key in startingOptionsData) {
         CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:startingOptionsData[key] drawingData:drawingData];
@@ -68,7 +68,7 @@
     
     //Update universal colors or current options
     if ([self.activeAttribute.type isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
-        [self.attributeData.drawingData.universalColors setObject:option.color forKey:UNIVERSAL_SKIN_BASE_COLOR];
+        [self.attributeData.drawingData.universalColors setObject:option.color forKey:SKIN_COLOR];
     }
     else {
         [self.attributeData.drawingData.currentOptions setObject:option forKey:self.activeAttribute.name];

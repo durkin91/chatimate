@@ -10,7 +10,7 @@
 #import "CHAvatarAttribute.h"
 #import "CHCreateAvatarData.h"
 
-@interface CHCreateAvatarFactory : NSObject
+@interface CHCreateAvatarManager : NSObject
 
 @property (strong, nonatomic) CHAvatarAttribute *activeAttribute;
 @property (strong, nonatomic) NSMutableArray *attachments;

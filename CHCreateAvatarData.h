@@ -34,7 +34,6 @@
 #define ATTRIBUTE_NAME @"Attribute Name"
 #define ATTRIBUTE_TYPE @"Attribute Type"
 
-
 //Names
 #define SKIN_COLOR @"Skin Color"
 #define JAW_SHAPE @"Jaw Shape"

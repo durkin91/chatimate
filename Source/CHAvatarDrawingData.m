@@ -190,7 +190,7 @@ static UIColor* _outlineColor = nil;
 - (NSMutableArray *)drawShoulders
 {
     //// Color Declarations
-    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinBaseColor = self.universalColors[SKIN_COLOR];
     UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
@@ -442,7 +442,7 @@ static UIColor* _outlineColor = nil;
 - (NSMutableArray *)drawNeck
 {
     //// Color Declarations
-    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinBaseColor = self.universalColors[SKIN_COLOR];
     UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
@@ -611,7 +611,7 @@ static UIColor* _outlineColor = nil;
 - (NSMutableArray *)drawUpperHead
 {
     //// Color Declarations
-    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinBaseColor = self.universalColors[SKIN_COLOR];
     UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
@@ -698,7 +698,7 @@ static UIColor* _outlineColor = nil;
 - (NSMutableArray *)drawJaw:(int)jawNumber
 {
     //// Color Declarations
-    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinBaseColor = self.universalColors[SKIN_COLOR];
     UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
@@ -1006,6 +1006,7 @@ static UIColor* _outlineColor = nil;
             bezier184Path.miterLimit = 4;
             
             [paths addObject:[self addColor:_outlineColor andPath:bezier184Path]];
+            break;
 
         }
             
@@ -1471,7 +1472,7 @@ static UIColor* _outlineColor = nil;
 - (NSMutableArray *)drawEars:(int)earNumber
 {
     //// Color Declarations
-    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinBaseColor = self.universalColors[SKIN_COLOR];
     UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];
@@ -1826,7 +1827,7 @@ static UIColor* _outlineColor = nil;
     }
     
     //// Color Declarations
-    UIColor* skinBaseColor = self.universalColors[UNIVERSAL_SKIN_BASE_COLOR];
+    UIColor* skinBaseColor = self.universalColors[SKIN_COLOR];
     UIColor* skinShadowColor = [self shadowColor:skinBaseColor];
     
     NSMutableArray *paths = [@[] mutableCopy];

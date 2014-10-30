@@ -7,7 +7,7 @@
 //
 
 #import "CHCreateAvatarViewController.h"
-#import "CHCreateAvatarFactory.h"
+#import "CHCreateAvatarManager.h"
 #import "CHAvatarAttribute.h"
 #import "CHAvatarAttributeOption.h"
 #import "CHCreateAvatarData.h"
@@ -17,7 +17,7 @@
 
 @interface CHCreateAvatarViewController () <CocosViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-@property (strong, nonatomic) CHCreateAvatarFactory *factory;
+@property (strong, nonatomic) CHCreateAvatarManager *manager;
 @property (nonatomic) int currentAttributeIndex;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -50,8 +50,8 @@
     
     //retrieve the currently active attribute and setup the collection view with starting index of 0.
     self.currentAttributeIndex = 0;
-    self.factory = [[CHCreateAvatarFactory alloc] init];
-    [self.factory setupAttachmentsAndColors];
+    self.manager = [[CHCreateAvatarManager alloc] init];
+    [self.manager setupAttachmentsAndColors];
     [self setupCollectionView];
 
     
@@ -73,14 +73,14 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.factory.activeAttribute.options count];
+    return [self.manager.activeAttribute.options count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    CHAvatarAttributeOption *option = [self.factory.activeAttribute.options objectAtIndex:indexPath.item];
+    CHAvatarAttributeOption *option = [self.manager.activeAttribute.options objectAtIndex:indexPath.item];
     
     //format the cell
     UIImageView *thumbnail = (UIImageView *)[cell viewWithTag:100];
@@ -92,8 +92,8 @@
 #pragma mark - CollectionView Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.factory updateAttachmentsForOption:indexPath.item];
-    [self setupSpritesWithAttachments:self.factory.attachments];
+    [self.manager updateAttachmentsForOption:indexPath.item];
+    [self setupSpritesWithAttachments:self.manager.attachments];
 }
 
 
@@ -105,7 +105,7 @@
     
     //setup the sprites
     [self getAvatarNodeFromScene];
-    [self setupSpritesWithAttachments:self.factory.attachments];
+    [self setupSpritesWithAttachments:self.manager.attachments];
     
     return self.currentScene;
 }
@@ -114,7 +114,7 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGSize cellSize;
-    if ([self.factory.activeAttribute.type isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
+    if ([self.manager.activeAttribute.type isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
         cellSize = CGSizeMake(77, 77);
     }
     else {
@@ -166,8 +166,8 @@
 
 -(void)setupCollectionView
 {
-    [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
-    self.titleLabel.text = [self.factory.activeAttribute.name uppercaseString];
+    [self.manager setActiveAttributeForIndex:self.currentAttributeIndex];
+    self.titleLabel.text = [self.manager.activeAttribute.name uppercaseString];
 }
 
 -(void)setupSpritesWithAttachments:(NSMutableArray *)attachments
@@ -192,8 +192,8 @@
 - (IBAction)nextArrowButtonPressed:(UIButton *)sender
 {
     self.currentAttributeIndex = self.currentAttributeIndex + 1;
-    [self.factory setActiveAttributeForIndex:self.currentAttributeIndex];
-    self.titleLabel.text = [self.factory.activeAttribute.name uppercaseString];
+    [self.manager setActiveAttributeForIndex:self.currentAttributeIndex];
+    self.titleLabel.text = [self.manager.activeAttribute.name uppercaseString];
     [self.collectionView reloadData];
 }
 @end

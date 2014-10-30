@@ -20,19 +20,21 @@
 - (id)initWithData:(NSDictionary *)data attributeData:(CHCreateAvatarData *)attributeDataInstance
 {
     self = [super init];
-    self.name = data[ATTRIBUTE_NAME];
-    self.type = data[ATTRIBUTE_TYPE];
-
-    
-    //create the options
-    NSArray *optionsData = [attributeDataInstance optionsForAttribute:self.name];
-    NSMutableArray *allOptions = [@[] mutableCopy];
-    for (NSMutableDictionary *data in optionsData) {
-        CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:data drawingData:attributeDataInstance.drawingData];
-        [allOptions addObject:option];
+    if (self) {
+        self.name = data[ATTRIBUTE_NAME];
+        self.type = data[ATTRIBUTE_TYPE];
+        
+        
+        //create the options
+        NSArray *optionsData = [attributeDataInstance optionsForAttribute:self.name];
+        NSMutableArray *allOptions = [@[] mutableCopy];
+        for (NSMutableDictionary *data in optionsData) {
+            CHAvatarAttributeOption *option = [[CHAvatarAttributeOption alloc] initWithData:data drawingData:attributeDataInstance.drawingData];
+            [allOptions addObject:option];
+        }
+        
+        self.options = allOptions;
     }
-    
-    self.options = allOptions;
     
     return self;
 }

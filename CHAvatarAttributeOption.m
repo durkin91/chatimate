@@ -21,17 +21,19 @@
 -(id)initWithData:(NSDictionary *)data drawingData:(CHAvatarDrawingData *)drawingData
 {
     self = [super init];
-    self.color = data[OPTION_COLOR];
-    self.paths = data[OPTION_PATHS];
-    self.attribute = data[OPTION_ATTRIBUTE];
-    self.name = data[OPTION_NAME];
-    self.number = [data[OPTION_NUMBER] intValue];
-    self.thumbnailFrameSize = [data[OPTION_THUMBNAIL_FRAME_SIZE] CGSizeValue];
-    self.thumbnailPaths = data[OPTION_THUMBNAIL_PATHS];
-    self.drawingData = drawingData;
+    if (self) {
+        self.color = data[OPTION_COLOR];
+        self.paths = data[OPTION_PATHS];
+        self.attribute = data[OPTION_ATTRIBUTE];
+        self.name = data[OPTION_NAME];
+        self.number = [data[OPTION_NUMBER] intValue];
+        self.thumbnailFrameSize = [data[OPTION_THUMBNAIL_FRAME_SIZE] CGSizeValue];
+        self.thumbnailPaths = data[OPTION_THUMBNAIL_PATHS];
+        self.drawingData = drawingData;
+        
+        [self drawThumbnailImage];
+    }
     
-    [self drawThumbnailImage];
-
     return self;
 }
 
