@@ -28,6 +28,8 @@
 #define JAW_OPTION_NAME @"jaw%i"
 #define EARS_OPTION_NAME @"ears%i"
 #define CHEEKBONES_OPTION_NAME @"cheekbones%i"
+#define CHIN_OPTION_NAME @"chin%i"
+#define NOSE_OPTION_NAME @"nose%i"
 
 //ATTRIBUTES DATA
 //Keys
@@ -40,6 +42,7 @@
 #define NOSE @"Nose"
 #define CHEEKBONES @"Cheekbones"
 #define EARS @"Ears"
+#define CHIN @"Chin"
 
 //Types
 #define COLOR_ATTRIBUTE_TYPE @"Color"
@@ -57,6 +60,7 @@
 #define SHOULDERS_ATTACHMENT @"shoulders"
 #define NECK_ATTACHMENT @"neck"
 #define HEAD_ATTACHMENT @"head"
+#define NOSE_ATTACHMENT @"nose"
 
 
 

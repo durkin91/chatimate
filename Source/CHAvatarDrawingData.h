@@ -40,11 +40,15 @@
 - (NSMutableArray *)drawJaw:(int)jawNumber;
 - (NSMutableArray *)drawEars:(int)earNumber;
 - (id)drawCheekbones:(int)cheekbonesNumber;
+- (NSMutableArray *)drawChin:(int)chinNumber;
+- (NSMutableArray *)drawNose:(int)noseNumber;
 
 //THUMBNAILS
 - (NSMutableArray *)drawColorThumbnail:(UIColor *)color;
 - (NSMutableArray *)drawJawThumbnail:(int)jawNumber;
 - (NSMutableArray *)drawEarsThumbnail:(int)earsNumber;
 - (NSMutableArray *)drawCheekbonesThumbnail:(int)cheekbonesNumber;
+- (NSMutableArray *)drawChinThumbnail:(int)chinNumber;
+- (NSMutableArray *)drawNoseThumbnail:(int)noseNumber;
 
 @end

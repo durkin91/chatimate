@@ -156,13 +156,13 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		150AA09D1A02F0AC006D18A6 /* Factory */ = {
+		150AA09D1A02F0AC006D18A6 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				156C312219F8AC4E00793C01 /* CHCreateAvatarManager.h */,
 				156C312319F8AC4E00793C01 /* CHCreateAvatarManager.m */,
 			);
-			name = Factory;
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		155A243919F92D17000392AC /* Data */ = {
@@ -220,7 +220,7 @@
 		156C311519F88E5500793C01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				150AA09D1A02F0AC006D18A6 /* Factory */,
+				150AA09D1A02F0AC006D18A6 /* Manager */,
 				155A243A19F92D28000392AC /* Objects */,
 				155A243919F92D17000392AC /* Data */,
 			);

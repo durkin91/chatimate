@@ -145,7 +145,6 @@
 
 - (void)getAvatarNodeFromScene
 {
-
     CCNode *CHCreateAvatarRootNode = [self findNodeWithName:CREATE_AVATAR_SCENE_ROOT_NODE_NAME inArrayOfChildren:self.currentScene.children];
     self.avatar = [self findNodeWithName:AVATAR_ROOT_NODE_NAME inArrayOfChildren:CHCreateAvatarRootNode.children];
 }
