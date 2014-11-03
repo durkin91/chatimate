@@ -18,7 +18,9 @@
 - (NSMutableDictionary *)universalColors
 {
     NSMutableDictionary *colors = [@{
-                                     SKIN_COLOR : [CHAvatarDrawingData skinColor:4]
+                                     SKIN_COLOR : [CHAvatarDrawingData skinColor:4],
+                                     GLASSES_FRAME_COLOR : [UIColor lightGrayColor],
+                                     HAIR_COLOR : [UIColor brownColor]
                                      } mutableCopy];
     return colors;
 }
@@ -85,7 +87,7 @@
     //CHEEKBONES
     else if ([name isEqualToString:CHEEKBONES]) {
         
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 0; i <= 5; i++) {
             NSMutableDictionary *cheekbones = [@{} mutableCopy];
             cheekbones[OPTION_NUMBER] = [NSNumber numberWithInt:i];
             cheekbones[OPTION_NAME] = [NSString stringWithFormat:CHEEKBONES_OPTION_NAME, i];
@@ -101,7 +103,7 @@
     //CHIN
     else if ([name isEqualToString:CHIN]) {
         
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 0; i <= 4; i++) {
             NSMutableDictionary *chin = [@{} mutableCopy];
             chin[OPTION_NUMBER] = [NSNumber numberWithInt:i];
             chin[OPTION_NAME] = [NSString stringWithFormat:CHIN_OPTION_NAME, i];
@@ -129,6 +131,39 @@
             [optionsData addObject:data];
         }
     }
+    
+    //GLASSES
+    else if ([name isEqualToString:GLASSES]) {
+        
+        for (int i = 0; i <= 2; i++) {
+            NSMutableDictionary *data = [@{} mutableCopy];
+            data[OPTION_NUMBER] = [NSNumber numberWithInt:i];
+            data[OPTION_NAME] = [NSString stringWithFormat:GLASSES_OPTION_NAME, i];
+            data[OPTION_COLOR] = [NSNull null];
+            data[OPTION_PATHS] = [self.drawingData drawGlasses:i];
+            data[OPTION_ATTRIBUTE] = GLASSES;
+            data[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawGlassesThumbnail:i];
+            data[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 123)];
+            [optionsData addObject:data];
+        }
+    }
+    
+    //FACIAL HAIR
+    else if ([name isEqualToString:FACIAL_HAIR]) {
+        
+        for (int i = 0; i <= 2; i++) {
+            NSMutableDictionary *data = [@{} mutableCopy];
+            data[OPTION_NUMBER] = [NSNumber numberWithInt:i];
+            data[OPTION_NAME] = [NSString stringWithFormat:FACIAL_HAIR_OPTION_NAME, i];
+            data[OPTION_COLOR] = [NSNull null];
+            data[OPTION_PATHS] = [self.drawingData drawFacialHair:i];
+            data[OPTION_ATTRIBUTE] = FACIAL_HAIR;
+            data[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawFacialHairThumbnail:i];
+            data[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            [optionsData addObject:data];
+        }
+    }
+
 
     return optionsData;
 }
@@ -168,8 +203,19 @@
                                         ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
                                         };
     
+    NSDictionary *glasses = @{
+                                        ATTRIBUTE_NAME : GLASSES,
+                                        ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
+                                        };
+    
+    NSDictionary *facialHair = @{
+                                        ATTRIBUTE_NAME : FACIAL_HAIR,
+                                        ATTRIBUTE_TYPE : PATH_ATTRIBUTE_TYPE,
+                                        };
+    
+    
     //return data
-    NSArray *attributesData = @[skinColor, jawShape, nose, cheekbones, ears, chin];
+    NSArray *attributesData = @[skinColor, jawShape, nose, cheekbones, ears, chin, glasses, facialHair];
     
     return attributesData;
 }
@@ -198,7 +244,7 @@
                                 ATTACHMENT_NAME : HEAD_ATTACHMENT,
                                 ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(300, 420)],
                                 ATTACHMENT_BASE_DRAWING : [self.drawingData drawUpperHead],
-                                ATTACHMENT_DRAW_ORDER : @[EARS, JAW_SHAPE, CHEEKBONES, CHIN]
+                                ATTACHMENT_DRAW_ORDER : @[EARS, JAW_SHAPE, CHEEKBONES, CHIN, BEARD]
                                 };
     
     NSDictionary *nose = @{
@@ -208,8 +254,23 @@
                                 ATTACHMENT_DRAW_ORDER : @[NOSE]
                                 };
     
+    NSDictionary *glasses = @{
+                                ATTACHMENT_NAME : GLASSES_ATTACHMENT,
+                                ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(300, 123)],
+                                ATTACHMENT_BASE_DRAWING : [@[] mutableCopy],
+                                ATTACHMENT_DRAW_ORDER : @[GLASSES]
+                                };
+    
+    NSDictionary *moustache = @{
+                                ATTACHMENT_NAME : MOUSTACHE_ATTACHMENT,
+                                ATTACHMENT_FRAME_SIZE : [NSValue valueWithCGSize:CGSizeMake(200, 120)],
+                                ATTACHMENT_BASE_DRAWING : [@[] mutableCopy],
+                                ATTACHMENT_DRAW_ORDER : @[MOUSTACHE]
+                                };
+
+    
     //return data
-    attachmentsData = @[shoulders, neck, head, nose];
+    attachmentsData = @[shoulders, neck, head, nose, glasses, moustache];
     return attachmentsData;
 }
 

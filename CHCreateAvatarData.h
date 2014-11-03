@@ -30,6 +30,8 @@
 #define CHEEKBONES_OPTION_NAME @"cheekbones%i"
 #define CHIN_OPTION_NAME @"chin%i"
 #define NOSE_OPTION_NAME @"nose%i"
+#define GLASSES_OPTION_NAME @"glasses%i"
+#define FACIAL_HAIR_OPTION_NAME @"facialHair%i"
 
 //ATTRIBUTES DATA
 //Keys
@@ -43,6 +45,14 @@
 #define CHEEKBONES @"Cheekbones"
 #define EARS @"Ears"
 #define CHIN @"Chin"
+#define GLASSES @"Glasses"
+#define GLASSES_FRAME_COLOR @"Glasses Color"
+#define FACIAL_HAIR @"Facial Hair"
+#define HAIR_COLOR @"Hair Color"
+
+//Hidden Attribute Names
+#define MOUSTACHE @"Moustache"
+#define BEARD @"Beard"
 
 //Types
 #define COLOR_ATTRIBUTE_TYPE @"Color"
@@ -61,6 +71,8 @@
 #define NECK_ATTACHMENT @"neck"
 #define HEAD_ATTACHMENT @"head"
 #define NOSE_ATTACHMENT @"nose"
+#define GLASSES_ATTACHMENT @"glasses"
+#define MOUSTACHE_ATTACHMENT @"moustache"
 
 
 

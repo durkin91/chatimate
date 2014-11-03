@@ -117,6 +117,10 @@
     if ([self.manager.activeAttribute.type isEqualToString:COLOR_ATTRIBUTE_TYPE]) {
         cellSize = CGSizeMake(77, 77);
     }
+    else if ([self.manager.activeAttribute.name isEqualToString:GLASSES]) {
+        cellSize = CGSizeMake(150, 67);
+    }
+    
     else {
         cellSize = CGSizeMake(95, 126);
     }
