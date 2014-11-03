@@ -18,12 +18,10 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) UIImage *thumbnailImage;
 @property (nonatomic) int number;
-@property (nonatomic) CGSize thumbnailFrameSize;
-@property (strong, nonatomic) NSMutableArray *thumbnailPaths;
 @property (strong, nonatomic) CHAvatarDrawingData *drawingData;
 
 - (id)initWithData:(NSDictionary *)data drawingData:(id)drawingData;
-- (void)drawThumbnailImage;
+//- (void)drawThumbnailImage;
 
 
 @end

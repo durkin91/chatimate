@@ -46,12 +46,13 @@
 - (id)drawFacialHair:(int)facialHairNumber;
 
 //THUMBNAILS
-- (NSMutableArray *)drawColorThumbnail:(UIColor *)color;
-- (NSMutableArray *)drawJawThumbnail:(int)jawNumber;
-- (NSMutableArray *)drawEarsThumbnail:(int)earsNumber;
-- (NSMutableArray *)drawCheekbonesThumbnail:(int)cheekbonesNumber;
-- (NSMutableArray *)drawChinThumbnail:(int)chinNumber;
-- (NSMutableArray *)drawNoseThumbnail:(int)noseNumber;
-- (NSMutableArray *)drawGlassesThumbnail:(int)glassesNumber;
+- (UIImage *)drawColorThumbnail:(UIColor *)color;
+- (UIImage *)drawJawThumbnail:(int)jawNumber;
+- (UIImage *)drawEarsThumbnail:(int)earsNumber;
+- (UIImage *)drawCheekbonesThumbnail:(int)cheekbonesNumber;
+- (UIImage *)drawChinThumbnail:(int)chinNumber;
+- (UIImage *)drawNoseThumbnail:(int)noseNumber;
+- (UIImage *)drawGlassesThumbnail:(int)glassesNumber;
+- (UIImage *)drawFacialHairThumbnail:(int)facialHairNumber;
 
 @end

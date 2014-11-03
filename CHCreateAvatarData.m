@@ -28,6 +28,7 @@
 #pragma mark - Attribute Option Data
 
 //will return the correct array of options data based on the attribute type specified
+//Thumbnail frame size is now specified in the Drawing Data
 - (NSMutableArray *)optionsForAttribute:(NSString *)name
 {
     NSMutableArray *optionsData = [@[] mutableCopy];
@@ -42,8 +43,7 @@
             skinColor[OPTION_COLOR] = [CHAvatarDrawingData skinColor:i];
             skinColor[OPTION_PATHS] = [NSNull null];
             skinColor[OPTION_ATTRIBUTE] = SKIN_COLOR;
-            skinColor[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawColorThumbnail:[CHAvatarDrawingData skinColor:i]];
-            skinColor[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(90, 90)];
+            skinColor[OPTION_THUMBNAIL_IMAGE] = [self.drawingData drawColorThumbnail:[CHAvatarDrawingData skinColor:i]];
             [optionsData addObject:skinColor];
         }
 
@@ -60,8 +60,7 @@
             jaw[OPTION_COLOR] = [NSNull null];
             jaw[OPTION_PATHS] = [self.drawingData drawJaw:i];
             jaw[OPTION_ATTRIBUTE] = JAW_SHAPE;
-            jaw[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawJawThumbnail:i];
-            jaw[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            jaw[OPTION_THUMBNAIL_IMAGE] = [self.drawingData drawJawThumbnail:i];
             [optionsData addObject:jaw];
         }
     }
@@ -77,8 +76,7 @@
             ears[OPTION_COLOR] = [NSNull null];
             ears[OPTION_PATHS] = [self.drawingData drawEars:i];
             ears[OPTION_ATTRIBUTE] = EARS;
-            ears[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawEarsThumbnail:i];
-            ears[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            ears[OPTION_THUMBNAIL_IMAGE] = [self.drawingData drawEarsThumbnail:i];
             [optionsData addObject:ears];
         }
 
@@ -94,8 +92,7 @@
             cheekbones[OPTION_COLOR] = [NSNull null];
             cheekbones[OPTION_PATHS] = [self.drawingData drawCheekbones:i];
             cheekbones[OPTION_ATTRIBUTE] = CHEEKBONES;
-            cheekbones[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawCheekbonesThumbnail:i];
-            cheekbones[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            cheekbones[OPTION_THUMBNAIL_IMAGE] = [self.drawingData drawCheekbonesThumbnail:i];
             [optionsData addObject:cheekbones];
         }
     }
@@ -110,8 +107,7 @@
             chin[OPTION_COLOR] = [NSNull null];
             chin[OPTION_PATHS] = [self.drawingData drawChin:i];
             chin[OPTION_ATTRIBUTE] = CHIN;
-            chin[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawChinThumbnail:i];
-            chin[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            chin[OPTION_THUMBNAIL_IMAGE] = [self.drawingData drawChinThumbnail:i];
             [optionsData addObject:chin];
         }
     }
@@ -126,8 +122,7 @@
             data[OPTION_COLOR] = [NSNull null];
             data[OPTION_PATHS] = [self.drawingData drawNose:i];
             data[OPTION_ATTRIBUTE] = NOSE;
-            data[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawNoseThumbnail:i];
-            data[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            data[OPTION_THUMBNAIL_IMAGE] = [self.drawingData drawNoseThumbnail:i];
             [optionsData addObject:data];
         }
     }
@@ -142,8 +137,7 @@
             data[OPTION_COLOR] = [NSNull null];
             data[OPTION_PATHS] = [self.drawingData drawGlasses:i];
             data[OPTION_ATTRIBUTE] = GLASSES;
-            data[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawGlassesThumbnail:i];
-            data[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 123)];
+            data[OPTION_THUMBNAIL_IMAGE] = [self.drawingData drawGlassesThumbnail:i];
             [optionsData addObject:data];
         }
     }
@@ -158,12 +152,10 @@
             data[OPTION_COLOR] = [NSNull null];
             data[OPTION_PATHS] = [self.drawingData drawFacialHair:i];
             data[OPTION_ATTRIBUTE] = FACIAL_HAIR;
-            data[OPTION_THUMBNAIL_PATHS] = [self.drawingData drawFacialHairThumbnail:i];
-            data[OPTION_THUMBNAIL_FRAME_SIZE] = [NSValue valueWithCGSize:CGSizeMake(300, 380)];
+            data[OPTION_THUMBNAIL_IMAGE] = [self.drawingData drawFacialHairThumbnail:i];
             [optionsData addObject:data];
         }
     }
-
 
     return optionsData;
 }

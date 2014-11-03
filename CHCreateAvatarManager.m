@@ -91,8 +91,7 @@
 {
     NSMutableDictionary *newOptionData = [self.attributeData optionDataForAttribute:option.attribute option:option.name];
     option.paths = newOptionData[OPTION_PATHS];
-    option.thumbnailPaths = newOptionData[OPTION_THUMBNAIL_PATHS];
-    [option drawThumbnailImage];
+    option.thumbnailImage = newOptionData[OPTION_THUMBNAIL_IMAGE];
 }
 
 

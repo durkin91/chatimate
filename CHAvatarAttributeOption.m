@@ -27,29 +27,26 @@
         self.attribute = data[OPTION_ATTRIBUTE];
         self.name = data[OPTION_NAME];
         self.number = [data[OPTION_NUMBER] intValue];
-        self.thumbnailFrameSize = [data[OPTION_THUMBNAIL_FRAME_SIZE] CGSizeValue];
-        self.thumbnailPaths = data[OPTION_THUMBNAIL_PATHS];
         self.drawingData = drawingData;
-        
-        [self drawThumbnailImage];
+        self.thumbnailImage = data[OPTION_THUMBNAIL_IMAGE];
     }
     
     return self;
 }
 
-- (void)drawThumbnailImage
-{
-    //Draw the thumbnail image
-    if ([self.color isKindOfClass:[UIColor class]]) {
-        UIGraphicsBeginImageContextWithOptions(self.thumbnailFrameSize, 0.0, 2.0);
-    }
-    else {
-        UIGraphicsBeginImageContextWithOptions(self.thumbnailFrameSize, 0.0, 1.0);
-    }
-    
-    [self.drawingData drawPaths:self.thumbnailPaths];
-    self.thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-}
+//- (void)drawThumbnailImage
+//{
+//    //Draw the thumbnail image
+//    if ([self.color isKindOfClass:[UIColor class]]) {
+//        UIGraphicsBeginImageContextWithOptions(self.thumbnailFrameSize, 0.0, 2.0);
+//    }
+//    else {
+//        UIGraphicsBeginImageContextWithOptions(self.thumbnailFrameSize, 0.0, 1.0);
+//    }
+//    
+//    [self.drawingData drawPaths:self.thumbnailPaths];
+//    self.thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//}
 
 @end

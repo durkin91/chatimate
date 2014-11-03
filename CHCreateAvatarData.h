@@ -21,6 +21,7 @@
 #define OPTION_THUMBNAIL_PATHS @"Thumbnail Paths"
 #define OPTION_THUMBNAIL_FRAME_SIZE @"Thumbnail Frame Size"
 #define OPTION_NUMBER @"Number"
+#define OPTION_THUMBNAIL_IMAGE @"Thumbnail Image"
 
 
 //Names
